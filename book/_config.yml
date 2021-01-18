@@ -1,0 +1,44 @@
+#######################################################################################
+# Book settings
+title : Kicking the Tires on Jupyter-Book # The title of the book. Will be placed in the left navbar.
+author: Ryan Lowe   # The author of the book
+# logo: 'qe-logo-large.png'
+copyright                   : "2021"  # Copyright year to be placed in the footer
+
+# Information about where the book exists on the web
+description: >-
+  A look at using jupyter-book for the uninitiated
+
+#######################################################################################
+# Execution settings
+execute:
+  execute_notebooks           : cache
+
+#######################################################################################
+# HTML-specific settings
+html:
+  home_page_in_navbar         : true
+
+# #######################################################################################
+# Interact link settings
+notebook_interface            : "notebook"
+
+#######################################################################################
+# Launch button settings
+repository:
+  url                         : https://github.com/skyrockmoon/?????
+  path_to_book                : "jb_kick_tires"
+
+# binder:
+#   binderhub_url               : "https://mybinder.org"
+#   text                        : "Launch binder"
+
+latex:
+  latex_engine                : "xelatex"
+  latex_documents:
+    targetname: book.tex
+
+#######################################################################################
+# Parse settings
+parse:
+  myst_extended_syntax: true
