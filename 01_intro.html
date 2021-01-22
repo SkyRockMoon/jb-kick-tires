@@ -1,0 +1,465 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction &#8212; Kicking the Tires on Jupyter-Book</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Setting up jupyter-book" href="02_setup.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Kicking the Tires on Jupyter-Book</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="#">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_setup.html">
+   Setting up jupyter-book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_build-pub.html">
+   Build and publish a book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_content.html">
+   Add content to the book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="myNotebook.html">
+   Writing in your jupyter notebook
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/01_intro.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#intended-audience">
+   Intended audience
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#executable-books">
+   Executable books
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mini-book-overview">
+   Mini-book overview
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This book is still being actively developed and this version of should be considered a rough draft. <a class="reference external" href="https://docs.github.com/en/github/getting-started-with-github/following-people#:~:text=If%20someone%20you%20follow%20stars,Unfollow%20under%20their%20profile%20image.">Follow me on GitHub</a> to receive notifications when updates are made.</p>
+</div>
+<p>This mini-book ‘kicks the tires’ on the open source <a class="reference external" href="https://jupyterbook.org">jupyter-book</a> tool chain that is used to create <a class="reference internal" href="#exec-book"><span class="std std-ref">executable books</span></a> that are published as websites and/or paper (dead tree) books.</p>
+<p>The term “kick the tires” is an informal saying from North America that means:</p>
+<blockquote>
+<div><p>To inspect something to ensure it meets expected standards or has favored characteristics, typically before committing to purchasing or otherwise selecting it.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wiktionary.org/wiki/kick_the_tires">Wikitionary</a></p></li>
+</ul>
+</div></blockquote>
+<p>Jupyter-book is a free and open source project, but you are still in essence buying it when you decide to author a book (or similar document) with it. The process of writing a book is a long and hard endeavour. If you have to spend a lot of time fussing and struggling with your chosen <em>tooling</em> then you will have cost yourself time and money.</p>
+<p><a class="reference external" href="https://www.investopedia.com/terms/k/kickingthetires.asp">Investopedia</a> makes the following points about “kicking the tires” on an investment:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Kicking the tires involves conducting a minimal amount of research before making an investment decision.</p></li>
+<li><p>Taken from the context of car shopping, it is the opposite of conducting serious, in-depth research or due diligence.</p></li>
+<li><p>Kicking the tires can nonetheless be a valid strategy as it cuts down on time and effort in conducting research by performing some cursory analysis, but can also lead investors astray with incomplete or wrong conclusions.</p></li>
+</ul>
+<p>Kicking the tires gets its name from shopping for an automobile. A car shopper who shows some interest in a car probably will not look under the hood or perform a serious comparative analysis versus similar models. However, this shopper usually takes a walk around the car from front to back to get a look and kick the tires. This shopper is not considered a serious buyer or a hot prospect.</p>
+</div></blockquote>
+<div class="section" id="intended-audience">
+<span id="id1"></span><h2>Intended audience<a class="headerlink" href="#intended-audience" title="Permalink to this headline">¶</a></h2>
+<p>The intended audience for this mini book is potential authors who are trying to figure out if jupyter-book will meet there needs. If you think the <a class="reference external" href="https://executablebooks.org/en/latest/gallery.html">example jupyter-books</a> are beautiful, but are unsure if the tooling will fit with your writing style, then this mini-book is for you. If this mini-book convinces you to ‘buy into’ jupyter-book, then you can read the <a class="reference external" href="https://jupyterbook.org">official documentation</a> to <em>actually</em> learn how to use the tool. What you see here is a very brief and superficial description of a very powerful tool.</p>
+<p>Once <a class="reference internal" href="02_setup.html#setup"><span class="std std-ref">setup</span></a>, jupyter-book hides all of the <em>ugly</em> business of creating a book using more than a dozen separate tools from the user, but be warned that you will need some level of comfort with command line tools and python to truly appreciate the magic that is jupyter-book.</p>
+</div>
+<div class="section" id="executable-books">
+<span id="exec-book"></span><h2>Executable books<a class="headerlink" href="#executable-books" title="Permalink to this headline">¶</a></h2>
+<p>This mini book skips over many of the useful and powerful features of jupyter-book because we are just kicking the tires. The importance of what an executable book is, and why you might want to write one, however can not be glossed over. An executable book is a set of files that are compiled into a book very much like a computer program. Jupyter-book is not a what you see is what you get (WYSIWYG) editor like a word processor. The panels below compare the process of authoring a website and/or dead tree book on a technical topic with both tools. If your authoring the next great fictional novel - which is all prose - stop right now and get busy writing in a word processor. If you are authoring a technical document with figures, equations, tables, and code, keep reading because there is a good chance jupyter-book will be a good fit.</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header docutils">
+<p class="card-text">Word Processor</p>
+</div>
+<div class="card-body docutils">
+<p class="card-text"><strong>Content Creation:</strong></p>
+<ol class="simple">
+<li><p class="card-text">Start with a template</p></li>
+<li><p class="card-text">Type your content into the word processor</p></li>
+<li><p class="card-text">Copy figures and graphs as images into the document</p></li>
+<li><p class="card-text">Use some simple tricks to number your equations</p></li>
+<li><p class="card-text">Use a 3rd party add on to integrate your bibliography</p></li>
+<li><p class="card-text">Inserted an auto-generated table of contents</p></li>
+</ol>
+<p class="card-text"><strong>Revisions:</strong></p>
+<ol class="simple">
+<li><p class="card-text">Identify an area of the document for improvement</p></li>
+<li><p class="card-text">Re-run your analysis in your tool of choice (R, SAS, matlab, etc.), and generate new figures/tables/results</p></li>
+<li><p class="card-text">Manually update the document and carefully spot every location where a change in the analysis changes the content</p></li>
+</ol>
+<p class="card-text"><strong>Peer review:</strong></p>
+<ol class="simple">
+<li><p class="card-text">If your lucky integrate changes from numerous documents named things like ‘chapter_3_final_rev_3_011621_rdl_edits_jkl_comments_02-13-21.docx’, changes may or may not be tracked. Suggested changes may or may not be compatible with a coherent dialog.</p></li>
+<li><p class="card-text">If your unlucky use notes with clues like “On the third paragraph of chapter 5 ‘XYZ’ is incorrect” to identify areas for improvement.</p></li>
+<li><p class="card-text">If your really unlucky, squint at a printed, then marked up with a red pen, then scanned, copy of document</p></li>
+<li><p class="card-text">Re-run your analysis in your tool of choice, and generate new figures/tables/results</p></li>
+<li><p class="card-text">Manually update the document and carefully spot every location where a change in the analysis changes the content</p></li>
+<li><p class="card-text">It is likely that you will have to restructure the document to account for changes that are not trivial - fight with the template as you do this</p></li>
+</ol>
+<p class="card-text"><strong>Final editing:</strong></p>
+<ol class="simple">
+<li><p class="card-text">Pour over your document for the umpteenith time late at night trying find inconsistencies and errors introduced by weeks/months of updates and changes to the content that were all made manually.</p></li>
+<li><p class="card-text">Generate a PDF of your final document</p></li>
+</ol>
+<p class="card-text"><strong>Website development:</strong></p>
+<p class="card-text">(usually this step is not included in a word processed book, but here is what you would do if you <em>really</em> wanted a website for your book)</p>
+<p class="card-text">Option 1 - become a web developer:</p>
+<ol class="simple">
+<li><p class="card-text">Learn HTML/javascript/CSS. Modern web development is not geared towards authoring a website for a book, so picking up a popular tool - like react or angular - would involve learning copious amounts of unnecessary skills that only a professional web developer needs</p></li>
+<li><p class="card-text">Build your own website from scratch, copy and paste in your content, painfully customize the look of your site manually, as a non-expert your result will probably not be considered a ‘beautiful, best in class’ site.</p></li>
+<li><p class="card-text">Implementing features like search and a custom navigation bar will probably be beyond your skill level</p></li>
+<li><p class="card-text">Pay to get a domain name and host your site on the internet</p></li>
+</ol>
+<p class="card-text">Option 2 - accept a inferior result:</p>
+<ol class="simple">
+<li><p class="card-text">Generate an html document from your word processor</p></li>
+<li><p class="card-text">Accept the plain, default output. The visual aesthetics will look unprofessional, but you probably don’t have the budget to hire a web developer</p></li>
+<li><p class="card-text">Pay to get a domain name and host your site on the internet</p></li>
+</ol>
+<p class="card-text"><strong>Publish your book</strong></p>
+<p class="card-text">Option 1 - Self publish:</p>
+<ol class="simple">
+<li><p class="card-text">Send your PDF to a print on demand service like <a class="reference external" href="https://kdp.amazon.com/en_US/help/topic/G202059560">kindle direct publishing</a> to be converted into a book and sold in an online store. Professional book publishers do not use common word processors for final formatting, so your book might look amateurish unless you used a really good template.</p></li>
+<li><p class="card-text">If you spot an error, go back and revise the document, and then the website manually. Then resubmit your PDF to the print on demand service.</p></li>
+</ol>
+<p class="card-text">Option 2 - Self fund an initial production run:</p>
+<ol class="simple">
+<li><p class="card-text">Send your PDF to a company that for a fee will print a couple boxes of books for you. Store these boxes in your living room and wait to see if your book becomes a best seller. Typically this costs at least $10,000.</p></li>
+<li><p class="card-text">If you spot an error after printing, there is nothing you can do.</p></li>
+</ol>
+<p class="card-text">Option 3 - Get a publishing deal</p>
+<ol class="simple">
+<li><p class="card-text">If you are skilled enough to get a publishing deal then you have a paid team helping you write and format the book. Still, jupyter-book might be a good way to impress your team by submitting your chapters on time with minimal errors.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header docutils">
+<p class="card-text">Executable book</p>
+</div>
+<div class="card-body docutils">
+<p class="card-text"><strong>Install jupyter-book:</strong></p>
+<ol class="simple">
+<li><p class="card-text">Unlike a word processor that comes pre-installed on most computers, jupyter-book must be installed. I like to believe that the instructions found on the <a class="reference internal" href="02_setup.html#setup"><span class="std std-ref">setup</span></a> page are sufficiently gentle for a technically savvy, but non-software-developer, to follow. However it took me a couple tries to find a workable method to install jupyter-book, and there is no help line when using free software.</p></li>
+</ol>
+<p class="card-text"><strong>Learn the tools:</strong></p>
+<ol class="simple">
+<li><p class="card-text">Jupyter-book uses a simple and straight forward syntax, but it still requires learning something new. This mini-book attempts to introduce a <a class="reference internal" href="04_content.html#content"><span class="std std-ref">minimum subset</span></a> of the syntax that everyone needs to get started, but referencing the <a class="reference external" href="https://jupyterbook.org/content/citations.html#references-and-citations">official jupyter-book documentation</a> will need to be a common occurrence. You will need at least a superficial understanding of:</p>
+<ul class="simple">
+<li><p class="card-text"><a class="reference internal" href="02_setup.html#wsl"><span class="std std-ref">Linux and the command line</span></a></p></li>
+<li><p class="card-text"><a class="reference internal" href="02_setup.html#python"><span class="std std-ref">Python</span></a></p></li>
+<li><p class="card-text"><span class="xref myst">Jupyter notebook</span></p></li>
+<li><p class="card-text"><span class="xref myst">Markdown</span></p></li>
+<li><p class="card-text"><span class="xref myst">Markedly Structured Text (MyST) </span></p></li>
+<li><p class="card-text"><a class="reference internal" href="02_setup.html#git"><span class="std std-ref">Git</span></a> version control (e.g. <a class="reference external" href="https://github.com/">GitHub</a>)</p></li>
+</ul>
+</li>
+</ol>
+<p class="card-text"><strong>Create content:</strong></p>
+<ol class="simple">
+<li><p class="card-text">Choose a template - like this mini book!</p></li>
+<li><p class="card-text">Write your content in markdown files and jupyter notebooks</p></li>
+<li><p class="card-text">Figures/tables/equations/bibliographies/refernces are all supported as first class citizens, but you must explicitly link them in your text. This will significantly slow down your writing.</p></li>
+<li><p class="card-text">Every time you want to see the final form of your book compile the book and wait about ~30 seconds to see the result. This will significantly slow down writing in the beginning until you are proficient with the syntax.</p></li>
+</ol>
+<p class="card-text"><strong>Revisions:</strong></p>
+<ol class="simple">
+<li><p class="card-text">Identify an area of the document for improvement</p></li>
+<li><p class="card-text">Re-run your analysis in a jupyter notebook, and generate new figures/tables/results</p></li>
+<li><p class="card-text">Update automatically propagate into your text</p></li>
+</ol>
+<p class="card-text"><strong>Peer review:</strong></p>
+<ol class="simple">
+<li><p class="card-text">For your technically savvy colleagues, send them the URL of your github repository for your book and ask them to make a pull request</p></li>
+<li><p class="card-text">For your colleagues that are ‘old school’, send them the URL of your book website and ask them to directly annotate the document</p></li>
+<li><p class="card-text">For your colleagues that are ‘old curmudgeons’ send them a print out of your book and a red pen</p></li>
+<li><p class="card-text">To incorporate feedback make changes and re-run your analysis in a jupyter notebook, generate new figures/tables/results that propagate automatically into the text</p></li>
+<li><p class="card-text">It is likely that you will have to restructure the document to account for changes that are not trivial - these changes proceed like normal writing because the formatting is applied automatically. Feel free to completely change the table of contents with no manual reformatting.</p></li>
+</ol>
+<p class="card-text"><strong>Final editing:</strong></p>
+<ol class="simple">
+<li><p class="card-text">Pour over your document for the umpteenith time late at night trying to improve the <em>content</em>. Rest assured that all your figures, references, and formatting are correct because they are auto-generated</p></li>
+<li><p class="card-text">With a simple command generate a website and publication ready PDF</p></li>
+</ol>
+<p class="card-text"><strong>Website development:</strong></p>
+<ol class="simple">
+<li><p class="card-text">This is automated for you if you follow the instructions on the <a class="reference internal" href="02_setup.html#setup"><span class="std std-ref">setup</span></a> page. By default the website is beautiful, professional, and includes many bells and whistles like search and navigation. The website looks as expected on both desktops and cell phones in any browser.</p></li>
+</ol>
+<p class="card-text"><strong>Publish your book</strong></p>
+<p class="card-text">Option 1 - Self publish:</p>
+<ol class="simple">
+<li><p class="card-text">Send your PDF to a print on demand service like <a class="reference external" href="https://kdp.amazon.com/en_US/help/topic/G202059560">kindle direct publishing</a> to be converted into a book and sold in an online store. Jupyter-book uses profesional grade tools to create your book PDF, so you can expect your book to be indistinguishable from a professionally produced book. If you spot an error, go back and revise your source files. The website can be updated automatically. Then resubmit your PDF to the print on demand service.</p></li>
+</ol>
+<p class="card-text">Option 2 - Self fund an initial production run:</p>
+<ol class="simple">
+<li><p class="card-text">This option is less likely in this use case because you are giving your book away for free on the website to generate publicity, but you can use your production ready PDF here as well.</p></li>
+<li><p class="card-text">If you spot an error after printing, there is nothing you can do.</p></li>
+</ol>
+<p class="card-text">Option 3 - Get a publishing deal</p>
+<ol class="simple">
+<li><p class="card-text">Giving away your book for free on a website flies against the business model of most publishers. Then again, very few people have the skills to get a publishing deal for their first book.</p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>The process of writing a book with a word processor and jupyter-book are vastly different as chronicled above. Each option has parts of the process that are fast, and other parts that are slow. Ultimately if using jupyter-book is the correct choice for you comes down to your use case.</p>
+<ul class="simple">
+<li><p>Using a word processor is fast initially and then revisions and changes later on become slow and painful. Quality assurance is difficult with a word processor. Figures, equations, tables, and numerical text results (e.g. mean of 34.2 (95% CI 29.2/37.8)) are all updated manually. Creating a book website manually is very challenging.</p></li>
+<li><p>Jupyter-book requires a very significant investment upfront, and even after mastering the long list of tools writing is slower. However revisions and publishing can be made very rapidly. Collaboration is pleasant and streamlined. If you value the book website, jupyter-book generates a truly beautiful and best in class html output. The PDF output is also very professional. You can be assured that every reference and figure is correct and up to date. Jupyter-book will give you a warning if any of the references are missing.</p></li>
+</ul>
+<p>I believe that jupyter-book is clearly the right tool for you if:</p>
+<ul class="simple">
+<li><p>You are authoring long and complex technical documents</p></li>
+<li><p>Have high standards for the accuracy and quality of your documents</p></li>
+<li><p>You already utilize the jupyter ecosystem for scientific computing</p></li>
+<li><p>Have a business model that is amendable with the open and reproducible research</p></li>
+</ul>
+<p>There are certainly other use cases for jupyter-book that are more traditional, but in those cases the trade offs between jupyter-book and a word processor or a latex tool set are less dramatic. The skill of your collaborators to use advanced tools is also a major decision point.</p>
+</div>
+<div class="section" id="mini-book-overview">
+<h2>Mini-book overview<a class="headerlink" href="#mini-book-overview" title="Permalink to this headline">¶</a></h2>
+<p>This mini-book is an example and template in itself.</p>
+<ul class="simple">
+<li><p>The <a class="reference internal" href="02_setup.html#setup"><span class="std std-ref">setup</span></a> page will show you how to install jupyter-book on a windows machine. The installation method in this book is opinionated,  because it aims to show a user how to kick the tires. The <a class="reference external" href="https://jupyterbook.org/content/citations.html#references-and-citations">official jupyter-book documentation</a> of course has details on other installation methods. Installing jupyter-book alone is not sufficient for success, the setup page also goes into all the other tools that are assumed to be present on your machine.</p></li>
+<li><p>The <a class="reference internal" href="02_setup.html#build"><span class="std std-ref">build</span></a> page shows you how to compile and generate both an html and PDF output of the book. This emphasizes the end goal of using jupyter-book, publishing!</p></li>
+<li><p>The <a class="reference internal" href="04_content.html#content"><span class="std std-ref">content</span></a> page introduces a minimal subset of the jupyter-book syntax so you can try your hand at authoring content and get a feel for the jupyter-book workflow. It is critical to understand that authoring content is slower, so that revising and publishing can be faster. Again, only you can determine if this writing model fits your use case. But at least you can quickly kick the tires and decide for yourself.</p></li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='right-next' id="next-link" href="02_setup.html" title="next page">Setting up jupyter-book</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ryan Lowe<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

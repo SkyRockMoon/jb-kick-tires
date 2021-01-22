@@ -1,0 +1,555 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Setting up jupyter-book &#8212; Kicking the Tires on Jupyter-Book</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Build and publish a book" href="03_build-pub.html" />
+    <link rel="prev" title="Introduction" href="01_intro.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Kicking the Tires on Jupyter-Book</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Setting up jupyter-book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_build-pub.html">
+   Build and publish a book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_content.html">
+   Add content to the book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="myNotebook.html">
+   Writing in your jupyter notebook
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/02_setup.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linux-on-windows">
+   Linux on windows
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#update-your-linux-distribution">
+     Update your linux distribution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-vs-code">
+   Install VS Code
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#make-wsl-bash-default-terminal-in-vscode">
+     Make WSL/BASH default terminal in vscode
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-oh-my-zsh">
+     Install oh-my-zsh
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#link-a-linux-folder-to-a-windows-folder">
+     Link a linux folder to a windows folder
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-latex-libraries">
+     Install latex libraries
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#build-python-3-8-from-source">
+   Build python 3.8 from source
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-pip">
+     Install Pip
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-virtualenv">
+     Install virtualenv
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-git-and-register-with-github">
+   Install Git and register with GitHub
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-git">
+     Install git
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#register-for-a-github-account">
+     Register for a GitHub account
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clone-and-build-the-mini-book">
+   Clone and build the mini book
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#build-the-mini-book">
+   Build the mini-book
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#host-your-website-on-github">
+   Host your website on GitHub
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notebooks">
+   Notebooks
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="setting-up-jupyter-book">
+<span id="setup"></span><h1>Setting up jupyter-book<a class="headerlink" href="#setting-up-jupyter-book" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This book is still being actively developed and this version of should be considered a rough draft. <a class="reference external" href="https://docs.github.com/en/github/getting-started-with-github/following-people#:~:text=If%20someone%20you%20follow%20stars,Unfollow%20under%20their%20profile%20image.">Follow me on GitHub</a> to receive notifications when updates are made.</p>
+</div>
+<p>Jupyter-book is a collection of complex tools that, in my opinion, perform a series of consecutive miracles every time you run them to generate a very professional looking output. I call the output a book, but there are lots of other things you could call it - website, paper, technical documentation, interactive notebook, etc.</p>
+<p>The installation process described here is very windows 10 centric and may not be to everyone’s taste. If you work on a linux machine you might be able to install jupyter-book in a <a class="reference external" href="https://jupyterbook.org/intro.html#install-jupyter-book">single command</a>. In most cases sophisticated users should be able to recognize how many of these instructions apply generally to their system. For the uninitiated, this setup guide will take you from zero to jupyter-book hero. Here is what you can expect to accomplish:</p>
+<ol class="simple">
+<li><p>Install the <a class="reference internal" href="#wsl"><span class="std std-ref">windows subsystem for linux</span></a>. Basically this is a little linux machine installed inside windows. This is necessary because jupyter-book is a essentially a linux tool.</p></li>
+<li><p>Install <a class="reference internal" href="#vs-code"><span class="std std-ref">VS Code</span></a>. VS Code is an <em>integrated development environment</em>. This is where you will do all your work.</p></li>
+<li><p>Build <a class="reference internal" href="#python"><span class="std std-ref">python3.8</span></a> from source code! It sounds scary, but it is actually really hard to mess up and better than the alternative.</p></li>
+<li><p>Install and register for the collaboration tools <a class="reference internal" href="#git"><span class="std std-ref">git and GitHub</span></a></p></li>
+<li><p><a class="reference internal" href="#clone"><span class="std std-ref">Clone</span></a> the mini-book repository onto your machine</p></li>
+<li><p>Duplicate the mini-book python environment, and <a class="reference internal" href="#build"><span class="std std-ref">build</span></a> the mini-book 🎉</p></li>
+</ol>
+<p><strong>TODO - add method for anaconda, or maybe miniconda &gt; <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-f</span> <span class="pre">environment.yml</span></code>, see conda try 2 directory</strong></p>
+<div class="section" id="linux-on-windows">
+<span id="wsl"></span><h2>Linux on windows<a class="headerlink" href="#linux-on-windows" title="Permalink to this headline">¶</a></h2>
+<p>Jupyter-book is fundamentally a linux tool. I initially tried to run jupyter-book on <a class="reference external" href="https://www.anaconda.com/">anaconda</a> on a windows 10 machine, and it only partially worked for me. Almost certainly this was my fault and not jupyter-book, but again I just want to kick the tires and don’t want to mess with debugging, so I eventually settled on using the <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/about">windows subsystem for linux</a> (WSL).</p>
+<p>Installation instructions for WSL are beyond the scope of this document and [is documented by Microsoft]](https://docs.microsoft.com/en-us/windows/wsl/install-win10). I personally used <a class="reference external" href="https://superuser.com/questions/1271682/is-there-a-way-of-installing-ubuntu-windows-subsystem-for-linux-on-win10-v170/1272559#1272559">these instructions</a>, which assume some pre-existing knowledge of linux.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>These instructions assume that you install Ubuntu 18.04 as your linux distribution.</p>
+</div>
+<p>After installation, from a windows command prompt run <code class="docutils literal notranslate"><span class="pre">ubuntu1804.exe</span></code>. In my specific case I had to run <code class="docutils literal notranslate"><span class="pre">C:\Users\&lt;user-name&gt;\ubuntu1804.exe</span></code>, where <code class="docutils literal notranslate"><span class="pre">&lt;user-name&gt;</span></code> is my computer user name.</p>
+<div class="section" id="update-your-linux-distribution">
+<h3>Update your linux distribution<a class="headerlink" href="#update-your-linux-distribution" title="Permalink to this headline">¶</a></h3>
+<p>Make sure you update everything with an <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">update</span></code> after logging into the WSL “machine” as everything will be out of date. This step will take a minute.</p>
+</div>
+</div>
+<div class="section" id="install-vs-code">
+<span id="vs-code"></span><h2>Install VS Code<a class="headerlink" href="#install-vs-code" title="Permalink to this headline">¶</a></h2>
+<p>Authoring content with jupyter-book involves lots of typing (your content) and issuing the same command on the command line umpteen billion times. A modern interactive development environment (IDE) will make this process much less tedious. <a class="reference external" href="https://code.visualstudio.com/">VS Code</a> is an amazing, and free, IDE that bridges the gap between the windows and linux world very effectively. Visit the <a class="reference external" href="https://code.visualstudio.com/Download">downloads page</a> and install it on your machine.</p>
+<p>When VS code opens for the first time it expects you to tell it what folder to work out of. It does not matter what folder you use for the next few steps, any project folder will suffice. Later we will change the working folder.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the remainder of the setup process work out of VS Code. You can close your windows command prompt at this point.</p>
+</div>
+<div class="section" id="make-wsl-bash-default-terminal-in-vscode">
+<h3>Make WSL/BASH default terminal in vscode<a class="headerlink" href="#make-wsl-bash-default-terminal-in-vscode" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>In VS code, make the terminal visible: View &gt; Terminal, or use the (Ctrl + `) shortcut</p></li>
+<li><p>From the dropdown in the terminal window, select ‘Set default shell’</p></li>
+<li><p>Select WSL/bash (C:\WINDOWS\System32\wsl.exe) as the default shell. If this option is not available see the note below.</p></li>
+<li><p>Close and reopen the terminal. If all went well the drop down will now indicate ‘wsl’ as the shell. Try <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">--version</span></code> to verify you are in the bash terminal</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have issues with this step, see <a class="reference external" href="https://medium.com/&#64;janelgbrandon/a-guide-for-using-wsl-for-development-d135670313a6">this document</a> for additional instructions.</p>
+</div>
+</div>
+<div class="section" id="install-oh-my-zsh">
+<h3>Install oh-my-zsh<a class="headerlink" href="#install-oh-my-zsh" title="Permalink to this headline">¶</a></h3>
+<p>This step will make everything in the console look prettier, which in turn makes using the command line easier to use.</p>
+<ul class="simple">
+<li><p>Install the z-shell, <code class="docutils literal notranslate"><span class="pre">apt</span> <span class="pre">install</span> <span class="pre">zsh</span></code></p></li>
+<li><p>Install <a class="reference external" href="https://ohmyz.sh/">oh-my-zsh</a>, <code class="docutils literal notranslate"><span class="pre">sh</span> <span class="pre">-c</span> <span class="pre">&quot;$(curl</span> <span class="pre">-fsSL</span> <span class="pre">https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;</span></code></p></li>
+</ul>
+<p>Close, and then reopen the terminal to see your new oh-my-zsh.</p>
+</div>
+<div class="section" id="link-a-linux-folder-to-a-windows-folder">
+<h3>Link a linux folder to a windows folder<a class="headerlink" href="#link-a-linux-folder-to-a-windows-folder" title="Permalink to this headline">¶</a></h3>
+<p>Files inside your WSL machine are buried in a hard to remember location that you really should not be messing with. Create a link to a folder on your C drive to make the linux to windows things work better.</p>
+<ol class="simple">
+<li><p>Move to your home directory <code class="docutils literal notranslate"><span class="pre">cd</span></code></p></li>
+<li><p>Create a folder named projects on your C drive <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">/mnt/c/projects</span></code></p></li>
+<li><p>Use your <em>windows</em> file explorer to verify that this step succeeded and you have a new folder named projects. If it failed check <a class="reference external" href="https://medium.com/&#64;janelgbrandon/a-guide-for-using-wsl-for-development-d135670313a6">this site</a> for detailed debugging details.</p></li>
+<li><p>Create a link to this location with <code class="docutils literal notranslate"><span class="pre">ln</span> <span class="pre">-s</span> <span class="pre">/mnt/c/projects</span></code>, this will create a projects directory in your home drive</p></li>
+<li><p>Test that your link works with <code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">~/projects/newfile.txt</span></code></p></li>
+<li><p>Again, use your <em>windows</em> file explorer to verify that newfile.txt was created in the projects folder</p></li>
+<li><p>Clean up with <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">~/projects/newfile.txt</span></code></p></li>
+</ol>
+</div>
+<div class="section" id="install-latex-libraries">
+<h3>Install latex libraries<a class="headerlink" href="#install-latex-libraries" title="Permalink to this headline">¶</a></h3>
+<p>These libraries are used when building a pdf. Install them with this extra long command:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra texlive-xetex latexmk
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="build-python-3-8-from-source">
+<span id="python"></span><h2>Build python 3.8 from source<a class="headerlink" href="#build-python-3-8-from-source" title="Permalink to this headline">¶</a></h2>
+<p>Jupyter-book requires python 3.8+. When this document was written the usual way of installing python (<code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">python3</span></code>) would install python 3.5.3, so you need to build python3.8 from source. Follow these steps:</p>
+<ol>
+<li><p>Upgrade with <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">update</span></code>, if you didn’t do it earlier</p></li>
+<li><p>Install packages needed to build python <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">build-essential</span> <span class="pre">zlib1g-dev</span> <span class="pre">libncurses5-dev</span> <span class="pre">libgdbm-dev</span> <span class="pre">libnss3-dev</span> <span class="pre">libssl-dev</span> <span class="pre">libreadline-dev</span> <span class="pre">libffi-dev</span> <span class="pre">libsqlite3-dev</span> <span class="pre">wget</span> <span class="pre">libbz2-dev</span></code></p></li>
+<li><p>Move to a temporary directory, <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/tmp</span></code> for example</p></li>
+<li><p>Download the source code <code class="docutils literal notranslate"><span class="pre">wget</span> <span class="pre">https://www.python.org/ftp/python/3.8.7/Python-3.8.7.tgz</span></code>. Change 3.8.7 to the latest version as needed. See the <a class="reference external" href="https://www.python.org/downloads/source/">python downloads page</a> for information on the latest version. When this document was written python3.9 was available for download, but jupyter-book is tested with python3.8 so that is the version I would use for now. This step will take a minute to complete.</p></li>
+<li><p>Extract the archive you just downloaded with <code class="docutils literal notranslate"><span class="pre">tar</span> <span class="pre">-xf</span> <span class="pre">Python-3.8.7.tgz</span></code></p></li>
+<li><p>Switch to the source directory <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">Python-3.8.7</span></code></p></li>
+<li><p>Check the dependencies <code class="docutils literal notranslate"><span class="pre">./configure</span> <span class="pre">--enable-optimizations</span></code></p></li>
+<li><p>Find number of cores on your machine with <code class="docutils literal notranslate"><span class="pre">nproc</span></code>. In my case the result was 8, but adjust the next step to match with your machine</p></li>
+<li><p>Build python 3.8 <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">-j</span> <span class="pre">8</span></code>, where <code class="docutils literal notranslate"><span class="pre">8</span></code> represents the number of cores your machine has</p></li>
+<li><p>Install the binaries with <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">make</span> <span class="pre">altinstall</span></code></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you don’t use <code class="docutils literal notranslate"><span class="pre">altinstall</span></code> you will overwrite the default system python3 binary.</p>
+</div>
+</li>
+<li><p>Check the version number of your install with <code class="docutils literal notranslate"><span class="pre">python3.8</span> <span class="pre">--version</span></code></p></li>
+<li><p>You can now remove the source files from your tmp directory with</p>
+<p><span class="math notranslate nohighlight">\( cd /tmp
+ \)</span> rm -fr Python-3.8.7
+$ rm Python-3.8.7.tgz</p>
+</li>
+</ol>
+<p>Next a few tools that support the use of python need to be installed.</p>
+<div class="section" id="install-pip">
+<h3>Install Pip<a class="headerlink" href="#install-pip" title="Permalink to this headline">¶</a></h3>
+<p>Much like <code class="docutils literal notranslate"><span class="pre">apt</span></code> is used for linux packages, Python has its own package manager <code class="docutils literal notranslate"><span class="pre">pip</span></code>. Install pip with <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">-H</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">python3-pip</span></code></p>
+</div>
+<div class="section" id="install-virtualenv">
+<h3>Install virtualenv<a class="headerlink" href="#install-virtualenv" title="Permalink to this headline">¶</a></h3>
+<p>A virtual environment allows you to install multiple version of the same library for different projects.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This might seem like overkill if you are just installing python for jupyter-book, but for anyone that uses python frequently a virtual environment will save your sanity! Plus it makes duplicating an environment trivial. For example it can automate the installation of an environment that matches with the environment that I used to write this mini-book.</p>
+</div>
+<p>Install the python virtual environment tool with <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">virtualenv</span></code></p>
+</div>
+</div>
+<div class="section" id="install-git-and-register-with-github">
+<span id="git"></span><h2>Install Git and register with GitHub<a class="headerlink" href="#install-git-and-register-with-github" title="Permalink to this headline">¶</a></h2>
+<p>Git is a popular version control system. When used in conjunction with GitHub, a popular code hosting platform, you will have access to some very powerful collaboration tools. Git is notorious for being user hostile, so we will use only the most basic functionality.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Because of the complexity of git you can find all kinds of conflicting advice on the internet. If you want to learn how to use git (and actually understand what is happening) there are a couple of good tutorials out there. The <a class="reference external" href="https://lab.github.com/">GitHub learning lab</a> uses a hands on approach to learning. The bitbucket tutorials (a direct competitor of GitHub) are also a good reference source.</p>
+</div>
+<div class="section" id="install-git">
+<h3>Install git<a class="headerlink" href="#install-git" title="Permalink to this headline">¶</a></h3>
+<p>From the command line install git with <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">git</span></code>. We will use git in the next section to download the source code of this mini-book.</p>
+</div>
+<div class="section" id="register-for-a-github-account">
+<h3>Register for a GitHub account<a class="headerlink" href="#register-for-a-github-account" title="Permalink to this headline">¶</a></h3>
+<p>TODO</p>
+</div>
+</div>
+<div class="section" id="clone-and-build-the-mini-book">
+<span id="clone"></span><h2>Clone and build the mini book<a class="headerlink" href="#clone-and-build-the-mini-book" title="Permalink to this headline">¶</a></h2>
+<p>In this section we will clone - or download - the source for the mini-book that you are reading so you can modify and then rebuild it later. Up to this point we have been working from an arbitrary working folder. In VS code use <code class="docutils literal notranslate"><span class="pre">file</span> <span class="pre">&gt;</span> <span class="pre">open</span> <span class="pre">folder</span></code> to navigate to your project folder (C:\projects) you created earlier. Then clone the mini-book repository from my GitHub account to your local drive using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">TODO</span> <span class="pre">TODO</span> <span class="pre">TODO</span></code>.</p>
+<p>Move into the cloned directory with <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">jb_kick_tires</span></code> and then view the directory contents with <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span></code>. You should see a listing of files and folders that includes:</p>
+<ul class="simple">
+<li><p>book: this is the source code for the book</p></li>
+<li><p>requirements.txt: this defines all the packages needed to exactly duplicate my python environment</p></li>
+<li><p>.gitignore TODO???? - Does this get cloned: this helps git avoid tracking unnecessary files</p></li>
+</ul>
+<p>All of the source code is located in the book directory, but before we build the book we need to install the python environment so you can build the mini-book using jupyter-book.</p>
+</div>
+<div class="section" id="build-the-mini-book">
+<span id="build"></span><h2>Build the mini-book<a class="headerlink" href="#build-the-mini-book" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p>Create a virtual environment with <code class="docutils literal notranslate"><span class="pre">python3.8</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">kick-tires</span></code></p></li>
+<li><p>Activate the virtual environment <code class="docutils literal notranslate"><span class="pre">.</span> <span class="pre">kick-tires/bin/activate</span></code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>At this point your command prompt should change to indicate that you are inside the virtual environment. The command prompt should change from:
+$ jb_kick_tires</p>
+<p>To look like this once the virtual environment has been activated:
+(kick-tires) jb_kick_tires</p>
+<p>It is no longer necesary to denote a specific version of pythong. For example issue the command <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">--version</span></code> and the version number should be 3.8.7. Also pip is actually pip3.</p>
+</div>
+</li>
+<li><p>Ensure pip is up to date <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--upgrade</span> <span class="pre">pip</span></code></p></li>
+<li><p>Install jupyter-book (finally!) and all the other libraries that are needed to create and build the book: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code>. Get comfortable, this will take a minute or two.</p></li>
+<li><p>Check the jupyter-book version <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">--version</span></code>. When this was written, jupyter-book was at 0.9.1.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>When you want to leave the kick-tires virtual environment issue the comman <code class="docutils literal notranslate"><span class="pre">deactivate</span></code> and you will be returned to your regular command prompt. Jupyter-book is installed <em>inside</em> the virtual environment, so if you leave the virtual environment <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">--version</span></code> will throw a ‘command not found’ error. A <code class="docutils literal notranslate"><span class="pre">.</span> <span class="pre">kick-tires/bin/activate</span></code> will reactivate your virtual environment.</p>
+</div>
+</li>
+<li><p>Build the book with <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">book</span></code>. Wait for the console to show you the status of the build. You should expect to see something like this:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>The HTML pages are in book/_build/html.
+
+===============================================================================
+
+Finished generating HTML for book.
+Your book&#39;s HTML pages are here:
+    book/_build/html/
+You can look at your book by opening this file in a browser:
+    book/_build/html/index.html
+Or paste this line directly into your browser bar:
+    file:///mnt/c/projects/jb_kick_tires/book/_build/html/index.html
+
+===============================================================================
+</pre></div>
+</div>
+</li>
+<li><p>From VS code ctrl + click on the link to open the book in your browser (your not using <a class="reference external" href="https://www.mozilla.org/en-US/firefox/unfck/">chrome, right?!?!</a>)</p></li>
+<li><p>If you see the mini-book then congrats. You survived the entire install process! 🎉🥴</p></li>
+</ol>
+</div>
+<div class="section" id="host-your-website-on-github">
+<span id="gh-actions"></span><h2>Host your website on GitHub<a class="headerlink" href="#host-your-website-on-github" title="Permalink to this headline">¶</a></h2>
+<p>TODO - how to use git and github to publish your book on the internet</p>
+</div>
+<div class="section" id="notebooks">
+<span id="id1"></span><h2>Notebooks<a class="headerlink" href="#notebooks" title="Permalink to this headline">¶</a></h2>
+<p>Jupyter-book is part of the jupyter ecosystem. The star at the center of the jupyter ecosystem is the jupyter notebook. A notebook is a computational tool that allows you to break a computation into a series of smaller cells. Each cell in a notebook can be executed individually. In addition to code you can write markdown in notebook cells to describe what the code is doing. This turns out to be such a powerful construct that you can write entire books in a jupyter notebook. Jupyter-book <em>simply</em> makes notebooks look presentable in web and book format.</p>
+<p>To see what a jupyter notebook looks like:</p>
+<ol class="simple">
+<li><p>Open a new terminal with the plus sign in the VS code terminal window</p></li>
+<li><p>Activate the kick-tires virtual environment <code class="docutils literal notranslate"><span class="pre">.</span> <span class="pre">kick-tires/bin/activate</span></code></p></li>
+<li><p>Open jupyter notebook with <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span> <span class="pre">--no-browser</span></code></p></li>
+<li><p>Follow the link provided in the console to open the jupyter notebook in a browser</p></li>
+</ol>
+<p>The chapter on <a class="reference internal" href="04_content.html#content"><span class="std std-ref">authoring content</span></a> will delve into the use of jupyter notebook with jupyter-book. If you are unfamiliar with jupyter notebook there are some useful tutorials ….TODO - which tutorials?</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="01_intro.html" title="previous page">Introduction</a>
+    <a class='right-next' id="next-link" href="03_build-pub.html" title="next page">Build and publish a book</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ryan Lowe<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

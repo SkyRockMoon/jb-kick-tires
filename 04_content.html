@@ -1,0 +1,745 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add content to the book &#8212; Kicking the Tires on Jupyter-Book</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Writing in your jupyter notebook" href="myNotebook.html" />
+    <link rel="prev" title="Build and publish a book" href="03_build-pub.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Kicking the Tires on Jupyter-Book</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_setup.html">
+   Setting up jupyter-book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_build-pub.html">
+   Build and publish a book
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Add content to the book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="myNotebook.html">
+   Writing in your jupyter notebook
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/04_content.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-new-chapter">
+   Create a new chapter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#regular-text">
+   Regular text
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numbered-and-bulleted-lists">
+   Numbered and bulleted lists
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ordered-lists">
+     Ordered lists
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unordered-list">
+     Unordered list
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-blocks">
+   Code blocks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#commands">
+     Commands
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#preformatted-text">
+     Preformatted text
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Code blocks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notes">
+   Notes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#footnotes">
+     Footnotes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#margin-notes">
+     Margin notes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="add-content-to-the-book">
+<span id="content"></span><h1>Add content to the book<a class="headerlink" href="#add-content-to-the-book" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This book is still being actively developed and this version of should be considered a rough draft. <a class="reference external" href="https://docs.github.com/en/github/getting-started-with-github/following-people#:~:text=If%20someone%20you%20follow%20stars,Unfollow%20under%20their%20profile%20image.">Follow me on GitHub</a> to receive notifications when updates are made.</p>
+</div>
+<p>This section covers how to add content to your book. To utilize jupyter-book you will have to ultimately become very familiar with the <a class="reference external" href="https://jupyterbook.org">official jupyter-book documentation</a>. However for the purposes of kicking the tires this section will take you through the features that are either critical to use, or just cool. Many details will be skipped for the purposes of illustrating what authoring a book with jupyter-book might be like in practice. Consider this chapter a minimum subset of the available functionality needed for authoring content.</p>
+<p>In an effort to make things more exciting this section will take you through a narrative of adding a new chapter to the <a class="reference internal" href="02_setup.html#clone"><span class="std std-ref">book you cloned</span></a> while installing jupyter-book. After getting a feel for how everything works in this section you will probably graduate to just using the <a class="reference external" href="https://jupyterbook.org/reference/cheatsheet.html">jupyter-book cheat sheet</a> to rapidly find the syntax details you need.</p>
+<p>Your mission, if you choose to accept it, is to add a chapter about dinosaurs to the book you cloned earlier. Don’t worry if your paleontology skills are rusty, the focus of this activity is on writing technical documents. You can expect to accomplish the following things while following along with this chapter.</p>
+<ol class="simple">
+<li><p>~~Create a new chapter about dinosaurs~~</p></li>
+<li><p>~~Edit <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> to include your new chapter~~</p></li>
+<li><p>Write some basic Markdown and MyST commands</p>
+<ul class="simple">
+<li><p>~~Headings~~</p></li>
+<li><p>~~Lists~~</p></li>
+<li><p>~~Code blocks~~</p></li>
+<li><p>~~Footnotes~~</p></li>
+<li><p>~~Margin notes~~</p></li>
+<li><p>admonations</p></li>
+<li><p>links (internal/external)</p></li>
+</ul>
+</li>
+<li><p>Add numbered content: figures, equations, tables</p></li>
+<li><p>Add references to numbered items</p></li>
+<li><p>Embed (glue) results from your analysis in a jupyter notebook directly into your text content</p></li>
+<li><p>Citations/bibliography</p></li>
+<li><p>Enable comments and annotations</p></li>
+</ol>
+<div class="section" id="create-a-new-chapter">
+<h2>Create a new chapter<a class="headerlink" href="#create-a-new-chapter" title="Permalink to this headline">¶</a></h2>
+<p>In your <code class="docutils literal notranslate"><span class="pre">book</span></code> directory that you <a class="reference internal" href="02_setup.html#clone"><span class="std std-ref">cloned earlier</span></a>, create a new file markdown file named <code class="docutils literal notranslate"><span class="pre">05_dino.md</span></code>. Place the following content into this file and save the file:</p>
+<p><em>05_dino.md</em></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(dino)=
+# Did dinosaurs have feathers?
+
+Write your content here...
+</pre></div>
+</div>
+<p>Next, open <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> and add an entry for your new chapter. The file should look like this:</p>
+<p><em><em>toc.yml</em></em></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- file: 01_intro
+- file: 02_setup
+- file: 03_build-pub
+- file: 04_content
+- file: 05_dino
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Notice how the <code class="docutils literal notranslate"><span class="pre">.md</span></code> extension is not included in the <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> file. Both markdown (<code class="docutils literal notranslate"><span class="pre">.md</span></code>) and jupyter notebook (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) files can be designated chapters in your jupyter-book. Using notebooks directly as content is not covered in this mini-book, see the <a class="reference external" href="https://jupyterbook.org">official docs</a> for full details.</p>
+</div>
+<p>Save everything and then rebuild the book with <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">book</span></code>. If all goes well you should now see your new book chapter in the left hand navigation bar.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>After every prompt to add something to <code class="docutils literal notranslate"><span class="pre">05_dino.md</span></code> rebuild the book and refresh your browser to view the changes. If the changes to not appear first check to see if you actually saved the file you were updating. You can also scroll up in the terminal and look for errors/warnings.</p>
+<p>Because you will need to issue the <code class="docutils literal notranslate"><span class="pre">build</span></code> command repeatedly while authoring your book it may be useful to know how to access your command line history. In most terminals simply press the up key once to see the last command that you typed. Press the up key twice to see what you typed two commands ago, and so on. Most of the time you can simply press the up key once and then press enter to build your book.</p>
+</div>
+<p>Headings are created by using a series of ampersands:</p>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Syntax</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Note</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="gh"># Heading level 1</span>
+<span class="gu">## Heading level 2</span>
+<span class="gu">### Heading level 3</span>
+<span class="gu">#### Heading level 4</span>
+<span class="gu">##### Heading level 5</span>
+<span class="gu">###### Heading level 6</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="gh"># Did dinosaurs have feathers?</span>
+</pre></div>
+</div>
+</td>
+<td><p>Level 1-6 headings, denoted by number of <code class="docutils literal notranslate"><span class="pre">#</span></code>. Each chapter can only have one top level header. Avoid skipping levels (e.g. heading level 5 directly under a level 1 heading)</p></td>
+</tr>
+</tbody>
+</table>
+<p>When writing it is often convenient to reference previous chapters or sections in your book. The <code class="docutils literal notranslate"><span class="pre">(dino)=</span></code> syntax represents a <a class="reference external" href="https://jupyterbook.org/reference/cheatsheet.html#target-headers">target header</a>. Regular headers can and do change, target headers are not visible to readers and therefore should not be changed once they are established to avoid breaking links. Don’t put any spaces in your target headers.</p>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Syntax</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Note</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span>(target_header)=
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span>(dino)=
+<span class="gh"># Did dinosaurs have feathers?</span>
+</pre></div>
+</div>
+</td>
+<td><p>See <a class="reference internal" href="#ref"><span class="std std-ref">below</span></a> for instructions on how to reference target headers.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="regular-text">
+<h2>Regular text<a class="headerlink" href="#regular-text" title="Permalink to this headline">¶</a></h2>
+<p>Regular (body) text is simply typed into your content file without any special syntax. Edit <code class="docutils literal notranslate"><span class="pre">05_dino.md</span></code> to include additional text:</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>The gyberish at the end of the paragraph is <a class="reference external" href="https://dinoipsum.herokuapp.com/">dinosaur filler text</a>.</p>
+</div>
+<p><em>05_dino.md</em></p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>(dino)=
+<span class="gh"># Did dinosaurs have feathers?</span>
+
+There is now evidence that dinosaurs may have all had feathers. Part of the controversy of this statement is defining exactly what a feather is...Achillesaurus Diceratops Malarguesaurus Sellacoxa Zhejiangosaurus Incisivosaurus Colonosaurus Albertaceratops Eupodosaurus Lapparentosaurus Siamosaurus Sauraechinodon Frenguellisaurus Chasmosaurus Rapator Brasileosaurus Riojasaurus Ruehleia Qinlingosaurus Anchisaurus Pantydraco Rebbachisaurus Appalachiosaurus Lapampasaurus Cryolophosaurus Gryphoceratops Strenusaurus Nectosaurus Squalodon Anatotitan Hallopus Velociraptor Pinacosaurus Archaeornithomimus Yueosaurus Vulcanodon Szechuanosaurus Hallopus Pleuropeltus.
+</pre></div>
+</div>
+</div>
+<div class="section" id="numbered-and-bulleted-lists">
+<h2>Numbered and bulleted lists<a class="headerlink" href="#numbered-and-bulleted-lists" title="Permalink to this headline">¶</a></h2>
+<p>Lists are often a way to summarize key points that you hope a reader skimming your book will pay attention to, or provide step by step instructions.</p>
+<div class="section" id="ordered-lists">
+<h3>Ordered lists<a class="headerlink" href="#ordered-lists" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Syntax</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Note</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="k">1.</span> First item
+<span class="k">1.</span> Second item
+    <span class="k">1.</span> First sub-item
+</pre></div>
+</div>
+</td>
+<td><ol class="simple">
+<li><p>First item</p></li>
+<li><p>Second item</p>
+<ol class="simple">
+<li><p>First sub-item</p></li>
+</ol>
+</li>
+</ol>
+</td>
+<td><p>Assign every item in the list a ‘1.’ and let the compiler properly number the list. This is crucial if you later have to add an item in the middle of the list and don’t want to manually renumber.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="unordered-list">
+<h3>Unordered list<a class="headerlink" href="#unordered-list" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Example</p></th>
+<th class="head"><p>Result</p></th>
+<th class="head"><p>Note</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="k">*</span> First item
+<span class="k">*</span> Second item
+  <span class="k">*</span> First subitem
+</pre></div>
+</div>
+</td>
+<td><ul class="simple">
+<li><p>First item</p></li>
+<li><p>Second item</p>
+<ul>
+<li><p>First subitem</p></li>
+</ul>
+</li>
+</ul>
+</td>
+<td><p>An asterisk (*) or dash (-) can be used to denote an unordered list.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Add a list of locations where dinosaurs are found to <code class="docutils literal notranslate"><span class="pre">05_dino.md</span></code>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Dinosaurs with feathers have been found in:
+    - Asia
+    - Australia
+    - North America
+    - The Atlantic ocean 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="code-blocks">
+<h2>Code blocks<a class="headerlink" href="#code-blocks" title="Permalink to this headline">¶</a></h2>
+<p>There are a couple of ways to draw attention to code or commands that a user following your book should use.</p>
+<div class="section" id="commands">
+<h3>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h3>
+<p>Any text placed inside of back ticks will be highlighted.</p>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Syntax</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Note</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="sb">`command`</span>
+</pre></div>
+</div>
+</td>
+<td><p>Run this <code class="docutils literal notranslate"><span class="pre">command</span></code> to achieve greatness</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="preformatted-text">
+<h3>Preformatted text<a class="headerlink" href="#preformatted-text" title="Permalink to this headline">¶</a></h3>
+<p>Any text that is indented with a single tab will be considered preformatted text. This can be useful for drawing attention to commands that a reader should execute by breaking the flow of the text.</p>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Syntax</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Note</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span>Execute this command:
+    $ sudo apt update
+</pre></div>
+</div>
+</td>
+<td><p>Execute this command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt update
+</pre></div>
+</div>
+</td>
+<td><p>Note the copy button in the upper right hand corner</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id1">
+<h3>Code blocks<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Snippets of code with syntax highlighting can be included in your document as well.</p>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Syntax</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Note</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="sb">```python</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;This is index </span><span class="si">{</span><span class="n">ii</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="sb">```</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;This is index </span><span class="si">{</span><span class="n">ii</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><p>Python is one of many languages that syntax highlighting is supported for.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Add some instructions for installing a fictional software tool to <code class="docutils literal notranslate"><span class="pre">05_dino.md</span></code>:</p>
+<p><em>05_dino.md</em></p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>You can install the feather identification toolbox via pip:
+    pip instal -U featherid
+
+Then modify your script to locate feathers on pictures of dinosaur bones. This uses computer vision in a way that is beyond the scope of this document to explain, and your ability to understand.
+
+<span class="sb">```python</span>
+<span class="kn">import</span> <span class="nn">featherid</span> <span class="k">as</span> <span class="nn">fid</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">X</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">files</span><span class="p">):</span>
+    <span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">fid</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="sb">```</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Best practices for using margin notes, and many other elements, are described in <a class="reference external" href="https://www.edwardtufte.com/tufte/books_vdqi">Edward Tufte’s</a> books, and online at <a class="reference external" href="https://edwardtufte.github.io/tufte-css/">Tufte CSS</a></p>
+</div>
+<p>Adding notes to your content can help readers who wish to learn more investigate further without breaking the flow of your text. In jupyter-book there are two kinds of notes that can be used. Traditional footnotes and Tufte style margin notes.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Margin notes are not fully supported when generating a PDF.</p>
+</div>
+<div class="section" id="footnotes">
+<h3>Footnotes<a class="headerlink" href="#footnotes" title="Permalink to this headline">¶</a></h3>
+<p>Footnotes can be used to add an interesting comment to text that is not directly relevant to the argument of the text.</p>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Syntax</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Note</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span>This is body text [^footnote-label].
+[<span class="nl">^footnote-label</span>]: <span class="na">This is my footnote.</span>
+</pre></div>
+</div>
+</td>
+<td><p>Dinosaurs may have had feathers <a class="footnote-reference brackets" href="#footnote-label" id="id2">1</a>.</p></td>
+<td><p>Click to follow the footnote which is located at the bottom of the page.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="margin-notes">
+<h3>Margin notes<a class="headerlink" href="#margin-notes" title="Permalink to this headline">¶</a></h3>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>This is a margin note</p>
+</div>
+<p>Margin notes, or sidenotes as they were originally called, are located in the margin.</p>
+<blockquote>
+<div><p>Sidenotes are like footnotes, except they don’t force the reader to jump their eye to the bottom of the page, but instead display off to the side in the margin. Perhaps you have noticed their use in this document already. You are very astute.
+— <a class="reference external" href="https://edwardtufte.github.io/tufte-css/">Tufte CSS</a></p>
+</div></blockquote>
+<div class="margin sidebar">
+<p class="sidebar-title">Optional title</p>
+<p>Margin note text goes here</p>
+</div>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Syntax</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Note</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{margin} Optional title
+Margin note text goes here
+```
+</pre></div>
+</div>
+</td>
+<td><p>See margin</p></td>
+<td><p>Margin notes are a great example of the web not being like print.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Add some notes to <code class="docutils literal notranslate"><span class="pre">05_dino.md</span></code></p>
+<p><em>05_dino.md</em></p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{margin}
+The filler text is generated from actual dinosaur names. Placing the margin note above the paragraph it is associated with usually results in proper placement of the note.
+```
+There is now evidence that dinosaurs may have all had feathers. Part of the controversy of this statement is defining exactly what a feather is [^feather]...Achillesaurus Diceratops Malarguesaurus Sellacoxa Zhejiangosaurus Incisivosaurus Colonosaurus Albertaceratops Eupodosaurus Lapparentosaurus... 
+
+[<span class="nl">^feather</span>]:<span class="na">To be a true feather, there are characteristics that need to be fulfilled. The structures must be made from a protein called beta-keratin, they must be branched, and finally they must originate from a follicle. For details see: [The first dinosaurs probably didn&#39;t have feathers](https://www.nhm.ac.uk/discover/news/2020/march/the-first-dinosaurs-probably-didn-t-have-feathers.html).</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="references">
+<span id="ref"></span><h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="footnote-label"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>This is my footnote which wil be placed at the bottom of the page. Conveniently you can click on the footnote number to return to the text that contains the note.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="03_build-pub.html" title="previous page">Build and publish a book</a>
+    <a class='right-next' id="next-link" href="myNotebook.html" title="next page">Writing in your jupyter notebook</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ryan Lowe<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
