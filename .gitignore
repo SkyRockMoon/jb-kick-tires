@@ -14,3 +14,6 @@ archive_jb_kick_tires
 # notes to self about venv
 virtual_environment.txt
 
+# deploy script
+deploy.sh
+

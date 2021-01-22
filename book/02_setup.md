@@ -187,7 +187,28 @@ All of the source code is located in the book directory, but before we build the
 
 (gh-actions)=
 ## Host your website on GitHub
-TODO - how to use git and github to publish your book on the internet
+
+```{warning}
+This section assumes that you have GitHub account. If you don't have an account, you can [sign up](https://github.com/join) for one for free.
+```
+
+```{note}
+If you don't have a repository setup on GitHub for you book follow [their instructions](https://docs.github.com/en/github/getting-started-with-github/create-a-repo) for creating a new repository.
+```
+
+Install the github pages importer tool to make publishing your book as a website a one command job:
+
+```
+pip install ghp-import
+```
+
+Then from your working directory deploy your book to a webpage with: 
+
+```
+ghp-import -n -p -f book/_build/html
+```
+
+This will move the files from book/_build/html to a branch called `gh-pages` and commit/push the branch. GitHub knows to look for a branch with that name, and will publish your book as a website at `https://<user-name>.github.io/<repo-name>`. Where `<user-name>` is your GitHub username, and `<repo-name>` is the name of the code repository that you are developing your book in.
 
 (notebooks)=
 ## Notebooks
