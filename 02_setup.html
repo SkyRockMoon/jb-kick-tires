@@ -43,6 +43,40 @@
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "SkyRockMoon/jb-kick-tires");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -54,6 +88,7 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://skyrockmoon.github.io/jb-kick-tires/02_setup.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Build and publish a book" href="03_build-pub.html" />
@@ -62,6 +97,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
 
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://skyrockmoon.github.io/jb-kick-tires/02_setup.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Setting up jupyter-book" />
+<meta property="og:description" content="Setting up jupyter-book  Warning  This book is still being actively developed and this version of should be considered a rough draft. Follow me on GitHub to rec" />
+
+
+<meta name="twitter:card" content="summary" />
 
 
   </head>
@@ -117,10 +161,6 @@
 
 </nav> <!-- To handle the deprecated key -->
 
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
 </div>
 
 
@@ -163,6 +203,22 @@
 </div>
 
         <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/SkyRockMoon/jb-kick-tires"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/SkyRockMoon/jb-kick-tires/issues/new?title=Issue%20on%20page%20%2F02_setup.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
 
 
         <!-- Full screen (wrap in <a> to have style consistency -->
@@ -482,7 +538,23 @@ Or paste this line directly into your browser bar:
 </div>
 <div class="section" id="host-your-website-on-github">
 <span id="gh-actions"></span><h2>Host your website on GitHub<a class="headerlink" href="#host-your-website-on-github" title="Permalink to this headline">¶</a></h2>
-<p>TODO - how to use git and github to publish your book on the internet</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This section assumes that you have GitHub account. If you don’t have an account, you can <a class="reference external" href="https://github.com/join">sign up</a> for one for free.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you don’t have a repository setup on GitHub for you book follow <a class="reference external" href="https://docs.github.com/en/github/getting-started-with-github/create-a-repo">their instructions</a> for creating a new repository.</p>
+</div>
+<p>Install the github pages importer tool to make publishing your book as a website a one command job:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">ghp</span><span class="o">-</span><span class="kn">import</span>
+</pre></div>
+</div>
+<p>Then from your working directory deploy your book to a webpage with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ghp</span><span class="o">-</span><span class="kn">import</span> <span class="o">-</span><span class="n">n</span> <span class="o">-</span><span class="n">p</span> <span class="o">-</span><span class="n">f</span> <span class="n">book</span><span class="o">/</span><span class="n">_build</span><span class="o">/</span><span class="n">html</span>
+</pre></div>
+</div>
+<p>This will move the files from book/_build/html to a branch called <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> and commit/push the branch. GitHub knows to look for a branch with that name, and will publish your book as a website at <code class="docutils literal notranslate"><span class="pre">https://&lt;user-name&gt;.github.io/&lt;repo-name&gt;</span></code>. Where <code class="docutils literal notranslate"><span class="pre">&lt;user-name&gt;</span></code> is your GitHub username, and <code class="docutils literal notranslate"><span class="pre">&lt;repo-name&gt;</span></code> is the name of the code repository that you are developing your book in.</p>
 </div>
 <div class="section" id="notebooks">
 <span id="id1"></span><h2>Notebooks<a class="headerlink" href="#notebooks" title="Permalink to this headline">¶</a></h2>
@@ -494,7 +566,7 @@ Or paste this line directly into your browser bar:
 <li><p>Open jupyter notebook with <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span> <span class="pre">--no-browser</span></code></p></li>
 <li><p>Follow the link provided in the console to open the jupyter notebook in a browser</p></li>
 </ol>
-<p>The chapter on <a class="reference internal" href="04_content.html#content"><span class="std std-ref">authoring content</span></a> will delve into the use of jupyter notebook with jupyter-book. If you are unfamiliar with jupyter notebook there are some useful tutorials ….TODO - which tutorials?</p>
+<p>The chapter on <a class="reference internal" href="04_content_OLD.html#content"><span class="std std-ref">authoring content</span></a> will delve into the use of jupyter notebook with jupyter-book. If you are unfamiliar with jupyter notebook there are some useful tutorials ….TODO - which tutorials?</p>
 </div>
 </div>
 
@@ -537,6 +609,9 @@ Or paste this line directly into your browser bar:
           By Ryan Lowe<br/>
         
             &copy; Copyright 2021.<br/>
+          <div class="extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+          </div>
       </p>
     </div>
   </footer>

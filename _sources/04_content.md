@@ -19,7 +19,8 @@ Your mission, if you choose to accept it, is to add a chapter about dinosaurs to
     - ~~Code blocks~~
     - ~~Footnotes~~
     - ~~Margin notes~~
-    - admonations
+    - Links/references
+    - admonitions
     - links (internal/external)   
 1. Add numbered content: figures, equations, tables 
 1. Add references to numbered items
@@ -36,6 +37,10 @@ In your `book` directory that you [cloned earlier](clone), create a new file mar
     # Did dinosaurs have feathers?
 
     Write your content here...
+
+```{note}
+Writing your content in a markdown (`.md`) file is one of two ways to author content. The other is to write the same syntax described here into a jupyter notebook (`.ipynb`). Both methods work equally well, but I chose to focus on markdown because I personally feel it a more appropriate method for long form works. This is purely my opinion, and as they say, your mileage may vary.
+```
 
 Next, open `_toc.yml` and add an entry for your new chapter. The file should look like this:
 
@@ -54,7 +59,7 @@ Notice how the `.md` extension is not included in the `_toc.yml` file. Both mark
 Save everything and then rebuild the book with `jupyter-book build book`. If all goes well you should now see your new book chapter in the left hand navigation bar. 
 
 ```{tip}
-After every prompt to add something to `05_dino.md` rebuild the book and refresh your browser to view the changes. If the changes to not appear first check to see if you actually saved the file you were updating. You can also scroll up in the terminal and look for errors/warnings.
+After every prompt to add something to `05_dino.md` rebuild the book and refresh your browser to view the changes. If the changes do not appear first check to see if you actually saved the file you were updating. You can also scroll up in the terminal and look for errors/warnings.
 
 Because you will need to issue the `build` command repeatedly while authoring your book it may be useful to know how to access your command line history. In most terminals simply press the up key once to see the last command that you typed. Press the up key twice to see what you typed two commands ago, and so on. Most of the time you can simply press the up key once and then press enter to build your book. 
 ```
@@ -320,13 +325,42 @@ There is now evidence that dinosaurs may have all had feathers. Part of the cont
 
 ``````
 
-
-
-
-
-
 (ref)=
 ## References
 
+There are many ways to generate a reference in jupyter-book. Here are the two simplest methods.
 
+### Markdown links
+To link to a target header that you created with the `(target-header)=` syntax simply 
+
+`````````{list-table}
+:header-rows: 1
+:widths: 20 15 15
+
+* - Syntax
+  - Example
+  - Note
+* - ``````md
+    Body text [link text](target-header)
+    ``````
+  - See the [references section](ref) for more details.
+  - Markdown links can also direct a reader to an external website, or just another markdown header. However using target headers is considered a best practice.
+`````````
+
+### Document links
+If you want to link to another document outside the current document you are writing in, then use a document link.
+
+`````````{list-table}
+:header-rows: 1
+:widths: 20 15 15
+
+* - Syntax
+  - Example
+  - Note
+* - ``````md
+    Body text {doc}`document`
+    ``````
+  - See the {doc}`setup` page for more details.
+  - There are multiple ways to style this link, check the [official docs](https://jupyterbook.org/reference/cheatsheet.html#reference-documents) for a complete description.
+`````````
 
