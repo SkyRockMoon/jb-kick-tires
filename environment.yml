@@ -1,0 +1,11 @@
+name: kick_tires
+channels:
+  - default
+dependencies:
+  - python=3.8
+  - sphinx
+  - pip
+  - numpy
+  - matplotlib
+  - pip:
+    - jupyter-book

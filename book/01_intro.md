@@ -1,5 +1,9 @@
 # Introduction
 
+```{warning}
+This book is still being actively developed and this version of should be considered a rough draft. [Follow me on GitHub](https://docs.github.com/en/github/getting-started-with-github/following-people#:~:text=If%20someone%20you%20follow%20stars,Unfollow%20under%20their%20profile%20image.) to receive notifications when updates are made.  
+```
+
 This mini-book 'kicks the tires' on the open source [jupyter-book](https://jupyterbook.org) tool chain that is used to create [executable books](exec-book) that are published as websites and/or paper (dead tree) books. 
 
 The term "kick the tires" is an informal saying from North America that means:
@@ -10,7 +14,7 @@ The term "kick the tires" is an informal saying from North America that means:
 
 Jupyter-book is a free and open source project, but you are still in essence buying it when you decide to author a book (or similar document) with it. The process of writing a book is a long and hard endeavour. If you have to spend a lot of time fussing and struggling with your chosen *tooling* then you will have cost yourself time and money.
 
-[Investopedia](https://www.investopedia.com/terms/k/kickingthetires.asp) makes the following points about "kicking the tires":
+[Investopedia](https://www.investopedia.com/terms/k/kickingthetires.asp) makes the following points about "kicking the tires" on an investment:
 
 > - Kicking the tires involves conducting a minimal amount of research before making an investment decision.
 > - Taken from the context of car shopping, it is the opposite of conducting serious, in-depth research or due diligence.
@@ -28,7 +32,7 @@ Once [setup](setup), jupyter-book hides all of the *ugly* business of creating a
 (exec-book)=
 ## Executable books
 
-This mini book skips over many of the useful and powerful features of jupyter-book because we are just kicking the tires. The importance of what an executable book is, and why you might want to write one, however can not be over stated. An executable book is a set of files that are compiled into a book very much like a computer program. Jupyter-book is not a what you see is what you get (WYSIWYG) editor like a word processor. The panels below compare the process of authoring a website and/or dead tree book on a technical topic with both tools. If your authoring the next great fictional novel - which is all prose - stop right now and get busy writing in a word processor. If you are authoring a technical document with figures, equations, tables, and code, keep reading because there is a good chance jupyter-book will be a good fit.
+This mini book skips over many of the useful and powerful features of jupyter-book because we are just kicking the tires. The importance of what an executable book is, and why you might want to write one, however can not be glossed over. An executable book is a set of files that are compiled into a book very much like a computer program. Jupyter-book is not a what you see is what you get (WYSIWYG) editor like a word processor. The panels below compare the process of authoring a website and/or dead tree book on a technical topic with both tools. If your authoring the next great fictional novel - which is all prose - stop right now and get busy writing in a word processor. If you are authoring a technical document with figures, equations, tables, and code, keep reading because there is a good chance jupyter-book will be a good fit.
 
 ```{panels}
 Word Processor

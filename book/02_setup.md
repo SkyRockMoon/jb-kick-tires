@@ -1,5 +1,10 @@
 (setup)=
 # Setting up jupyter-book
+
+```{warning}
+This book is still being actively developed and this version of should be considered a rough draft. [Follow me on GitHub](https://docs.github.com/en/github/getting-started-with-github/following-people#:~:text=If%20someone%20you%20follow%20stars,Unfollow%20under%20their%20profile%20image.) to receive notifications when updates are made.  
+```
+
 Jupyter-book is a collection of complex tools that, in my opinion, perform a series of consecutive miracles every time you run them to generate a very professional looking output. I call the output a book, but there are lots of other things you could call it - website, paper, technical documentation, interactive notebook, etc.
 
 The installation process described here is very windows 10 centric and may not be to everyone's taste. If you work on a linux machine you might be able to install jupyter-book in a [single command](https://jupyterbook.org/intro.html#install-jupyter-book). In most cases sophisticated users should be able to recognize how many of these instructions apply generally to their system. For the uninitiated, this setup guide will take you from zero to jupyter-book hero. Here is what you can expect to accomplish:

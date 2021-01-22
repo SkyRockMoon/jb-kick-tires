@@ -1,6 +1,10 @@
 (build-pub)=
 # Build and publish a book
 
+```{warning}
+This book is still being actively developed and this version of should be considered a rough draft. [Follow me on GitHub](https://docs.github.com/en/github/getting-started-with-github/following-people#:~:text=If%20someone%20you%20follow%20stars,Unfollow%20under%20their%20profile%20image.) to receive notifications when updates are made.  
+```
+
 If you successfully completed the instructions on the [setup](setup) page then you can build a book. In this section we will look in a little bit closer detail at what actually happened during the build process to ensure that jupyter-book is a start to finish solution for your writing process. When using jupyter-book the writing process is slower than say a word processor, but the overall process that ends in publishing your work is both more modern (with an option for a website) and faster. If you don't like what you see here, then jupyter-book may not be a good fit for your use case. It's better to find that out now rather than later if that is the case.
 
 ## Build a book website
