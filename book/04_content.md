@@ -20,11 +20,12 @@ Your mission, if you choose to accept it, is to add a chapter about dinosaurs to
     - ~~Footnotes~~
     - ~~Margin notes~~
     - Links/references
-    - admonitions
-    - links (internal/external)   
+    - ~admonitions~
+    - ~links (internal/external)~  
+    - ~~Math~~
+1. Embed (glue) results from your analysis in a jupyter notebook directly into your text content 
 1. Add numbered content: figures, equations, tables 
 1. Add references to numbered items
-1. Embed (glue) results from your analysis in a jupyter notebook directly into your text content
 1. Citations/bibliography
 1. Enable comments and annotations
 
@@ -251,6 +252,7 @@ for i, X in enumerate(files):
 ```
 ``````
 
+(doc-notes)=
 ## Notes
 ```{margin}
 Best practices for using margin notes, and many other elements, are described in [Edward Tufte's](https://www.edwardtufte.com/tufte/books_vdqi) books, and online at [Tufte CSS](https://edwardtufte.github.io/tufte-css/) 
@@ -310,21 +312,6 @@ Margin note text goes here
   - See margin
   - Margin notes are a great example of the web not being like print.
 `````````
-Add some notes to `05_dino.md`
-
-*05_dino.md*
-
-``````md
-
-```{margin}
-The filler text is generated from actual dinosaur names. Placing the margin note above the paragraph it is associated with usually results in proper placement of the note.
-```
-There is now evidence that dinosaurs may have all had feathers. Part of the controversy of this statement is defining exactly what a feather is [^feather]...Achillesaurus Diceratops Malarguesaurus Sellacoxa Zhejiangosaurus Incisivosaurus Colonosaurus Albertaceratops Eupodosaurus Lapparentosaurus... 
-
-[^feather]:To be a true feather, there are characteristics that need to be fulfilled. The structures must be made from a protein called beta-keratin, they must be branched, and finally they must originate from a follicle. For details see: [The first dinosaurs probably didn't have feathers](https://www.nhm.ac.uk/discover/news/2020/march/the-first-dinosaurs-probably-didn-t-have-feathers.html).
-
-``````
-
 (ref)=
 ## References
 
@@ -346,7 +333,7 @@ To link to a target header that you created with the `(target-header)=` syntax s
   - See the [references section](ref) for more details.
   - Markdown links can also direct a reader to an external website, or just another markdown header. However using target headers is considered a best practice.
 `````````
-
+(doc-links)=
 ### Document links
 If you want to link to another document outside the current document you are writing in, then use a document link.
 
@@ -363,4 +350,182 @@ If you want to link to another document outside the current document you are wri
   - See the {doc}`setup` page for more details.
   - There are multiple ways to style this link, check the [official docs](https://jupyterbook.org/reference/cheatsheet.html#reference-documents) for a complete description.
 `````````
+Add some [notes](doc-notes) [references](ref), and [links](doc-links) to `05_dino.md` to help backup your assertions about feathers.
 
+*05_dino.md*
+
+``````md
+
+```{margin}
+The filler text is generated from actual dinosaur names. Placing the margin note above the paragraph it is associated with usually results in proper placement of the note.
+```
+There is now evidence that dinosaurs may have all had feathers. Part of the controversy of this statement is defining exactly what a feather is [^feather]...Achillesaurus Diceratops Malarguesaurus Sellacoxa Zhejiangosaurus Incisivosaurus Colonosaurus Albertaceratops Eupodosaurus Lapparentosaurus...See the next section for more [dinosaur names](more). 
+
+[^feather]:To be a true feather, there are characteristics that need to be fulfilled. The structures must be made from a protein called beta-keratin, they must be branched, and finally they must originate from a follicle. For details see: [The first dinosaurs probably didn't have feathers](https://www.nhm.ac.uk/discover/news/2020/march/the-first-dinosaurs-probably-didn-t-have-feathers.html).
+
+(more)=
+## More dinosaur names
+Chebsaurus Venaticosuchus Yuanmousaurus Rileyasuchus Tianyulong Auroraceratops Acrocanthosaurus Lukousaurus Razanandrongobe Jenghizkhan Malawisaurus Therizinosaurus Razanandrongobe Eustreptospondylus Unescoceratops Shixinggia Parvicursor Gwyneddosaurus Abelisaurus Suzhousaurus Picrodon Herrerasaurus Brontomerus Tangvayosaurus Ultrasaurus Achillobator Quilmesaurus Trigonosaurus Zapsalis
+
+``````
+## Admonition
+
+> An admonition is advice with a hint of scolding, a warning not to do something. When you're cautioned or warned about some mistake you might be just about to make, or some looming danger, you're receiving an admonition. --- [vocabulary.com](https://www.vocabulary.com/dictionary/admonition)
+
+```{tip}
+These little boxes are admonition's. Some of the available admonitions include: 
+- Admonition
+- Attention
+- Caution
+- Danger
+- Error
+- Hint
+- Important
+- Note
+- Title
+- Warning
+```
+
+`````````{list-table}
+:header-rows: 1
+:widths: 20 15 15
+
+* - Syntax
+  - Example
+  - Note
+* - ``````md
+    ```{admonition} Optional title
+    Text or markdown here
+    ```
+    ``````
+  - ```{admonition} Watch out!
+    Dinosaurs have sharp teeth 
+    ```
+  - 
+`````````
+
+Add an admonition to `05_dino.md` alert your reader to a common mistake.
+
+*05_dino.md*
+
+``````md
+```{warning}
+Feathers are very difficult to identify in a fossil. Extreme care should be taken when distinguishing between a feather and other grit and debris that may be present.
+```
+``````
+
+## Mathematical Formulas
+
+If you need to include a mathematical formula that can easily be achieved. The formula is considered inline if it flows with the text like this, $a^2 +b^2 = c^2$. Or you can add a block formula which is centered on its own line:
+
+$$
+p(H|e) = \frac{p(H)p(e|H)}{p(e)}
+$$
+
+Formulas are written in $\LaTeX$. A [good cheat sheet](https://users.dickinson.edu/~richesod/latex/latexcheatsheet.pdf) will show most of the common symbols you will need to know. If that fails you can draw the symbol with your mouse and an [algorithm](https://detexify.kirelabs.org/classify.html) will identify your symbol and and show you the $\LaTeX$ code that will generate it.
+
+`````````{list-table}
+:header-rows: 1
+:widths: 20 15 15
+
+* - Syntax
+  - Example
+  - Note
+* - ``````md
+    This is an inline formula $1/2sin(\theta)$
+    ``````
+  - This is an inline formula $1/2sin(\theta)$
+  - 
+* - ``````md
+    This is a block formula
+
+    $$
+    f(x) = x_1 +2x_2
+    $$
+    ``````
+  - This is a block formula
+
+    $$
+    f(x) = x_1 +2x_2
+    $$
+  - 
+`````````
+
+## Embed results
+This next section covers a key element of jupyter-book, the ability to embed results from a jupyter notebook into your content. This enables the development of [executable books](exec-book). Adding this capability will slow your writing process down considerably, but over the course of multiple revisions it may just save your sanity.
+
+``````{note}
+This section assumes that you have previously created a jupyter notebook. You can read more about [notebooks](notebooks) to get a feel for their true power. For now, just create a sample notebook that we can work with:
+1. In your virtual environment, install the prerequisite python libraries `pip install scipy numpy matplotlib myst_nb`
+1. Navigate to your book directory `cd book`
+1. Open jupyter notebook with `jupyter notebook --no-browser`
+1. Follow the link provided in the console
+1. Create a new Python 3 notebook and name it `myNotebook`
+1. Paste the following into the first cell of the notebook and press `shift + enter` to execute the cell
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from myst_nb import glue
+
+N = 100
+x = np.random.randn(N)
+y = np.random.randn(N)
+
+plt.plot(x,y,'o')
+glue
+
+myVar = 42
+glue("myLabel", myVar )
+```
+``````
+
+In reality your writing process likely starts with a notebook. After days of meticulous data collection and analysis you finally arrive at a result that you believe is publishable. At that point you would fire up jupyter-book and start describing your results. There are major two use cases for embeding notebook results to consider:
+
+- Numerical content
+- Figures
+
+Numerical content are just numbers. 
+
+`````````{list-table}
+:header-rows: 1
+:widths: 20 15 15
+
+* - Syntax
+  - Example
+  - Note
+* - ```md
+    The answer to the 
+    “Great Question” of “Life, 
+    the Universe and Everything”
+     is {glue:}`myLabel`.
+    ```
+  - The answer to the “Great Question” of “Life, the Universe and Everything” is {glue:}`myLabel`
+  - 
+`````````
+
+In practice you may need to round your results to a few signifigant digits. All of the [python format strings](https://mkaz.blog/code/python-string-format-cookbook/#f-strings) can be used with the `{glue:text}` directive.
+
+`````````{list-table}
+:header-rows: 1
+:widths: 20 15 15
+
+* - Syntax
+  - Example
+  - Note
+* - ```md
+    The result was {glue:text}`avg` 
+    (95% CI {glue:text}`lower`/
+    {glue:text}`upper`).
+    ```
+  - The result was {glue:text}`avg` (95% CI {glue:text}`lower`/{glue:text}`upper`).
+  - Unformatted text
+* - ```md
+    The result was 
+    {glue:text}`avg:2.2f` 
+    (95% CI {glue:text}`lower:2.2f`/
+    {glue:text}`upper:2.2f`).
+    ```
+  - The result was {glue:text}`avg:2.2f` (95% CI {glue:text}`lower:2.2f`/{glue:text}`upper:2.2f`).
+  - Formatted as a two digit floating point number
+`````````
