@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; Kicking the Tires on Jupyter-Book</title>
+    <title>&lt;no title&gt; &#8212; Kicking the Tires on Jupyter-Book</title>
     
   <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -88,8 +88,8 @@ commentsRunWhenDOMLoaded(addUtterances);
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://skyrockmoon.github.io/jb-kick-tires/genindex.html" />
-    <link rel="index" title="Index" href="#" />
+    <link rel="canonical" href="https://skyrockmoon.github.io/jb-kick-tires/myNotebook2.html" />
+    <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -97,9 +97,9 @@ commentsRunWhenDOMLoaded(addUtterances);
 
 
 <!-- Opengraph tags -->
-<meta property="og:url"         content="https://skyrockmoon.github.io/jb-kick-tires/genindex.html" />
+<meta property="og:url"         content="https://skyrockmoon.github.io/jb-kick-tires/myNotebook2.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Kicking the Tires on Jupyter-Book" />
+<meta property="og:title"       content="&lt;no title&gt;" />
 <meta property="og:description" content="" />
 
 
@@ -178,6 +178,23 @@ commentsRunWhenDOMLoaded(addUtterances);
         </button>
         
         
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/myNotebook2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
         <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
@@ -189,7 +206,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/SkyRockMoon/jb-kick-tires/issues/new?title=Issue%20on%20page%20%2Fgenindex.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/SkyRockMoon/jb-kick-tires/issues/new?title=Issue%20on%20page%20%2FmyNotebook2.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -205,10 +222,36 @@ commentsRunWhenDOMLoaded(addUtterances);
 
         <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/SkyRockMoon/jb-kick-tires/master?urlpath=tree/book/myNotebook2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
     </div>
 
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="simple nav section-nav flex-column">
+</ul>
+
+        </nav>
         
     </div>
 </div>
@@ -217,13 +260,63 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
 
-<h1 id="index">Index</h1>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
 
-<div class="genindex-jumpbox">
- 
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;random-fig&#39;</span><span class="p">,</span><span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">myVar</span> <span class="o">=</span> <span class="s2">&quot;42&quot;</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;myLabel&quot;</span><span class="p">,</span> <span class="n">myVar</span> <span class="p">)</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">up</span> <span class="o">=</span> <span class="n">m</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">s</span>
+<span class="n">low</span> <span class="o">=</span> <span class="n">m</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">s</span> 
+<span class="c1"># interval = f&#39;{m} (95% CI {m-2*s}/{m+2*s})&#39;</span>
+<span class="c1"># glue(&#39;confidence-interval&#39;, interval)</span>
+
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;avg&#39;</span><span class="p">,</span><span class="n">m</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;upper&#39;</span><span class="p">,</span><span class="n">up</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span><span class="n">low</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;42&#39;
+</pre></div>
+</div>
+<img alt="_images/myNotebook2_0_5.png" src="_images/myNotebook2_0_5.png" />
+</div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
