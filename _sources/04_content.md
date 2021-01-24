@@ -414,6 +414,7 @@ Feathers are very difficult to identify in a fossil. Extreme care should be take
 ```
 ``````
 
+(math-formula)=
 ## Mathematical Formulas
 
 If you need to include a mathematical formula that can easily be achieved. The formula is considered inline if it flows with the text like this, $a^2 +b^2 = c^2$. Or you can add a block formula which is centered on its own line:
@@ -449,6 +450,19 @@ Formulas are written in $\LaTeX$. A [good cheat sheet](https://users.dickinson.e
     f(x) = x_1 +2x_2
     $$
   - 
+* - ``````md
+    This is a numbered formula
+
+    $$
+    z=\sqrt{x^2+y^2}
+    $$ (myLabel)
+    ``````
+  - This is a numbered formula
+
+    $$
+    z=\sqrt{x^2+y^2}
+    $$ (numbered-equation)
+  - See [numbered references](num-ref-eq) to refer to this equation by its number
 `````````
 
 ## Embed results
@@ -468,22 +482,35 @@ import numpy as np
 import matplotlib.pyplot as plt
 from myst_nb import glue
 
+fig, ax = plt.subplots()
 N = 100
 x = np.random.randn(N)
 y = np.random.randn(N)
 
 plt.plot(x,y,'o')
-glue
+plt.xlabel('Feather Length [mm]')
+plt.ylabel('Bone Diameter [cm]')
+glue('random-fig',fig, display=False)
 
-myVar = 42
+myVar = "42"
 glue("myLabel", myVar )
+
+m = np.mean(y)  # mean 
+s = np.std(y)   # standard deviation
+up = m+2*s      # 95% confidence level
+low = m-2*s     # 5% confidence level
+
+glue('avg',m, display=False)
+glue('upper',up, display=False)
+glue('lower',low, display=False)
 ```
-``````
 
 In reality your writing process likely starts with a notebook. After days of meticulous data collection and analysis you finally arrive at a result that you believe is publishable. At that point you would fire up jupyter-book and start describing your results. There are major two use cases for embeding notebook results to consider:
 
 - Numerical content
 - Figures
+
+### Numerical content
 
 Numerical content are just numbers. 
 
@@ -528,4 +555,81 @@ In practice you may need to round your results to a few signifigant digits. All 
     ```
   - The result was {glue:text}`avg:2.2f` (95% CI {glue:text}`lower:2.2f`/{glue:text}`upper:2.2f`).
   - Formatted as a two digit floating point number
+`````````
+
+### Figures
+
+Figures typically help to visualize the results of an analysis. A figure can be added to a document with a just a `` {glue:}`<figure-label>` ``, but it is usually more helpful in a technical document to add a numbered figure with a caption.
+
+`````````{list-table}
+:header-rows: 1
+:widths: 20 15 15
+
+* - Syntax
+  - Example
+  - Note
+* - ``````md
+    ```{glue:figure} <figure-label>
+    ---
+    figwidth: 150px
+    name: "<figure-reference-name>"
+    ---
+
+    Figure caption written in markdown
+    ```
+    ``````
+  - ```{glue:figure} random-fig
+    ---
+    figwidth: 200px
+    name: "fig:random"
+    ---
+
+    Feather length vs bone diameter
+    ```
+  - See [numbered refrences](numbered-ref) to refer to this figure by its figure number.
+`````````
+
+(numbered-ref)=
+## Numbered Refrences
+
+Numbered references are a more advanced version of [regular references](ref), but very common in technical documents. Numberd references can be made to:
+
+- Figures
+- Tables
+- Equations
+
+### Figures
+
+`````````{list-table}
+:header-rows: 1
+:widths: 20 15 15
+
+* - Syntax
+  - Example
+  - Note
+* - ``````md
+    {numref}`<numbered-label>`
+    ``````
+  - See {numref}`fig:random` for the relationship between...
+  - See the [official docs](https://jupyterbook.org/reference/cheatsheet.html#referencing-figures) for many more options
+`````````
+
+### Tables
+TODO
+
+(num-ref-eq)=
+### Equations
+
+`````````{list-table}
+:header-rows: 1
+:widths: 20 15 15
+
+* - Syntax
+  - Example
+  - Note
+* - ``````md
+    {eq}`<label>`
+    ``````
+  - Equation {eq}`numbered-equation` shows the result
+  - See also [numbered equations](math-formula)
 `````````
