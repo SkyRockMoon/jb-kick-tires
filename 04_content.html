@@ -322,8 +322,8 @@ commentsRunWhenDOMLoaded(addUtterances);
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mathematical-formulas">
-   Mathematical Formulas
+  <a class="reference internal nav-link" href="#equation">
+   Equation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -365,6 +365,21 @@ commentsRunWhenDOMLoaded(addUtterances);
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#citations">
+   Citations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#annotations">
+   Annotations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comments">
+   Comments
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -385,20 +400,21 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>This section covers how to add content to your book. To utilize jupyter-book you will have to ultimately become very familiar with the <a class="reference external" href="https://jupyterbook.org">official jupyter-book documentation</a>. However for the purposes of kicking the tires this section will take you through the features that are either critical to use, or just cool. Many details will be skipped for the purposes of illustrating what authoring a book with jupyter-book might be like in practice. Consider this chapter a minimum subset of the available functionality needed for authoring content.</p>
 <p>In an effort to make things more exciting this section will take you through a narrative of adding a new chapter to the <a class="reference internal" href="02_setup.html#clone"><span class="std std-ref">book you cloned</span></a> while installing jupyter-book. After getting a feel for how everything works in this section you will probably graduate to just using the <a class="reference external" href="https://jupyterbook.org/reference/cheatsheet.html">jupyter-book cheat sheet</a> to rapidly find the syntax details you need.</p>
 <p>Your mission, if you choose to accept it, is to add a chapter about dinosaurs to the book you cloned earlier. Don’t worry if your paleontology skills are rusty, the focus of this activity is on writing technical documents. You can expect to accomplish the following things while following along with this chapter.</p>
+<p>TODO: update list and link this to sections</p>
 <ol class="simple">
-<li><p>~~Create a new chapter about dinosaurs~~</p></li>
-<li><p>~~Edit <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> to include your new chapter~~</p></li>
+<li><p>Create a new chapter about dinosaurs</p></li>
+<li><p>Edit <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> to include your new chapter</p></li>
 <li><p>Write some basic Markdown and MyST commands</p>
 <ul class="simple">
-<li><p>~~Headings~~</p></li>
-<li><p>~~Lists~~</p></li>
-<li><p>~~Code blocks~~</p></li>
-<li><p>~~Footnotes~~</p></li>
-<li><p>~~Margin notes~~</p></li>
+<li><p>Headings</p></li>
+<li><p>Lists</p></li>
+<li><p>Code blocks</p></li>
+<li><p>Footnotes</p></li>
+<li><p>Margin notes</p></li>
 <li><p>Links/references</p></li>
 <li><p>~admonitions~</p></li>
 <li><p>~links (internal/external)~</p></li>
-<li><p>~~Math~~</p></li>
+<li><p>Math</p></li>
 </ul>
 </li>
 <li><p>Embed (glue) results from your analysis in a jupyter notebook directly into your text content</p></li>
@@ -911,8 +927,8 @@ Feathers are very difficult to identify in a fossil. Extreme care should be take
 </pre></div>
 </div>
 </div>
-<div class="section" id="mathematical-formulas">
-<span id="math-formula"></span><h2>Mathematical Formulas<a class="headerlink" href="#mathematical-formulas" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="equation">
+<span id="math-formula"></span><h2>Equation<a class="headerlink" href="#equation" title="Permalink to this headline">¶</a></h2>
 <p>If you need to include a mathematical formula that can easily be achieved. The formula is considered inline if it flows with the text like this, <span class="math notranslate nohighlight">\(a^2 +b^2 = c^2\)</span>. Or you can add a block formula which is centered on its own line:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1160,7 +1176,90 @@ Figure caption written in markdown
 </div>
 <div class="section" id="tables">
 <h3>Tables<a class="headerlink" href="#tables" title="Permalink to this headline">¶</a></h3>
-<p>TODO</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">{list-tables}</span></code> directive is provided for creating numbered tables. For example this markup produces the result seen in <a class="reference internal" href="#my-table-label"><span class="std std-numref">Table 1</span></a>. To reference this table by number use <code class="docutils literal notranslate"><span class="pre">{numref}`my-table-label`</span></code>.</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{list-table} General characteristics of Sepia officinalis accessory sex gland ESTs [^sepia].
+:header-rows: 0
+:name: my-table-label
+
+<span class="k">*</span> - Number of high quality <span class="gs">**sequenced**</span> cDNA
+  <span class="k">-</span> 576
+<span class="k">*</span> - Number of high quality ESTs
+  <span class="k">-</span> 560
+<span class="k">*</span> - Average length of high quality ESTs (bp)
+  <span class="k">-</span> 974.6
+<span class="k">*</span> - Number of contigs
+  <span class="k">-</span> 37
+<span class="k">*</span> - Number of singletons
+  <span class="k">-</span> 186
+<span class="k">*</span> - Redundency
+  <span class="k">-</span> 66.7%
+```
+</pre></div>
+</div>
+<table class="table" id="my-table-label">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">General characteristics of Sepia officinalis accessory sex gland ESTs <a class="footnote-reference brackets" href="#sepia" id="id4">2</a>.</span><a class="headerlink" href="#my-table-label" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Number of high quality <strong>sequenced</strong> cDNA</p></td>
+<td><p>576</p></td>
+</tr>
+<tr class="row-even"><td><p>Number of high quality ESTs</p></td>
+<td><p>560</p></td>
+</tr>
+<tr class="row-odd"><td><p>Average length of high quality ESTs (bp)</p></td>
+<td><p>974.6</p></td>
+</tr>
+<tr class="row-even"><td><p>Number of contigs</p></td>
+<td><p>37</p></td>
+</tr>
+<tr class="row-odd"><td><p>Number of singletons</p></td>
+<td><p>186</p></td>
+</tr>
+<tr class="row-even"><td><p>Redundency</p></td>
+<td><p>66.7%</p></td>
+</tr>
+</tbody>
+</table>
+<p>Tables with more than two columns require you to describe how to spread out the columns with a <code class="docutils literal notranslate"><span class="pre">:widths:</span> <span class="pre">auto</span></code> argument. <a class="reference internal" href="#three-column-table"><span class="std std-numref">Table 2</span></a> shows an example of a three column table. Also, note the use of column headers.</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{list-table} Three column table
+:header-rows: 1
+:widths: auto
+:name: three-column-table
+
+<span class="k">*</span> - Col 1
+  <span class="k">-</span> Col 2
+  <span class="k">-</span> Col 3
+<span class="k">*</span> - Data 1.1
+  <span class="k">-</span> Data 1.2
+  <span class="k">-</span> Data 1.3
+<span class="k">*</span> - Data 2.1
+  <span class="k">-</span> Data 2.2
+  <span class="k">-</span> Data 2.3
+```
+</pre></div>
+</div>
+<table class="colwidths-auto table" id="three-column-table">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Three column table</span><a class="headerlink" href="#three-column-table" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Col 1</p></th>
+<th class="head"><p>Col 2</p></th>
+<th class="head"><p>Col 3</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data 1.1</p></td>
+<td><p>Data 1.2</p></td>
+<td><p>Data 1.3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data 2.1</p></td>
+<td><p>Data 2.2</p></td>
+<td><p>Data 2.3</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="equations">
 <span id="num-ref-eq"></span><h3>Equations<a class="headerlink" href="#equations" title="Permalink to this headline">¶</a></h3>
@@ -1182,17 +1281,77 @@ Figure caption written in markdown
 </div>
 </td>
 <td><p>Equation <a class="reference internal" href="#equation-numbered-equation">(1)</a> shows the result</p></td>
-<td><p>See also <a class="reference internal" href="#math-formula"><span class="std std-ref">numbered equations</span></a></p></td>
+<td><p>A <a class="reference internal" href="#math-formula"><span class="std std-ref">numbered equation</span></a> is needed to use this method</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="section" id="citations">
+<h2>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">¶</a></h2>
+<p>Citations require couple steps.</p>
+<ul class="simple">
+<li><p>Generate a refrences.bib file and place it in your <code class="docutils literal notranslate"><span class="pre">book</span></code> directory. This should be a standard option in any reference manager (e.g. <a class="reference external" href="https://www.zotero.org/">Zotero</a>). See <span class="xref std std-doc">references</span> if you need a sample <code class="docutils literal notranslate"><span class="pre">.bib</span></code> file for testing.</p></li>
+<li><p>Cite using the directive<code class="docutils literal notranslate"><span class="pre">{cite}`citation-label`</span></code></p></li>
+<li><p>Include a list of citations at the end of the document</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Syntax</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Note</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span>{cite}`citation-label`
+</pre></div>
+</div>
+</td>
+<td><p>As described in <a class="bibtex reference internal" href="#stone-bayes-2015" id="id5">[Sto15]</a></p></td>
+<td><p>The citation will not display properly until the bibliography is linked as shown below</p></td>
+</tr>
+</tbody>
+</table>
+<p>Then include the bibliography with:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{bibliography} references.bib
+:filter: docname in docnames
+```
+</pre></div>
+</div>
+<p>Your bibliography will be automatically generated like this, and can be formatted to meet any style guide.</p>
+<p id="bibtex-bibliography-04_content-0"><dl class="citation">
+<dt class="bibtex label" id="stone-bayes-2015"><span class="brackets"><a class="fn-backref" href="#id5">Sto15</a></span></dt>
+<dd><p>James V. Stone. <em>Bayes’ rule with Python: a tutorial introduction to Bayesian analysis</em>. Sebtel Press, Sheffield, England, first edition, 2015. ISBN 978-0-9933679-3-9. OCLC: ocn970361039.</p>
+</dd>
+</dl>
+</p>
+</div>
+<div class="section" id="annotations">
+<h2>Annotations<a class="headerlink" href="#annotations" title="Permalink to this headline">¶</a></h2>
+<p>A very cool integration that jupyter-book makes available is annotations. An annotation is a way for readers to make notes on your document. Seeing is believing, so view the <a class="reference external" href="https://jupyterbook.org/interactive/comments/hypothesis.html">demo</a> on the jupyter-book website to see it in action.</p>
+</div>
+<div class="section" id="comments">
+<h2>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>Jupyter-book makes integrating comments a very easy process (assuming you have a github account). Add the following to your <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> file to enable comments:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>html:
+  comments:
+    utterances:
+      repo: &quot;github-org/github-repo&quot;
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The comments integration is not visible when viewing your book <em>locally</em>. You must <a class="reference internal" href="03_build-pub.html#build-pub"><span class="std std-ref">publish to GitHub</span></a> to see the integration.</p>
+</div>
 <hr class="docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="footnote-label"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
 <dd><p>This is my footnote which wil be placed at the bottom of the page. Conveniently you can click on the footnote number to return to the text that contains the note.</p>
 </dd>
+<dt class="label" id="sepia"><span class="brackets"><a class="fn-backref" href="#id4">2</a></span></dt>
+<dd><p>Enault, Jeremy &amp; Zatylny-Gaudin, Celine &amp; Bernay, Benoît &amp; Lefranc, Benjamin &amp; Leprince, Jérôme &amp; Baudy-Floc’h, Michèle &amp; Henry, Joël. (2012). A Complex Set of Sex Pheromones Identified in the Cuttlefish Sepia officinalis. PloS one. 7. e46531. 10.1371/journal.pone.0046531.</p>
+</dd>
 </dl>
-</div>
 </div>
 </div>
 
