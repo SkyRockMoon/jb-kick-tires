@@ -11,18 +11,20 @@ In an effort to make things more exciting this section will take you through a n
 
 Your mission, if you choose to accept it, is to add a chapter about dinosaurs to the book you cloned earlier. Don't worry if your paleontology skills are rusty, the focus of this activity is on writing technical documents. You can expect to accomplish the following things while following along with this chapter.
 
-1. ~~Create a new chapter about dinosaurs~~
-1. ~~Edit `_toc.yml` to include your new chapter~~
+TODO: update list and link this to sections
+
+1. Create a new chapter about dinosaurs
+1. Edit `_toc.yml` to include your new chapter
 1. Write some basic Markdown and MyST commands
-    - ~~Headings~~
-    - ~~Lists~~
-    - ~~Code blocks~~
-    - ~~Footnotes~~
-    - ~~Margin notes~~
+    - Headings
+    - Lists
+    - Code blocks
+    - Footnotes
+    - Margin notes
     - Links/references
     - ~admonitions~
     - ~links (internal/external)~  
-    - ~~Math~~
+    - Math
 1. Embed (glue) results from your analysis in a jupyter notebook directly into your text content 
 1. Add numbered content: figures, equations, tables 
 1. Add references to numbered items
@@ -415,7 +417,7 @@ Feathers are very difficult to identify in a fossil. Extreme care should be take
 ``````
 
 (math-formula)=
-## Mathematical Formulas
+## Equation
 
 If you need to include a mathematical formula that can easily be achieved. The formula is considered inline if it flows with the text like this, $a^2 +b^2 = c^2$. Or you can add a block formula which is centered on its own line:
 
@@ -615,7 +617,83 @@ Numbered references are a more advanced version of [regular references](ref), bu
 `````````
 
 ### Tables
-TODO
+The `{list-tables}` directive is provided for creating numbered tables. For example this markup produces the result seen in {numref}`my-table-label`. To reference this table by number use `` {numref}`my-table-label` ``. 
+
+``````md
+```{list-table} General characteristics of Sepia officinalis accessory sex gland ESTs [^sepia].
+:header-rows: 0
+:name: my-table-label
+
+* - Number of high quality **sequenced** cDNA
+  - 576
+* - Number of high quality ESTs
+  - 560
+* - Average length of high quality ESTs (bp)
+  - 974.6
+* - Number of contigs
+  - 37
+* - Number of singletons
+  - 186
+* - Redundency
+  - 66.7%
+```
+``````
+
+```{list-table} General characteristics of Sepia officinalis accessory sex gland ESTs [^sepia].
+:header-rows: 0
+:name: my-table-label
+
+* - Number of high quality **sequenced** cDNA
+  - 576
+* - Number of high quality ESTs
+  - 560
+* - Average length of high quality ESTs (bp)
+  - 974.6
+* - Number of contigs
+  - 37
+* - Number of singletons
+  - 186
+* - Redundency
+  - 66.7%
+```
+[^sepia]: Enault, Jeremy & Zatylny-Gaudin, Celine & Bernay, Benoît & Lefranc, Benjamin & Leprince, Jérôme & Baudy-Floc'h, Michèle & Henry, Joël. (2012). A Complex Set of Sex Pheromones Identified in the Cuttlefish Sepia officinalis. PloS one. 7. e46531. 10.1371/journal.pone.0046531. 
+
+Tables with more than two columns require you to describe how to spread out the columns with a `:widths: auto` argument. {numref}`three-column-table` shows an example of a three column table. Also, note the use of column headers.
+
+``````md
+```{list-table} Three column table
+:header-rows: 1
+:widths: auto
+:name: three-column-table
+
+* - Col 1
+  - Col 2
+  - Col 3
+* - Data 1.1
+  - Data 1.2
+  - Data 1.3
+* - Data 2.1
+  - Data 2.2
+  - Data 2.3
+```
+``````
+
+```{list-table} Three column table
+:header-rows: 1
+:widths: auto
+:name: three-column-table
+
+* - Col 1
+  - Col 2
+  - Col 3
+* - Data 1.1
+  - Data 1.2
+  - Data 1.3
+* - Data 2.1
+  - Data 2.2
+  - Data 2.3
+```
+
 
 (num-ref-eq)=
 ### Equations
@@ -631,5 +709,57 @@ TODO
     {eq}`<label>`
     ``````
   - Equation {eq}`numbered-equation` shows the result
-  - See also [numbered equations](math-formula)
+  - A [numbered equation](math-formula) is needed to use this method
 `````````
+
+## Citations
+
+Citations require couple steps. 
+
+- Generate a refrences.bib file and place it in your `book` directory. This should be a standard option in any reference manager (e.g. [Zotero](https://www.zotero.org/)). See {doc}`references` if you need a sample `.bib` file for testing.
+- Cite using the directive`` {cite}`citation-label` ``
+- Include a list of citations at the end of the document
+
+`````````{list-table}
+:header-rows: 1
+:widths: auto
+
+* - Syntax
+  - Example
+  - Note
+* - ```md
+    {cite}`citation-label`
+    ```
+  - As described in {cite}`stone_bayes_2015`
+  - The citation will not display properly until the bibliography is linked as shown below
+`````````
+
+Then include the bibliography with:
+
+``````md
+```{bibliography} references.bib
+:filter: docname in docnames
+```
+``````
+
+Your bibliography will be automatically generated like this, and can be formatted to meet any style guide.
+
+```{bibliography} references.bib
+:filter: docname in docnames
+```
+
+## Annotations
+A very cool integration that jupyter-book makes available is annotations. An annotation is a way for readers to make notes on your document. Seeing is believing, so view the [demo](https://jupyterbook.org/interactive/comments/hypothesis.html) on the jupyter-book website to see it in action.
+
+## Comments
+Jupyter-book makes integrating comments a very easy process (assuming you have a github account). Add the following to your `_config.yml` file to enable comments:
+
+```md
+html:
+  comments:
+    utterances:
+      repo: "github-org/github-repo"
+```
+
+```{note}
+The comments integration is not visible when viewing your book *locally*. You must [publish to GitHub](build-pub) to see the integration.
