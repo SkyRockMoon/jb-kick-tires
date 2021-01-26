@@ -105,9 +105,9 @@ Executable book
 1. Jupyter-book uses a simple and straight forward syntax, but it still requires learning something new. This mini-book attempts to introduce a [minimum subset](content) of the syntax that everyone needs to get started, but referencing the [official jupyter-book documentation](https://jupyterbook.org/content/citations.html#references-and-citations) will need to be a common occurrence. You will need at least a superficial understanding of:
     - [Linux and the command line](wsl)
     - [Python](python)
-    - [Jupyter notebook](jupyter)
-    - [Markdown](markdown)
-    - [Markedly Structured Text (MyST) ](myst)
+    - [Jupyter notebook](notebooks)
+    - [Markdown](mark-vs-myst)
+    - [Markedly Structured Text (MyST) ](mark-vs-myst)
     - [Git](git) version control (e.g. [GitHub](https://github.com/))
 
 **Create content:**
