@@ -151,6 +151,11 @@ commentsRunWhenDOMLoaded(addUtterances);
    Add content to the book
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_content_v2.html">
+   Add content to the book v2
+  </a>
+ </li>
 </ul>
 
 </nav> <!-- To handle the deprecated key -->
@@ -265,7 +270,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p class="admonition-title">Warning</p>
 <p>This book is still being actively developed and this version of should be considered a rough draft. <a class="reference external" href="https://docs.github.com/en/github/getting-started-with-github/following-people#:~:text=If%20someone%20you%20follow%20stars,Unfollow%20under%20their%20profile%20image.">Follow me on GitHub</a> to receive notifications when updates are made.</p>
 </div>
-<p>This mini-book ‘kicks the tires’ on the open source <a class="reference external" href="https://jupyterbook.org">jupyter-book</a> tool chain that is used to create <a class="reference internal" href="#exec-book"><span class="std std-ref">executable books</span></a> that are published as websites and/or paper (dead tree) books.</p>
+<p>This mini-book ‘kicks the tires’ on the open source <a class="reference external" href="https://jupyterbook.org">jupyter-book</a> project. Jupyter-book can be used to create <a class="reference internal" href="#exec-book"><span class="std std-ref">executable books</span></a> that can be published as websites and/or paper (dead tree) books.</p>
 <p>The term “kick the tires” is an informal saying from North America that means:</p>
 <blockquote>
 <div><p>To inspect something to ensure it meets expected standards or has favored characteristics, typically before committing to purchasing or otherwise selecting it.</p>
@@ -273,7 +278,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p><a class="reference external" href="https://en.wiktionary.org/wiki/kick_the_tires">Wikitionary</a></p></li>
 </ul>
 </div></blockquote>
-<p>Jupyter-book is a free and open source project, but you are still in essence buying it when you decide to author a book (or similar document) with it. The process of writing a book is a long and hard endeavour. If you have to spend a lot of time fussing and struggling with your chosen <em>tooling</em> then you will have cost yourself time and money.</p>
+<p>Jupyter-book is a free and open source project, but you are still in essence buying it when you decide to author a book (or similar document) with it. The process of writing a book is a long and hard endeavour. If you have to spend a lot of time fussing and struggling with your chosen <em>tooling</em> then you will have cost yourself considerable time and money.</p>
 <p><a class="reference external" href="https://www.investopedia.com/terms/k/kickingthetires.asp">Investopedia</a> makes the following points about “kicking the tires” on an investment:</p>
 <blockquote>
 <div><ul class="simple">
@@ -285,12 +290,12 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div></blockquote>
 <div class="section" id="intended-audience">
 <span id="id1"></span><h2>Intended audience<a class="headerlink" href="#intended-audience" title="Permalink to this headline">¶</a></h2>
-<p>The intended audience for this mini book is potential authors who are trying to figure out if jupyter-book will meet there needs. If you think the <a class="reference external" href="https://executablebooks.org/en/latest/gallery.html">example jupyter-books</a> are beautiful, but are unsure if the tooling will fit with your writing style, then this mini-book is for you. If this mini-book convinces you to ‘buy into’ jupyter-book, then you can read the <a class="reference external" href="https://jupyterbook.org">official documentation</a> to <em>actually</em> learn how to use the tool. What you see here is a very brief and superficial description of a very powerful tool.</p>
+<p>The intended audience for this mini book is potential authors who are trying to figure out if jupyter-book will meet their needs. If you think the <a class="reference external" href="https://executablebooks.org/en/latest/gallery.html">example jupyter-books</a> are beautiful, but are unsure if the tooling will fit with your writing style, then this mini-book is for you. If this mini-book convinces you to ‘buy into’ jupyter-book, then you can read the <a class="reference external" href="https://jupyterbook.org">official documentation</a> to <em>actually</em> learn how to use the tool. What you see here is a very brief and superficial description of a very powerful tool.</p>
 <p>Once <a class="reference internal" href="02_setup.html#setup"><span class="std std-ref">setup</span></a>, jupyter-book hides all of the <em>ugly</em> business of creating a book using more than a dozen separate tools from the user, but be warned that you will need some level of comfort with command line tools and python to truly appreciate the magic that is jupyter-book.</p>
 </div>
 <div class="section" id="executable-books">
 <span id="exec-book"></span><h2>Executable books<a class="headerlink" href="#executable-books" title="Permalink to this headline">¶</a></h2>
-<p>This mini book skips over many of the useful and powerful features of jupyter-book because we are just kicking the tires. The importance of what an executable book is, and why you might want to write one, however can not be glossed over. An executable book is a set of files that are compiled into a book very much like a computer program. Jupyter-book is not a what you see is what you get (WYSIWYG) editor like a word processor. The panels below compare the process of authoring a website and/or dead tree book on a technical topic with both tools. If your authoring the next great fictional novel - which is all prose - stop right now and get busy writing in a word processor. If you are authoring a technical document with figures, equations, tables, and code, keep reading because there is a good chance jupyter-book will be a good fit.</p>
+<p>This mini book skips over many of the useful and powerful features of jupyter-book because we are just kicking the tires. The importance of what an executable book is, and why you might want to write one, however can not be glossed over. An executable book is a set of files that are compiled into a book very much like a computer program. Jupyter-book is not a what you see is what you get (WYSIWYG) editor like a typical word processor. The panels below compare the process of authoring a website and/or dead tree book on a technical topic with both tools. If your authoring the next great fictional novel - which is all prose - stop right now and get busy writing in a word processor. If you are authoring a technical document with figures, equations, tables, and code, keep reading because there is a good chance jupyter-book will be a good fit.</p>
 <div class="sphinx-bs container pb-4 docutils">
 <div class="row docutils">
 <div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
@@ -311,14 +316,14 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p class="card-text"><strong>Revisions:</strong></p>
 <ol class="simple">
 <li><p class="card-text">Identify an area of the document for improvement</p></li>
-<li><p class="card-text">Re-run your analysis in your tool of choice (R, SAS, matlab, etc.), and generate new figures/tables/results</p></li>
+<li><p class="card-text">Re-run your analysis in your tool of choice (R, SAS, Matlab, etc.), and generate new figures/tables/results</p></li>
 <li><p class="card-text">Manually update the document and carefully spot every location where a change in the analysis changes the content</p></li>
 </ol>
 <p class="card-text"><strong>Peer review:</strong></p>
 <ol class="simple">
-<li><p class="card-text">If your lucky integrate changes from numerous documents named things like ‘chapter_3_final_rev_3_011621_rdl_edits_jkl_comments_02-13-21.docx’, changes may or may not be tracked. Suggested changes may or may not be compatible with a coherent dialog.</p></li>
+<li><p class="card-text">If your lucky, integrate changes from numerous documents named things like ‘chapter_3_final_rev_3_011621_rdl_edits_jkl_comments_02-13-21.docx’, changes may or may not be tracked. Suggested changes may or may not be compatible with a coherent dialog.</p></li>
 <li><p class="card-text">If your unlucky use notes with clues like “On the third paragraph of chapter 5 ‘XYZ’ is incorrect” to identify areas for improvement.</p></li>
-<li><p class="card-text">If your really unlucky, squint at a printed, then marked up with a red pen, then scanned, copy of document</p></li>
+<li><p class="card-text">If your really unlucky, squint at a printed, then marked up with a red pen, then scanned, copy of your document</p></li>
 <li><p class="card-text">Re-run your analysis in your tool of choice, and generate new figures/tables/results</p></li>
 <li><p class="card-text">Manually update the document and carefully spot every location where a change in the analysis changes the content</p></li>
 <li><p class="card-text">It is likely that you will have to restructure the document to account for changes that are not trivial - fight with the template as you do this</p></li>
@@ -352,7 +357,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p class="card-text">Option 2 - Self fund an initial production run:</p>
 <ol class="simple">
 <li><p class="card-text">Send your PDF to a company that for a fee will print a couple boxes of books for you. Store these boxes in your living room and wait to see if your book becomes a best seller. Typically this costs at least $10,000.</p></li>
-<li><p class="card-text">If you spot an error after printing, there is nothing you can do.</p></li>
+<li><p class="card-text">If you spot an error after printing, there is nothing you can do short of paying to reprint everything.</p></li>
 </ol>
 <p class="card-text">Option 3 - Get a publishing deal</p>
 <ol class="simple">
@@ -377,9 +382,9 @@ commentsRunWhenDOMLoaded(addUtterances);
 <ul class="simple">
 <li><p class="card-text"><a class="reference internal" href="02_setup.html#wsl"><span class="std std-ref">Linux and the command line</span></a></p></li>
 <li><p class="card-text"><a class="reference internal" href="02_setup.html#python"><span class="std std-ref">Python</span></a></p></li>
-<li><p class="card-text"><span class="xref myst">Jupyter notebook</span></p></li>
-<li><p class="card-text"><span class="xref myst">Markdown</span></p></li>
-<li><p class="card-text"><span class="xref myst">Markedly Structured Text (MyST) </span></p></li>
+<li><p class="card-text"><a class="reference internal" href="02_setup.html#notebooks"><span class="std std-ref">Jupyter notebook</span></a></p></li>
+<li><p class="card-text"><a class="reference internal" href="04_content.html#mark-vs-myst"><span class="std std-ref">Markdown</span></a></p></li>
+<li><p class="card-text"><a class="reference internal" href="04_content.html#mark-vs-myst"><span class="std std-ref">Markedly Structured Text (MyST) </span></a></p></li>
 <li><p class="card-text"><a class="reference internal" href="02_setup.html#git"><span class="std std-ref">Git</span></a> version control (e.g. <a class="reference external" href="https://github.com/">GitHub</a>)</p></li>
 </ul>
 </li>
@@ -395,12 +400,12 @@ commentsRunWhenDOMLoaded(addUtterances);
 <ol class="simple">
 <li><p class="card-text">Identify an area of the document for improvement</p></li>
 <li><p class="card-text">Re-run your analysis in a jupyter notebook, and generate new figures/tables/results</p></li>
-<li><p class="card-text">Update automatically propagate into your text</p></li>
+<li><p class="card-text">Updates automatically propagate into your text</p></li>
 </ol>
 <p class="card-text"><strong>Peer review:</strong></p>
 <ol class="simple">
 <li><p class="card-text">For your technically savvy colleagues, send them the URL of your github repository for your book and ask them to make a pull request</p></li>
-<li><p class="card-text">For your colleagues that are ‘old school’, send them the URL of your book website and ask them to directly annotate the document</p></li>
+<li><p class="card-text">For your colleagues that are ‘old school’, enable the <a class="reference external" href="https://jupyterbook.org/interactive/comments/hypothesis.html">hypothesis web service</a>, and then send them the URL of your book website and ask them to directly annotate the document</p></li>
 <li><p class="card-text">For your colleagues that are ‘old curmudgeons’ send them a print out of your book and a red pen</p></li>
 <li><p class="card-text">To incorporate feedback make changes and re-run your analysis in a jupyter notebook, generate new figures/tables/results that propagate automatically into the text</p></li>
 <li><p class="card-text">It is likely that you will have to restructure the document to account for changes that are not trivial - these changes proceed like normal writing because the formatting is applied automatically. Feel free to completely change the table of contents with no manual reformatting.</p></li>

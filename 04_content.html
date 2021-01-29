@@ -91,6 +91,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="canonical" href="https://skyrockmoon.github.io/jb-kick-tires/04_content.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Add content to the book v2" href="04_content_v2.html" />
     <link rel="prev" title="Build and publish a book" href="03_build-pub.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -149,6 +150,11 @@ commentsRunWhenDOMLoaded(addUtterances);
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Add content to the book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_content_v2.html">
+   Add content to the book v2
   </a>
  </li>
 </ul>
@@ -239,6 +245,16 @@ commentsRunWhenDOMLoaded(addUtterances);
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#headings">
+   Headings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#markdown-vs-myst">
+   Markdown vs MyST
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#regular-text">
    Regular text
   </a>
@@ -276,7 +292,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
+    <a class="reference internal nav-link" href="#id4">
      Code blocks
     </a>
    </li>
@@ -300,8 +316,8 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   References
+  <a class="reference internal nav-link" href="#links-references">
+   Links/References
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -317,13 +333,18 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#admonition">
-   Admonition
+  <a class="reference internal nav-link" href="#admonitions">
+   Admonitions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#equation">
-   Equation
+  <a class="reference internal nav-link" href="#tables">
+   Tables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#equations">
+   Equations
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -349,17 +370,17 @@ commentsRunWhenDOMLoaded(addUtterances);
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
+    <a class="reference internal nav-link" href="#numbered-figure">
      Figures
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tables">
+    <a class="reference internal nav-link" href="#numbered-table">
      Tables
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#equations">
+    <a class="reference internal nav-link" href="#numbered-eq">
      Equations
     </a>
    </li>
@@ -376,8 +397,8 @@ commentsRunWhenDOMLoaded(addUtterances);
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#comments">
-   Comments
+  <a class="reference internal nav-link" href="#reader-comments">
+   Reader Comments
   </a>
  </li>
 </ul>
@@ -398,33 +419,41 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>This book is still being actively developed and this version of should be considered a rough draft. <a class="reference external" href="https://docs.github.com/en/github/getting-started-with-github/following-people#:~:text=If%20someone%20you%20follow%20stars,Unfollow%20under%20their%20profile%20image.">Follow me on GitHub</a> to receive notifications when updates are made.</p>
 </div>
 <p>This section covers how to add content to your book. To utilize jupyter-book you will have to ultimately become very familiar with the <a class="reference external" href="https://jupyterbook.org">official jupyter-book documentation</a>. However for the purposes of kicking the tires this section will take you through the features that are either critical to use, or just cool. Many details will be skipped for the purposes of illustrating what authoring a book with jupyter-book might be like in practice. Consider this chapter a minimum subset of the available functionality needed for authoring content.</p>
-<p>In an effort to make things more exciting this section will take you through a narrative of adding a new chapter to the <a class="reference internal" href="02_setup.html#clone"><span class="std std-ref">book you cloned</span></a> while installing jupyter-book. After getting a feel for how everything works in this section you will probably graduate to just using the <a class="reference external" href="https://jupyterbook.org/reference/cheatsheet.html">jupyter-book cheat sheet</a> to rapidly find the syntax details you need.</p>
-<p>Your mission, if you choose to accept it, is to add a chapter about dinosaurs to the book you cloned earlier. Don’t worry if your paleontology skills are rusty, the focus of this activity is on writing technical documents. You can expect to accomplish the following things while following along with this chapter.</p>
-<p>TODO: update list and link this to sections</p>
+<p>In an effort to make leanring syntax more exciting this section will take you through a narrative of adding content to the <a class="reference internal" href="02_setup.html#clone"><span class="std std-ref">book you cloned</span></a> while installing jupyter-book. After getting a feel for how everything works in this section you will probably graduate to just using the <a class="reference external" href="https://jupyterbook.org/reference/cheatsheet.html">jupyter-book cheat sheet</a> to rapidly find the syntax details you need.</p>
+<p>Your mission, if you choose to accept it, is to write a (very brief and totally fictitious) book about dinosaurs using the sample book you cloned earlier as a template. Don’t worry if your paleontology skills are rusty, the focus of this activity is on writing the described syntax. You can expect to accomplish the following tasks while reading this chapter.</p>
 <ol class="simple">
-<li><p>Create a new chapter about dinosaurs</p></li>
-<li><p>Edit <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> to include your new chapter</p></li>
-<li><p>Write some basic Markdown and MyST commands</p>
+<li><p><a class="reference internal" href="#new-chapter"><span class="std std-ref">Create a new chapter about dinosaurs</span></a></p></li>
+<li><p><a class="reference internal" href="#mark-vs-myst"><span class="std std-ref">Write some basic content using Markdown and MyST</span></a></p>
 <ul class="simple">
-<li><p>Headings</p></li>
-<li><p>Lists</p></li>
-<li><p>Code blocks</p></li>
-<li><p>Footnotes</p></li>
-<li><p>Margin notes</p></li>
-<li><p>Links/references</p></li>
-<li><p>~admonitions~</p></li>
-<li><p>~links (internal/external)~</p></li>
-<li><p>Math</p></li>
+<li><p><a class="reference internal" href="#headings"><span class="std std-ref">Headings</span></a></p></li>
+<li><p><a class="reference internal" href="#regular-text"><span class="std std-ref">Regular text</span></a></p></li>
+<li><p><a class="reference internal" href="#num-bullet-lists"><span class="std std-ref">Lists</span></a></p></li>
+<li><p><a class="reference internal" href="#code-blocks"><span class="std std-ref">Code blocks</span></a></p></li>
+<li><p><a class="reference internal" href="#doc-notes"><span class="std std-ref">Notes</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#footnotes"><span class="std std-ref">Footnotes</span></a></p></li>
+<li><p><a class="reference internal" href="#margin-notes"><span class="std std-ref">Margin notes</span></a></p></li>
 </ul>
 </li>
-<li><p>Embed (glue) results from your analysis in a jupyter notebook directly into your text content</p></li>
-<li><p>Add numbered content: figures, equations, tables</p></li>
-<li><p>Add references to numbered items</p></li>
-<li><p>Citations/bibliography</p></li>
-<li><p>Enable comments and annotations</p></li>
+<li><p><a class="reference internal" href="#ref"><span class="std std-ref">Links and section references</span></a></p></li>
+<li><p><a class="reference internal" href="#admonition"><span class="std std-ref">Admonitions</span></a></p></li>
+<li><p><a class="reference internal" href="#math-formula"><span class="std std-ref">Equations</span></a></p></li>
+<li><p><a class="reference internal" href="#tables"><span class="std std-ref">Tables</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#glue-results"><span class="std std-ref">Embed (glue) results from your analysis in a jupyter notebook into your text content</span></a></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#glue-number"><span class="std std-ref">Glue numbers</span></a></p></li>
+<li><p><a class="reference internal" href="#glue-figure"><span class="std std-ref">Glue figures</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#numbered-ref"><span class="std std-ref">Reference numbered content</span></a>: <a class="reference internal" href="#numbered-figure"><span class="std std-ref">figures</span></a>, <a class="reference internal" href="#numbered-table"><span class="std std-ref">tables</span></a>, <a class="reference internal" href="#numbered-eq"><span class="std std-ref">equations</span></a>,</p></li>
+<li><p><a class="reference internal" href="#citations"><span class="std std-ref">Create Citations/Bibliography</span></a></p></li>
+<li><p><a class="reference internal" href="#annotations"><span class="std std-ref">Enable Annotations</span></a></p></li>
+<li><p><a class="reference internal" href="#comments"><span class="std std-ref">Enable Reader comments</span></a></p></li>
 </ol>
 <div class="section" id="create-a-new-chapter">
-<h2>Create a new chapter<a class="headerlink" href="#create-a-new-chapter" title="Permalink to this headline">¶</a></h2>
+<span id="new-chapter"></span><h2>Create a new chapter<a class="headerlink" href="#create-a-new-chapter" title="Permalink to this headline">¶</a></h2>
 <p>In your <code class="docutils literal notranslate"><span class="pre">book</span></code> directory that you <a class="reference internal" href="02_setup.html#clone"><span class="std std-ref">cloned earlier</span></a>, create a new file markdown file named <code class="docutils literal notranslate"><span class="pre">05_dino.md</span></code>. Place the following content into this file and save the file:</p>
 <p><em>05_dino.md</em></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(dino)=
@@ -456,6 +485,9 @@ Write your content here...
 <p>After every prompt to add something to <code class="docutils literal notranslate"><span class="pre">05_dino.md</span></code> rebuild the book and refresh your browser to view the changes. If the changes do not appear first check to see if you actually saved the file you were updating. You can also scroll up in the terminal and look for errors/warnings.</p>
 <p>Because you will need to issue the <code class="docutils literal notranslate"><span class="pre">build</span></code> command repeatedly while authoring your book it may be useful to know how to access your command line history. In most terminals simply press the up key once to see the last command that you typed. Press the up key twice to see what you typed two commands ago, and so on. Most of the time you can simply press the up key once and then press enter to build your book.</p>
 </div>
+</div>
+<div class="section" id="headings">
+<span id="id1"></span><h2>Headings<a class="headerlink" href="#headings" title="Permalink to this headline">¶</a></h2>
 <p>Headings are created by using a series of ampersands:</p>
 <table class="colwidths-given table">
 <colgroup>
@@ -515,8 +547,12 @@ Write your content here...
 </tbody>
 </table>
 </div>
+<div class="section" id="markdown-vs-myst">
+<span id="mark-vs-myst"></span><h2>Markdown vs MyST<a class="headerlink" href="#markdown-vs-myst" title="Permalink to this headline">¶</a></h2>
+<p>You will hear two different names for the syntax being thrown around in this chapter. Markdown and Markedly Structured Text (MyST). While there are important differences in the two, none of those differences will matter to a content creator. Just use the syntax described here in your document and thank the creators/maintainers of jupyter-book for saving you from worry about the details because ‘it just works (TM)’.</p>
+</div>
 <div class="section" id="regular-text">
-<h2>Regular text<a class="headerlink" href="#regular-text" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2>Regular text<a class="headerlink" href="#regular-text" title="Permalink to this headline">¶</a></h2>
 <p>Regular (body) text is simply typed into your content file without any special syntax. Edit <code class="docutils literal notranslate"><span class="pre">05_dino.md</span></code> to include additional text:</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
@@ -531,7 +567,7 @@ There is now evidence that dinosaurs may have all had feathers. Part of the cont
 </div>
 </div>
 <div class="section" id="numbered-and-bulleted-lists">
-<h2>Numbered and bulleted lists<a class="headerlink" href="#numbered-and-bulleted-lists" title="Permalink to this headline">¶</a></h2>
+<span id="num-bullet-lists"></span><h2>Numbered and bulleted lists<a class="headerlink" href="#numbered-and-bulleted-lists" title="Permalink to this headline">¶</a></h2>
 <p>Lists are often a way to summarize key points that you hope a reader skimming your book will pay attention to, or provide step by step instructions.</p>
 <div class="section" id="ordered-lists">
 <h3>Ordered lists<a class="headerlink" href="#ordered-lists" title="Permalink to this headline">¶</a></h3>
@@ -613,7 +649,7 @@ There is now evidence that dinosaurs may have all had feathers. Part of the cont
 </div>
 </div>
 <div class="section" id="code-blocks">
-<h2>Code blocks<a class="headerlink" href="#code-blocks" title="Permalink to this headline">¶</a></h2>
+<span id="id3"></span><h2>Code blocks<a class="headerlink" href="#code-blocks" title="Permalink to this headline">¶</a></h2>
 <p>There are a couple of ways to draw attention to code or commands that a user following your book should use.</p>
 <div class="section" id="commands">
 <h3>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h3>
@@ -672,8 +708,8 @@ There is now evidence that dinosaurs may have all had feathers. Part of the cont
 </tbody>
 </table>
 </div>
-<div class="section" id="id1">
-<h3>Code blocks<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>Code blocks<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>Snippets of code with syntax highlighting can be included in your document as well.</p>
 <table class="colwidths-given table">
 <colgroup>
@@ -733,7 +769,7 @@ Then modify your script to locate feathers on pictures of dinosaur bones. This u
 <p>Margin notes are not fully supported when generating a PDF.</p>
 </div>
 <div class="section" id="footnotes">
-<h3>Footnotes<a class="headerlink" href="#footnotes" title="Permalink to this headline">¶</a></h3>
+<span id="id5"></span><h3>Footnotes<a class="headerlink" href="#footnotes" title="Permalink to this headline">¶</a></h3>
 <p>Footnotes can be used to add an interesting comment to text that is not directly relevant to the argument of the text.</p>
 <table class="colwidths-given table">
 <colgroup>
@@ -753,14 +789,14 @@ Then modify your script to locate feathers on pictures of dinosaur bones. This u
 </pre></div>
 </div>
 </td>
-<td><p>Dinosaurs may have had feathers <a class="footnote-reference brackets" href="#footnote-label" id="id2">1</a>.</p></td>
+<td><p>Dinosaurs may have had feathers <a class="footnote-reference brackets" href="#footnote-label" id="id6">1</a>.</p></td>
 <td><p>Click to follow the footnote which is located at the bottom of the page.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="margin-notes">
-<h3>Margin notes<a class="headerlink" href="#margin-notes" title="Permalink to this headline">¶</a></h3>
+<span id="id7"></span><h3>Margin notes<a class="headerlink" href="#margin-notes" title="Permalink to this headline">¶</a></h3>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>This is a margin note</p>
@@ -800,9 +836,9 @@ Margin note text goes here
 </table>
 </div>
 </div>
-<div class="section" id="references">
-<span id="ref"></span><h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<p>There are many ways to generate a reference in jupyter-book. Here are the two simplest methods.</p>
+<div class="section" id="links-references">
+<span id="ref"></span><h2>Links/References<a class="headerlink" href="#links-references" title="Permalink to this headline">¶</a></h2>
+<p>There are many ways to generate a link/reference in jupyter-book. Here are the two simplest methods. See <a class="reference internal" href="#numbered-ref"><span class="std std-ref">numbered references</span></a> for more advanced use cases.</p>
 <div class="section" id="markdown-links">
 <h3>Markdown links<a class="headerlink" href="#markdown-links" title="Permalink to this headline">¶</a></h3>
 <p>To link to a target header that you created with the <code class="docutils literal notranslate"><span class="pre">(target-header)=</span></code> syntax simply</p>
@@ -870,8 +906,8 @@ Chebsaurus Venaticosuchus Yuanmousaurus Rileyasuchus Tianyulong Auroraceratops A
 </div>
 </div>
 </div>
-<div class="section" id="admonition">
-<h2>Admonition<a class="headerlink" href="#admonition" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="admonitions">
+<span id="admonition"></span><h2>Admonitions<a class="headerlink" href="#admonitions" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>An admonition is advice with a hint of scolding, a warning not to do something. When you’re cautioned or warned about some mistake you might be just about to make, or some looming danger, you’re receiving an admonition. — <a class="reference external" href="https://www.vocabulary.com/dictionary/admonition">vocabulary.com</a></p>
 </div></blockquote>
@@ -927,256 +963,13 @@ Feathers are very difficult to identify in a fossil. Extreme care should be take
 </pre></div>
 </div>
 </div>
-<div class="section" id="equation">
-<span id="math-formula"></span><h2>Equation<a class="headerlink" href="#equation" title="Permalink to this headline">¶</a></h2>
-<p>If you need to include a mathematical formula that can easily be achieved. The formula is considered inline if it flows with the text like this, <span class="math notranslate nohighlight">\(a^2 +b^2 = c^2\)</span>. Or you can add a block formula which is centered on its own line:</p>
-<div class="math notranslate nohighlight">
-\[
-p(H|e) = \frac{p(H)p(e|H)}{p(e)}
-\]</div>
-<p>Formulas are written in <span class="math notranslate nohighlight">\(\LaTeX\)</span>. A <a class="reference external" href="https://users.dickinson.edu/~richesod/latex/latexcheatsheet.pdf">good cheat sheet</a> will show most of the common symbols you will need to know. If that fails you can draw the symbol with your mouse and an <a class="reference external" href="https://detexify.kirelabs.org/classify.html">algorithm</a> will identify your symbol and and show you the <span class="math notranslate nohighlight">\(\LaTeX\)</span> code that will generate it.</p>
-<table class="colwidths-given table">
-<colgroup>
-<col style="width: 40%" />
-<col style="width: 30%" />
-<col style="width: 30%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Syntax</p></th>
-<th class="head"><p>Example</p></th>
-<th class="head"><p>Note</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span>This is an inline formula $1/2sin(\theta)$
-</pre></div>
-</div>
-</td>
-<td><p>This is an inline formula <span class="math notranslate nohighlight">\(1/2sin(\theta)\)</span></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span>This is a block formula
-
-$$
-f(x) = x<span class="ge">_1 +2x_</span>2
-$$
-</pre></div>
-</div>
-</td>
-<td><p>This is a block formula</p>
-<div class="math notranslate nohighlight">
-\[
-    f(x) = x_1 +2x_2
-    \]</div>
-</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span>This is a numbered formula
-
-$$
-z=\sqrt{x^2+y^2}
-$$ (myLabel)
-</pre></div>
-</div>
-</td>
-<td><p>This is a numbered formula</p>
-<div class="math notranslate nohighlight" id="equation-numbered-equation">
-<span class="eqno">(1)<a class="headerlink" href="#equation-numbered-equation" title="Permalink to this equation">¶</a></span>\[
-    z=\sqrt{x^2+y^2}
-    \]</div>
-</td>
-<td><p>See <a class="reference internal" href="#num-ref-eq"><span class="std std-ref">numbered references</span></a> to refer to this equation by its number</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="embed-results">
-<h2>Embed results<a class="headerlink" href="#embed-results" title="Permalink to this headline">¶</a></h2>
-<p>This next section covers a key element of jupyter-book, the ability to embed results from a jupyter notebook into your content. This enables the development of <a class="reference internal" href="01_intro.html#exec-book"><span class="std std-ref">executable books</span></a>. Adding this capability will slow your writing process down considerably, but over the course of multiple revisions it may just save your sanity.</p>
-<div class="section" id="numerical-content">
-<h3>Numerical content<a class="headerlink" href="#numerical-content" title="Permalink to this headline">¶</a></h3>
-<p>Numerical content are just numbers.</p>
-<table class="colwidths-given table">
-<colgroup>
-<col style="width: 40%" />
-<col style="width: 30%" />
-<col style="width: 30%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Syntax</p></th>
-<th class="head"><p>Example</p></th>
-<th class="head"><p>Note</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span>The answer to the 
-“Great Question” of “Life, 
-the Universe and Everything”
- is {glue:}`myLabel`.
-</pre></div>
-</div>
-</td>
-<td><p>The answer to the “Great Question” of “Life, the Universe and Everything” is <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">'42'</span></code></span></p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
+<div class="section" id="tables">
+<span id="id8"></span><h2>Tables<a class="headerlink" href="#tables" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">{list-tables}</span></code> directive is provided for creating numbered tables. For example this markup produces the result seen in <a class="reference internal" href="#my-table-label"><span class="std std-numref">Table 1</span></a>. To reference this table by number use <code class="docutils literal notranslate"><span class="pre">{numref}`my-table-label`</span></code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This section assumes that you have previously created a jupyter notebook. You can read more about <a class="reference internal" href="02_setup.html#notebooks"><span class="std std-ref">notebooks</span></a> to get a feel for their true power. For now, just create a sample notebook that we can work with:</p>
-<ol class="simple">
-<li><p>In your virtual environment, install the prerequisite python libraries <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">scipy</span> <span class="pre">numpy</span> <span class="pre">matplotlib</span> <span class="pre">myst_nb</span></code></p></li>
-<li><p>Navigate to your book directory <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">book</span></code></p></li>
-<li><p>Open jupyter notebook with <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span> <span class="pre">--no-browser</span></code></p></li>
-<li><p>Follow the link provided in the console</p></li>
-<li><p>Create a new Python 3 notebook and name it <code class="docutils literal notranslate"><span class="pre">myNotebook</span></code></p></li>
-<li><p>Paste the following into the first cell of the notebook and press <code class="docutils literal notranslate"><span class="pre">shift</span> <span class="pre">+</span> <span class="pre">enter</span></code> to execute the cell</p></li>
-</ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Feather Length [mm]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Bone Diameter [cm]&#39;</span><span class="p">)</span>
-<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;random-fig&#39;</span><span class="p">,</span><span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="n">myVar</span> <span class="o">=</span> <span class="s2">&quot;42&quot;</span>
-<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;myLabel&quot;</span><span class="p">,</span> <span class="n">myVar</span> <span class="p">)</span>
-
-<span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>  <span class="c1"># mean </span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>   <span class="c1"># standard deviation</span>
-<span class="n">up</span> <span class="o">=</span> <span class="n">m</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">s</span>      <span class="c1"># 95% confidence level</span>
-<span class="n">low</span> <span class="o">=</span> <span class="n">m</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">s</span>     <span class="c1"># 5% confidence level</span>
-
-<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;avg&#39;</span><span class="p">,</span><span class="n">m</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;upper&#39;</span><span class="p">,</span><span class="n">up</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span><span class="n">low</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
+<p>There is a table available in markdown as well, but I would suggest that you use the <code class="docutils literal notranslate"><span class="pre">list-table</span></code> directive because it is easier to write and includes a caption.</p>
 </div>
-<p>In reality your writing process likely starts with a notebook. After days of meticulous data collection and analysis you finally arrive at a result that you believe is publishable. At that point you would fire up jupyter-book and start describing your results. There are major two use cases for embeding notebook results to consider:</p>
-<ul class="simple">
-<li><p>Numerical content</p></li>
-<li><p>Figures</p></li>
-</ul>
-</div>
-<p>In practice you may need to round your results to a few signifigant digits. All of the <a class="reference external" href="https://mkaz.blog/code/python-string-format-cookbook/#f-strings">python format strings</a> can be used with the <code class="docutils literal notranslate"><span class="pre">{glue:text}</span></code> directive.</p>
-<table class="colwidths-given table">
-<colgroup>
-<col style="width: 40%" />
-<col style="width: 30%" />
-<col style="width: 30%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Syntax</p></th>
-<th class="head"><p>Example</p></th>
-<th class="head"><p>Note</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span>The result was {glue:text}`avg` 
-(95% CI {glue:text}`lower`/
-{glue:text}`upper`).
-</pre></div>
-</div>
-</td>
-<td><p>The result was <span class="pasted-text">-0.16156338937358977</span> (95% CI <span class="pasted-text">-1.9091848709630883</span>/<span class="pasted-text">1.5860580922159089</span>).</p></td>
-<td><p>Unformatted text</p></td>
-</tr>
-<tr class="row-odd"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span>The result was 
-{glue:text}`avg:2.2f` 
-(95% CI {glue:text}`lower:2.2f`/
-{glue:text}`upper:2.2f`).
-</pre></div>
-</div>
-</td>
-<td><p>The result was <span class="pasted-text">-0.16</span> (95% CI <span class="pasted-text">-1.91</span>/<span class="pasted-text">1.59</span>).</p></td>
-<td><p>Formatted as a two digit floating point number</p></td>
-</tr>
-</tbody>
-</table>
-<div class="section" id="figures">
-<h3>Figures<a class="headerlink" href="#figures" title="Permalink to this headline">¶</a></h3>
-<p>Figures typically help to visualize the results of an analysis. A figure can be added to a document with a just a <code class="docutils literal notranslate"><span class="pre">{glue:}`&lt;figure-label&gt;`</span></code>, but it is usually more helpful in a technical document to add a numbered figure with a caption.</p>
-<table class="colwidths-given table">
-<colgroup>
-<col style="width: 40%" />
-<col style="width: 30%" />
-<col style="width: 30%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Syntax</p></th>
-<th class="head"><p>Example</p></th>
-<th class="head"><p>Note</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="gu">```{glue:figure} &lt;figure-label&gt;</span>
-<span class="gu">---</span>
-figwidth: 150px
-<span class="gu">name: &quot;&lt;figure-reference-name&gt;&quot;</span>
-<span class="gu">---</span>
-
-Figure caption written in markdown
-```
-</pre></div>
-</div>
-</td>
-<td><div class="figure align-default" id="fig-random" style="width: 200px">
-<div class="cell_output docutils container">
-<img alt="_images/myNotebook2_0_0.png" src="_images/myNotebook2_0_0.png" />
-</div>
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Feather length vs bone diameter</span><a class="headerlink" href="#fig-random" title="Permalink to this image">¶</a></p>
-</div>
-</td>
-<td><p>See <a class="reference internal" href="#numbered-ref"><span class="std std-ref">numbered refrences</span></a> to refer to this figure by its figure number.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="section" id="numbered-refrences">
-<span id="numbered-ref"></span><h2>Numbered Refrences<a class="headerlink" href="#numbered-refrences" title="Permalink to this headline">¶</a></h2>
-<p>Numbered references are a more advanced version of <a class="reference internal" href="#ref"><span class="std std-ref">regular references</span></a>, but very common in technical documents. Numberd references can be made to:</p>
-<ul class="simple">
-<li><p>Figures</p></li>
-<li><p>Tables</p></li>
-<li><p>Equations</p></li>
-</ul>
-<div class="section" id="id3">
-<h3>Figures<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<table class="colwidths-given table">
-<colgroup>
-<col style="width: 40%" />
-<col style="width: 30%" />
-<col style="width: 30%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Syntax</p></th>
-<th class="head"><p>Example</p></th>
-<th class="head"><p>Note</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span>{numref}`&lt;numbered-label&gt;`
-</pre></div>
-</div>
-</td>
-<td><p>See <a class="reference internal" href="#fig-random"><span class="std std-numref">Fig. 1</span></a> for the relationship between…</p></td>
-<td><p>See the <a class="reference external" href="https://jupyterbook.org/reference/cheatsheet.html#referencing-figures">official docs</a> for many more options</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="tables">
-<h3>Tables<a class="headerlink" href="#tables" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">{list-tables}</span></code> directive is provided for creating numbered tables. For example this markup produces the result seen in <a class="reference internal" href="#my-table-label"><span class="std std-numref">Table 1</span></a>. To reference this table by number use <code class="docutils literal notranslate"><span class="pre">{numref}`my-table-label`</span></code>.</p>
 <div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{list-table} General characteristics of Sepia officinalis accessory sex gland ESTs [^sepia].
 :header-rows: 0
 :name: my-table-label
@@ -1197,7 +990,7 @@ Figure caption written in markdown
 </pre></div>
 </div>
 <table class="table" id="my-table-label">
-<caption><span class="caption-number">Table 1 </span><span class="caption-text">General characteristics of Sepia officinalis accessory sex gland ESTs <a class="footnote-reference brackets" href="#sepia" id="id4">2</a>.</span><a class="headerlink" href="#my-table-label" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">General characteristics of Sepia officinalis accessory sex gland ESTs <a class="footnote-reference brackets" href="#sepia" id="id9">2</a>.</span><a class="headerlink" href="#my-table-label" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -1262,7 +1055,289 @@ Figure caption written in markdown
 </table>
 </div>
 <div class="section" id="equations">
-<span id="num-ref-eq"></span><h3>Equations<a class="headerlink" href="#equations" title="Permalink to this headline">¶</a></h3>
+<span id="math-formula"></span><h2>Equations<a class="headerlink" href="#equations" title="Permalink to this headline">¶</a></h2>
+<p>If you need to include a mathematical formula that can easily be achieved. The formula is considered inline if it flows with the text like this, <span class="math notranslate nohighlight">\(a^2 +b^2 = c^2\)</span>. Or you can add a block formula which is centered on its own line:</p>
+<div class="math notranslate nohighlight">
+\[
+p(H|e) = \frac{p(H)p(e|H)}{p(e)}
+\]</div>
+<p>Formulas are written in <span class="math notranslate nohighlight">\(\LaTeX\)</span>. A <a class="reference external" href="https://users.dickinson.edu/~richesod/latex/latexcheatsheet.pdf">good cheat sheet</a> will show most of the common symbols you will need to know. If that fails you can draw the symbol with your mouse and an <a class="reference external" href="https://detexify.kirelabs.org/classify.html">algorithm</a> will identify your symbol and and show you the <span class="math notranslate nohighlight">\(\LaTeX\)</span> code that will generate it.</p>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Syntax</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Note</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span>This is an inline formula $1/2sin(\theta)$
+</pre></div>
+</div>
+</td>
+<td><p>This is an inline formula <span class="math notranslate nohighlight">\(1/2sin(\theta)\)</span></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span>This is a block formula
+
+$$
+f(x) = x<span class="ge">_1 +2x_</span>2
+$$
+</pre></div>
+</div>
+</td>
+<td><p>This is a block formula</p>
+<div class="math notranslate nohighlight">
+\[
+    f(x) = x_1 +2x_2
+    \]</div>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span>This is a numbered formula
+
+$$
+z=\sqrt{x^2+y^2}
+$$ (myLabel)
+</pre></div>
+</div>
+</td>
+<td><p>This is a numbered formula</p>
+<div class="math notranslate nohighlight" id="equation-numbered-equation">
+<span class="eqno">(1)<a class="headerlink" href="#equation-numbered-equation" title="Permalink to this equation">¶</a></span>\[
+    z=\sqrt{x^2+y^2}
+    \]</div>
+</td>
+<td><p>See <a class="reference internal" href="#numbered-eq"><span class="std std-ref">numbered references</span></a> to refer to this equation by its number</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="embed-results">
+<span id="glue-results"></span><h2>Embed results<a class="headerlink" href="#embed-results" title="Permalink to this headline">¶</a></h2>
+<p>This next section covers a key element of jupyter-book, the ability to embed results from a jupyter notebook into your content. This enables the development of <a class="reference internal" href="01_intro.html#exec-book"><span class="std std-ref">executable books</span></a>. Adding this capability will slow your writing process down considerably, but over the course of multiple revisions it may just save your sanity.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section assumes that you have previously created a jupyter notebook. You can read more about <a class="reference internal" href="02_setup.html#notebooks"><span class="std std-ref">notebooks</span></a> to get a feel for their true power. For now, just create a sample notebook that we can work with:</p>
+<ol class="simple">
+<li><p>In your virtual environment, install the prerequisite python libraries <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">scipy</span> <span class="pre">numpy</span> <span class="pre">matplotlib</span> <span class="pre">myst_nb</span></code></p></li>
+<li><p>Navigate to your book directory <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">book</span></code></p></li>
+<li><p>Open jupyter notebook with <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span> <span class="pre">--no-browser</span></code></p></li>
+<li><p>Follow the link provided in the console</p></li>
+<li><p>Create a new Python 3 notebook and name it <code class="docutils literal notranslate"><span class="pre">myNotebook</span></code></p></li>
+<li><p>Paste the following into the first cell of the notebook and press <code class="docutils literal notranslate"><span class="pre">shift</span> <span class="pre">+</span> <span class="pre">enter</span></code> to execute the cell</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Feather Length [mm]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Bone Diameter [cm]&#39;</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;random-fig&#39;</span><span class="p">,</span><span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">myVar</span> <span class="o">=</span> <span class="s2">&quot;42&quot;</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;myLabel&quot;</span><span class="p">,</span> <span class="n">myVar</span> <span class="p">)</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>  <span class="c1"># mean </span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>   <span class="c1"># standard deviation</span>
+<span class="n">up</span> <span class="o">=</span> <span class="n">m</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">s</span>      <span class="c1"># 95% confidence level</span>
+<span class="n">low</span> <span class="o">=</span> <span class="n">m</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">s</span>     <span class="c1"># 5% confidence level</span>
+
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;avg&#39;</span><span class="p">,</span><span class="n">m</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;upper&#39;</span><span class="p">,</span><span class="n">up</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span><span class="n">low</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>In reality your writing process likely starts with a notebook. After days of meticulous data collection and analysis you finally arrive at a result that you believe is publishable. At that point you would fire up jupyter-book and start describing your results. There are two major use cases for embeding notebook results to consider:</p>
+<ul class="simple">
+<li><p>Numerical content</p></li>
+<li><p>Figures</p></li>
+</ul>
+<p>In all cases you make a variable or figure available in your notebook with the <code class="docutils literal notranslate"><span class="pre">glue('&lt;label&gt;',&lt;variable&gt;)</span></code> <em>function</em>. The <code class="docutils literal notranslate"><span class="pre">variable</span></code> is the object that you created in your notebook. You can give it an easy to remember name with the <code class="docutils literal notranslate"><span class="pre">label</span></code>. You reference the <code class="docutils literal notranslate"><span class="pre">label</span></code> in your writing when you use the <code class="docutils literal notranslate"><span class="pre">glue</span></code> directive. See below for the specific use cases of the <code class="docutils literal notranslate"><span class="pre">glue</span></code> directive to embed content.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The critical benefit of <em>gluing</em> notebook outputs into your document is when you update the variable in your notebook, the changes automatically propogate into your document the next time you rebuild your book. Just make sure your notebook is inside your book directory and jupyter-book takes care of the rest.</p>
+</div>
+<div class="section" id="numerical-content">
+<span id="glue-number"></span><h3>Numerical content<a class="headerlink" href="#numerical-content" title="Permalink to this headline">¶</a></h3>
+<p>Numerical content is just numbers.</p>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Syntax</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Note</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span>The answer to the 
+“Great Question” of “Life, 
+the Universe and Everything”
+ is {glue:}`myLabel`.
+</pre></div>
+</div>
+</td>
+<td><p>The answer to the “Great Question” of “Life, the Universe and Everything” is <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">'42'</span></code></span></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>In practice you may need to round your results to a few signifigant digits. All of the <a class="reference external" href="https://mkaz.blog/code/python-string-format-cookbook/#f-strings">python format strings</a> can be used with the <code class="docutils literal notranslate"><span class="pre">{glue:text}</span></code> directive.</p>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Syntax</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Note</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span>The result was {glue:text}`avg` 
+(95% CI {glue:text}`lower`/
+{glue:text}`upper`).
+</pre></div>
+</div>
+</td>
+<td><p>The result was <span class="pasted-text">-0.16156338937358977</span> (95% CI <span class="pasted-text">-1.9091848709630883</span>/<span class="pasted-text">1.5860580922159089</span>).</p></td>
+<td><p>Unformatted text</p></td>
+</tr>
+<tr class="row-odd"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span>The result was 
+{glue:text}`avg:2.2f` 
+(95% CI {glue:text}`lower:2.2f`/
+{glue:text}`upper:2.2f`).
+</pre></div>
+</div>
+</td>
+<td><p>The result was <span class="pasted-text">-0.16</span> (95% CI <span class="pasted-text">-1.91</span>/<span class="pasted-text">1.59</span>).</p></td>
+<td><p>Formatted as a two digit floating point number</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="figures">
+<span id="glue-figure"></span><h3>Figures<a class="headerlink" href="#figures" title="Permalink to this headline">¶</a></h3>
+<p>Figures typically help to visualize the results of an analysis. A figure can be added to a document with a just a <code class="docutils literal notranslate"><span class="pre">{glue:}`&lt;figure-label&gt;`</span></code>, but it is usually more helpful in a technical document to add a numbered figure with a caption.</p>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Syntax</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Note</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="gu">```{glue:figure} &lt;figure-label&gt;</span>
+<span class="gu">---</span>
+figwidth: 150px
+<span class="gu">name: &quot;&lt;figure-reference-name&gt;&quot;</span>
+<span class="gu">---</span>
+
+Figure caption written in markdown
+```
+</pre></div>
+</div>
+</td>
+<td><div class="figure align-default" id="fig-random" style="width: 200px">
+<div class="cell_output docutils container">
+<img alt="_images/myNotebook2_0_0.png" src="_images/myNotebook2_0_0.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Feather length vs bone diameter</span><a class="headerlink" href="#fig-random" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><p>See <a class="reference internal" href="#numbered-ref"><span class="std std-ref">numbered refrences</span></a> to refer to this figure by its figure number.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="numbered-refrences">
+<span id="numbered-ref"></span><h2>Numbered Refrences<a class="headerlink" href="#numbered-refrences" title="Permalink to this headline">¶</a></h2>
+<p>Numbered references are a more advanced version of <a class="reference internal" href="#ref"><span class="std std-ref">regular references</span></a>, but very common in technical documents. To make a numbered reference you of course have to have a numbered object to refer to. Numberd references can be made to:</p>
+<ul class="simple">
+<li><p>Figures</p></li>
+<li><p>Tables</p></li>
+<li><p>Equations</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Equations are the odd ball in this group. Figures and tables use the <code class="docutils literal notranslate"><span class="pre">{numref}</span></code> directive, while equations have their own <code class="docutils literal notranslate"><span class="pre">{eq}</span></code> directive. If you reference a figure or table the reference will be inserted as <code class="docutils literal notranslate"><span class="pre">Figure</span> <span class="pre">X</span></code> or <code class="docutils literal notranslate"><span class="pre">Table</span> <span class="pre">Y</span></code>. If you reference an equation it will be inserted as <code class="docutils literal notranslate"><span class="pre">(1)</span></code>.</p>
+</div>
+<div class="section" id="numbered-figure">
+<span id="id10"></span><h3>Figures<a class="headerlink" href="#numbered-figure" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Syntax</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Note</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span>{numref}`&lt;numbered-label&gt;`
+</pre></div>
+</div>
+</td>
+<td><p>See <a class="reference internal" href="#fig-random"><span class="std std-numref">Fig. 1</span></a> for the relationship between…</p></td>
+<td><p>See the <a class="reference external" href="https://jupyterbook.org/reference/cheatsheet.html#referencing-figures">official docs</a> for many more options</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="numbered-table">
+<span id="id11"></span><h3>Tables<a class="headerlink" href="#numbered-table" title="Permalink to this headline">¶</a></h3>
+<p>To reference a table by number use <code class="docutils literal notranslate"><span class="pre">{numref}`my-table-label`</span></code>.</p>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Syntax</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Note</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span>{numref}`&lt;label&gt;`
+</pre></div>
+</div>
+</td>
+<td><p>See <a class="reference internal" href="#my-table-label"><span class="std std-numref">Table 1</span></a> for a summary of results</p></td>
+<td><p>See the <a class="reference external" href="https://jupyterbook.org/reference/cheatsheet.html#referencing-tables">official docs</a> for many more options</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="numbered-eq">
+<span id="id12"></span><h3>Equations<a class="headerlink" href="#numbered-eq" title="Permalink to this headline">¶</a></h3>
 <table class="colwidths-given table">
 <colgroup>
 <col style="width: 40%" />
@@ -1288,7 +1363,7 @@ Figure caption written in markdown
 </div>
 </div>
 <div class="section" id="citations">
-<h2>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">¶</a></h2>
+<span id="id13"></span><h2>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">¶</a></h2>
 <p>Citations require couple steps.</p>
 <ul class="simple">
 <li><p>Generate a refrences.bib file and place it in your <code class="docutils literal notranslate"><span class="pre">book</span></code> directory. This should be a standard option in any reference manager (e.g. <a class="reference external" href="https://www.zotero.org/">Zotero</a>). See <span class="xref std std-doc">references</span> if you need a sample <code class="docutils literal notranslate"><span class="pre">.bib</span></code> file for testing.</p></li>
@@ -1307,7 +1382,7 @@ Figure caption written in markdown
 </pre></div>
 </div>
 </td>
-<td><p>As described in <a class="bibtex reference internal" href="#stone-bayes-2015" id="id5">[Sto15]</a></p></td>
+<td><p>As described in <a class="bibtex reference internal" href="#stone-bayes-2015" id="id14">[Sto15]</a></p></td>
 <td><p>The citation will not display properly until the bibliography is linked as shown below</p></td>
 </tr>
 </tbody>
@@ -1320,35 +1395,36 @@ Figure caption written in markdown
 </div>
 <p>Your bibliography will be automatically generated like this, and can be formatted to meet any style guide.</p>
 <p id="bibtex-bibliography-04_content-0"><dl class="citation">
-<dt class="bibtex label" id="stone-bayes-2015"><span class="brackets"><a class="fn-backref" href="#id5">Sto15</a></span></dt>
+<dt class="bibtex label" id="stone-bayes-2015"><span class="brackets"><a class="fn-backref" href="#id14">Sto15</a></span></dt>
 <dd><p>James V. Stone. <em>Bayes’ rule with Python: a tutorial introduction to Bayesian analysis</em>. Sebtel Press, Sheffield, England, first edition, 2015. ISBN 978-0-9933679-3-9. OCLC: ocn970361039.</p>
 </dd>
 </dl>
 </p>
 </div>
 <div class="section" id="annotations">
-<h2>Annotations<a class="headerlink" href="#annotations" title="Permalink to this headline">¶</a></h2>
-<p>A very cool integration that jupyter-book makes available is annotations. An annotation is a way for readers to make notes on your document. Seeing is believing, so view the <a class="reference external" href="https://jupyterbook.org/interactive/comments/hypothesis.html">demo</a> on the jupyter-book website to see it in action.</p>
+<span id="id15"></span><h2>Annotations<a class="headerlink" href="#annotations" title="Permalink to this headline">¶</a></h2>
+<p>A very cool integration that jupyter-book makes available is annotations. An annotation is a way for readers to make notes on your document. Seeing is believing, so view the <a class="reference external" href="https://jupyterbook.org/interactive/comments/hypothesis.html">demo</a> on the jupyter-book website to see it in action and learn how to adjust the <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> file to enable annotations.</p>
 </div>
-<div class="section" id="comments">
-<h2>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
-<p>Jupyter-book makes integrating comments a very easy process (assuming you have a github account). Add the following to your <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> file to enable comments:</p>
+<div class="section" id="reader-comments">
+<span id="comments"></span><h2>Reader Comments<a class="headerlink" href="#reader-comments" title="Permalink to this headline">¶</a></h2>
+<p>Jupyter-book makes integrating a section for reader comments a very easy process (assuming you have a github account). Add the following to your <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> file to enable comments:</p>
 <div class="highlight-md notranslate"><div class="highlight"><pre><span></span>html:
   comments:
     utterances:
       repo: &quot;github-org/github-repo&quot;
 </pre></div>
 </div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">github-org</span></code> is your user name or organization, and <code class="docutils literal notranslate"><span class="pre">github-repo</span></code> is the repository where you are hosting your project. So in the case of this book - which is hosted at https://github.com/SkyRockMoon/jb-kick-tires - the org is <code class="docutils literal notranslate"><span class="pre">SkyRockMoon</span></code> and the repo is <code class="docutils literal notranslate"><span class="pre">jb-kick-tires</span></code>. See below, this site has comments enabled.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The comments integration is not visible when viewing your book <em>locally</em>. You must <a class="reference internal" href="03_build-pub.html#build-pub"><span class="std std-ref">publish to GitHub</span></a> to see the integration.</p>
 </div>
 <hr class="docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="footnote-label"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dt class="label" id="footnote-label"><span class="brackets"><a class="fn-backref" href="#id6">1</a></span></dt>
 <dd><p>This is my footnote which wil be placed at the bottom of the page. Conveniently you can click on the footnote number to return to the text that contains the note.</p>
 </dd>
-<dt class="label" id="sepia"><span class="brackets"><a class="fn-backref" href="#id4">2</a></span></dt>
+<dt class="label" id="sepia"><span class="brackets"><a class="fn-backref" href="#id9">2</a></span></dt>
 <dd><p>Enault, Jeremy &amp; Zatylny-Gaudin, Celine &amp; Bernay, Benoît &amp; Lefranc, Benjamin &amp; Leprince, Jérôme &amp; Baudy-Floc’h, Michèle &amp; Henry, Joël. (2012). A Complex Set of Sex Pheromones Identified in the Cuttlefish Sepia officinalis. PloS one. 7. e46531. 10.1371/journal.pone.0046531.</p>
 </dd>
 </dl>
@@ -1384,6 +1460,7 @@ Figure caption written in markdown
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="03_build-pub.html" title="previous page">Build and publish a book</a>
+    <a class='right-next' id="next-link" href="04_content_v2.html" title="next page">Add content to the book v2</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

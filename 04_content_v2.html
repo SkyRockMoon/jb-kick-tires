@@ -1,0 +1,479 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add content to the book v2 &#8212; Kicking the Tires on Jupyter-Book</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "SkyRockMoon/jb-kick-tires");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://skyrockmoon.github.io/jb-kick-tires/04_content_v2.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Add content to the book" href="04_content.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://skyrockmoon.github.io/jb-kick-tires/04_content_v2.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Add content to the book v2" />
+<meta property="og:description" content="Add content to the book v2  Warning  This book is still being actively developed and this version of should be considered a rough draft. Follow me on GitHub to " />
+
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Kicking the Tires on Jupyter-Book</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_setup.html">
+   Setting up jupyter-book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_build-pub.html">
+   Build and publish a book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_content.html">
+   Add content to the book
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Add content to the book v2
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/04_content_v2.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/SkyRockMoon/jb-kick-tires"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/SkyRockMoon/jb-kick-tires/issues/new?title=Issue%20on%20page%20%2F04_content_v2.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#file-structure">
+   File structure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-up-your-book-chapters">
+   Setting up your book chapters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#target-references">
+   Target references
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#markdown-vs-myst">
+   Markdown vs MyST
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#add-content">
+   Add content
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#headings">
+     Headings
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#regular-text">
+     Regular text
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#glue-results-from-your-notebooks">
+   Glue results from your notebooks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reader-reviewer-feedback">
+   Reader/reviewer feedback
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#annotations">
+     Annotations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comments">
+     Comments
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="add-content-to-the-book-v2">
+<span id="content-v2"></span><h1>Add content to the book v2<a class="headerlink" href="#add-content-to-the-book-v2" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This book is still being actively developed and this version of should be considered a rough draft. <a class="reference external" href="https://docs.github.com/en/github/getting-started-with-github/following-people#:~:text=If%20someone%20you%20follow%20stars,Unfollow%20under%20their%20profile%20image.">Follow me on GitHub</a> to receive notifications when updates are made.</p>
+</div>
+<p>This section covers how to add content to your book. To utilize jupyter-book you will have to ultimately become very familiar with the <a class="reference external" href="https://jupyterbook.org">official jupyter-book documentation</a>. However for the purposes of kicking the tires this section will take you through the features that are either critical to use, or just cool. Many details will be skipped for the purposes of illustrating what authoring a book with jupyter-book might be like in practice. Consider this chapter a minimum subset of the available functionality needed for authoring content.</p>
+<p>In an effort to make leanring syntax more exciting this section will take you through a narrative of adding content to the <a class="reference internal" href="02_setup.html#clone"><span class="std std-ref">book you cloned</span></a> while installing jupyter-book. After getting a feel for how everything works in this section you will probably graduate to just using the <a class="reference external" href="https://jupyterbook.org/reference/cheatsheet.html">jupyter-book cheat sheet</a> to rapidly find the syntax details you need.</p>
+<p>Your mission, if you choose to accept it, is to write a (very brief and totally fictitious) book about dinosaurs using the sample book you cloned earlier as a template. Don’t worry if your paleontology skills are rusty, the focus of this activity is on writing the described syntax. You can expect to accomplish the following tasks while reading this chapter.</p>
+<ol class="simple">
+<li><p><a class="reference internal" href="04_content.html#new-chapter"><span class="std std-ref">Create a new chapter about dinosaurs</span></a></p></li>
+<li><p><a class="reference internal" href="04_content.html#mark-vs-myst"><span class="std std-ref">Write some basic content using Markdown and MyST</span></a></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="04_content.html#headings"><span class="std std-ref">Headings</span></a></p></li>
+<li><p><a class="reference internal" href="04_content.html#regular-text"><span class="std std-ref">Regular text</span></a></p></li>
+<li><p><a class="reference internal" href="04_content.html#num-bullet-lists"><span class="std std-ref">Lists</span></a></p></li>
+<li><p><a class="reference internal" href="04_content.html#code-blocks"><span class="std std-ref">Code blocks</span></a></p></li>
+<li><p><a class="reference internal" href="04_content.html#doc-notes"><span class="std std-ref">Notes</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="04_content.html#footnotes"><span class="std std-ref">Footnotes</span></a></p></li>
+<li><p><a class="reference internal" href="04_content.html#margin-notes"><span class="std std-ref">Margin notes</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="04_content.html#ref"><span class="std std-ref">Links and section references</span></a></p></li>
+<li><p><a class="reference internal" href="04_content.html#admonition"><span class="std std-ref">Admonitions</span></a></p></li>
+<li><p><a class="reference internal" href="04_content.html#math-formula"><span class="std std-ref">Equations</span></a></p></li>
+<li><p><a class="reference internal" href="04_content.html#tables"><span class="std std-ref">Tables</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="04_content.html#glue-results"><span class="std std-ref">Embed (glue) results from your analysis in a jupyter notebook into your text content</span></a></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="04_content.html#glue-number"><span class="std std-ref">Glue numbers</span></a></p></li>
+<li><p><a class="reference internal" href="04_content.html#glue-figure"><span class="std std-ref">Glue figures</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="04_content.html#numbered-ref"><span class="std std-ref">Reference numbered content</span></a>: <a class="reference internal" href="04_content.html#numbered-figure"><span class="std std-ref">figures</span></a>, <a class="reference internal" href="04_content.html#numbered-table"><span class="std std-ref">tables</span></a>, <a class="reference internal" href="04_content.html#numbered-eq"><span class="std std-ref">equations</span></a>,</p></li>
+<li><p><a class="reference internal" href="04_content.html#citations"><span class="std std-ref">Create Citations/Bibliography</span></a></p></li>
+<li><p><a class="reference internal" href="04_content.html#annotations"><span class="std std-ref">Enable Annotations</span></a></p></li>
+<li><p><a class="reference internal" href="04_content.html#comments"><span class="std std-ref">Enable Reader comments</span></a></p></li>
+</ol>
+<div class="section" id="file-structure">
+<h2>File structure<a class="headerlink" href="#file-structure" title="Permalink to this headline">¶</a></h2>
+<p>If you look at the <code class="docutils literal notranslate"><span class="pre">sample-book</span></code> that you cloned during the install you will see the following structure and files.</p>
+<ul class="simple">
+<li><p>sample-book: this is your top level working directory</p>
+<ul>
+<li><p>book: this directory contains the content of your book</p>
+<ul>
+<li><p>_build: this directory is generated for you when you build the book</p>
+<ul>
+<li><p>html: the html version of your book (if you chose this option)</p></li>
+<li><p>pdf: the pdf version of your book (if you chose this option)
+.md files: these are markdown files that contain mostly text
+.ipynb files: these are notebook files that contain mostly computations and analysis
+_toc.yml: This file controls your table of contents
+_config.yml: This file controls the configuration that determines the look and feel of your book</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>environment.yml: file anaconda uses to automatically  setup your environment if you are using anaconda</p></li>
+<li><p>requirements.txt: file used to create a python virtual environment if you are not using anaconda</p></li>
+<li><p>README.md: describes the contents of this repository</p></li>
+<li><p>.gitignore: a file that tells git to ignore some directories</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="setting-up-your-book-chapters">
+<h2>Setting up your book chapters<a class="headerlink" href="#setting-up-your-book-chapters" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">intro</span>
+  <span class="nt">numbered</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+
+<span class="p p-Indicator">-</span> <span class="nt">file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">lit-review</span>
+<span class="p p-Indicator">-</span> <span class="nt">file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">methods</span>
+<span class="p p-Indicator">-</span> <span class="nt">file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">references</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="target-references">
+<h2>Target references<a class="headerlink" href="#target-references" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>numbered references</p></li>
+<li><p>link references</p></li>
+</ul>
+</div>
+<div class="section" id="markdown-vs-myst">
+<h2>Markdown vs MyST<a class="headerlink" href="#markdown-vs-myst" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="add-content">
+<h2>Add content<a class="headerlink" href="#add-content" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="headings">
+<h3>Headings<a class="headerlink" href="#headings" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="regular-text">
+<h3>Regular text<a class="headerlink" href="#regular-text" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="glue-results-from-your-notebooks">
+<h2>Glue results from your notebooks<a class="headerlink" href="#glue-results-from-your-notebooks" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="reader-reviewer-feedback">
+<h2>Reader/reviewer feedback<a class="headerlink" href="#reader-reviewer-feedback" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="annotations">
+<h3>Annotations<a class="headerlink" href="#annotations" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="comments">
+<h3>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="04_content.html" title="previous page">Add content to the book</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ryan Lowe<br/>
+        
+            &copy; Copyright 2021.<br/>
+          <div class="extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
