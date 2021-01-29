@@ -1,5 +1,5 @@
-(content)=
-# Add content to the book
+(content_v2)=
+# Add content to the book v2
 
 ```{warning}
 This book is still being actively developed and this version of should be considered a rough draft. [Follow me on GitHub](https://docs.github.com/en/github/getting-started-with-github/following-people#:~:text=If%20someone%20you%20follow%20stars,Unfollow%20under%20their%20profile%20image.) to receive notifications when updates are made.  
