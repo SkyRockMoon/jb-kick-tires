@@ -1,6 +1,11 @@
 # Install log
 
-## Try 3 
+## Try 4 (conda alternative aka 'easy way')
+
+conda env create -f environment.yml
+
+
+## Try 3  (this worked, aka 'hard way')
 
 - [Build python 3.8+ from source(]https://linuxize.com/post/how-to-install-python-3-8-on-ubuntu-18-04/)
     1. Upgrade: `sudo apt update`

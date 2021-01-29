@@ -7,9 +7,9 @@ This book is still being actively developed and this version of should be consid
 
 This section covers how to add content to your book. To utilize jupyter-book you will have to ultimately become very familiar with the [official jupyter-book documentation](https://jupyterbook.org). However for the purposes of kicking the tires this section will take you through the features that are either critical to use, or just cool. Many details will be skipped for the purposes of illustrating what authoring a book with jupyter-book might be like in practice. Consider this chapter a minimum subset of the available functionality needed for authoring content.
 
-In an effort to make things more exciting this section will take you through a narrative of adding a new chapter to the [book you cloned](clone) while installing jupyter-book. After getting a feel for how everything works in this section you will probably graduate to just using the [jupyter-book cheat sheet](https://jupyterbook.org/reference/cheatsheet.html) to rapidly find the syntax details you need. 
+In an effort to make leanring syntax more exciting this section will take you through a narrative of adding content to the [book you cloned](clone) while installing jupyter-book. After getting a feel for how everything works in this section you will probably graduate to just using the [jupyter-book cheat sheet](https://jupyterbook.org/reference/cheatsheet.html) to rapidly find the syntax details you need. 
 
-Your mission, if you choose to accept it, is to add a chapter about dinosaurs to the book you cloned earlier. Don't worry if your paleontology skills are rusty, the focus of this activity is on writing technical documents. You can expect to accomplish the following things while following along with this chapter.
+Your mission, if you choose to accept it, is to write a (very brief and totally fictitious) book about dinosaurs using the sample book you cloned earlier as a template. Don't worry if your paleontology skills are rusty, the focus of this activity is on writing the described syntax. You can expect to accomplish the following tasks while reading this chapter.
 
 1. [Create a new chapter about dinosaurs](new-chapter)
 1. [Write some basic content using Markdown and MyST](mark-vs-myst)
