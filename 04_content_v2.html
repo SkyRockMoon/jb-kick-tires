@@ -249,8 +249,35 @@ commentsRunWhenDOMLoaded(addUtterances);
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#target-references">
-   Target references
+  <a class="reference internal nav-link" href="#headings">
+   Headings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#regular-text">
+   Regular text
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numbered-and-bulleted-lists">
+   Numbered and bulleted lists
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ordered-lists">
+     Ordered lists
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unordered-list">
+     Unordered list
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cross-references">
+   Cross references
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -264,12 +291,12 @@ commentsRunWhenDOMLoaded(addUtterances);
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#headings">
+    <a class="reference internal nav-link" href="#id2">
      Headings
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#regular-text">
+    <a class="reference internal nav-link" href="#id3">
      Regular text
     </a>
    </li>
@@ -318,12 +345,12 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>In an effort to make leanring syntax more exciting this section will take you through a narrative of adding content to the <a class="reference internal" href="02_setup.html#clone"><span class="std std-ref">book you cloned</span></a> while installing jupyter-book. After getting a feel for how everything works in this section you will probably graduate to just using the <a class="reference external" href="https://jupyterbook.org/reference/cheatsheet.html">jupyter-book cheat sheet</a> to rapidly find the syntax details you need.</p>
 <p>Your mission, if you choose to accept it, is to write a (very brief and totally fictitious) book about dinosaurs using the sample book you cloned earlier as a template. Don’t worry if your paleontology skills are rusty, the focus of this activity is on writing the described syntax. You can expect to accomplish the following tasks while reading this chapter.</p>
 <ol class="simple">
-<li><p><a class="reference internal" href="04_content.html#new-chapter"><span class="std std-ref">Create a new chapter about dinosaurs</span></a></p></li>
+<li><p><a class="reference internal" href="#new-chapter"><span class="std std-ref">Outline your book chapters</span></a></p></li>
 <li><p><a class="reference internal" href="04_content.html#mark-vs-myst"><span class="std std-ref">Write some basic content using Markdown and MyST</span></a></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="04_content.html#headings"><span class="std std-ref">Headings</span></a></p></li>
-<li><p><a class="reference internal" href="04_content.html#regular-text"><span class="std std-ref">Regular text</span></a></p></li>
-<li><p><a class="reference internal" href="04_content.html#num-bullet-lists"><span class="std std-ref">Lists</span></a></p></li>
+<li><p><a class="reference internal" href="#regular-text"><span class="std std-ref">Regular text</span></a></p></li>
+<li><p><a class="reference internal" href="#num-bullet-lists"><span class="std std-ref">Lists</span></a></p></li>
 <li><p><a class="reference internal" href="04_content.html#code-blocks"><span class="std std-ref">Code blocks</span></a></p></li>
 <li><p><a class="reference internal" href="04_content.html#doc-notes"><span class="std std-ref">Notes</span></a></p>
 <ul>
@@ -352,46 +379,238 @@ commentsRunWhenDOMLoaded(addUtterances);
 <h2>File structure<a class="headerlink" href="#file-structure" title="Permalink to this headline">¶</a></h2>
 <p>If you look at the <code class="docutils literal notranslate"><span class="pre">sample-book</span></code> that you cloned during the install you will see the following structure and files.</p>
 <ul class="simple">
-<li><p>sample-book: this is your top level working directory</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">sample-book</span></code>: this is your top level working directory</p>
 <ul>
-<li><p>book: this directory contains the content of your book</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">book</span></code>: this directory contains the content of your book</p>
 <ul>
-<li><p>_build: this directory is generated for you when you build the book</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">_build</span></code>: this directory is generated for you when you build the book</p>
 <ul>
-<li><p>html: the html version of your book (if you chose this option)</p></li>
-<li><p>pdf: the pdf version of your book (if you chose this option)
-.md files: these are markdown files that contain mostly text
-.ipynb files: these are notebook files that contain mostly computations and analysis
-_toc.yml: This file controls your table of contents
-_config.yml: This file controls the configuration that determines the look and feel of your book</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">html</span></code>: the html version of your book (if you chose this option)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pdf</span></code>: the pdf version of your book (if you chose this option)
+<code class="docutils literal notranslate"><span class="pre">.md</span></code> files: these are markdown files that contain mostly text
+<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> files: these are notebook files that contain mostly computations and analysis
+<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>: This file controls your table of contents
+<code class="docutils literal notranslate"><span class="pre">_config.yml</span></code>: This file controls the configuration that determines the look and feel of your book</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>environment.yml: file anaconda uses to automatically  setup your environment if you are using anaconda</p></li>
-<li><p>requirements.txt: file used to create a python virtual environment if you are not using anaconda</p></li>
-<li><p>README.md: describes the contents of this repository</p></li>
-<li><p>.gitignore: a file that tells git to ignore some directories</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>: file anaconda uses to automatically setup your environment if you are using anaconda</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>: file used to create a python virtual environment if you are not using anaconda</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">README.md</span></code>: describes the contents of this repository</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>: a file that tells git to ignore the _build directory among other things that don’t need to be in version control</p></li>
 </ul>
 </li>
 </ul>
+<p>We will mainly be editing the files inside the <code class="docutils literal notranslate"><span class="pre">book</span></code> directory to show what the content creation process is like with jupyter-book.</p>
 </div>
 <div class="section" id="setting-up-your-book-chapters">
-<h2>Setting up your book chapters<a class="headerlink" href="#setting-up-your-book-chapters" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">intro</span>
+<span id="new-chapter"></span><h2>Setting up your book chapters<a class="headerlink" href="#setting-up-your-book-chapters" title="Permalink to this headline">¶</a></h2>
+<p>Organization is key to the writing process, imagine you have outlined the following chapters for your book:</p>
+<ul class="simple">
+<li><p>Abstract</p></li>
+<li><p>Introduction</p></li>
+<li><p>Literature review</p></li>
+<li><p>Methods</p></li>
+<li><p>References</p></li>
+</ul>
+<p>To create your book you would start by creating an empty markdown (<code class="docutils literal notranslate"><span class="pre">.md</span></code>) file for each of your chapters. You can name the files anything you want, but consider using similar names. The sample-book already contains the following files for you:</p>
+<ul class="simple">
+<li><p>Abstract: <code class="docutils literal notranslate"><span class="pre">abstract.md</span></code></p></li>
+<li><p>Introduction: <code class="docutils literal notranslate"><span class="pre">intro.md</span></code></p></li>
+<li><p>Literature review: <code class="docutils literal notranslate"><span class="pre">lit-review.md</span></code></p></li>
+<li><p>Methods: <code class="docutils literal notranslate"><span class="pre">methods.md</span></code></p></li>
+<li><p>References: <code class="docutils literal notranslate"><span class="pre">references.md</span></code></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Writing your content in a markdown (<code class="docutils literal notranslate"><span class="pre">.md</span></code>) file is one of two ways to author content. The other is to write the same syntax described here into a jupyter notebook (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). Both methods work equally well, but I chose to focus on markdown because I personally feel it a more appropriate method for long form works. This is purely my opinion, and as they say, your mileage may vary.</p>
+</div>
+<p>An abstract is traditionally part of a journal paper, not a book. Because print and web are not equivalent mediums there are times when you have to make accommodations for the differences. In this case your abstract will act as a landing page for your website.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>You can build your book from your working directory using <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">book</span></code> to see the changes you are making.</p>
+</div>
+<p>If you build the book you will notice that you can only see the introduction. We need to tell jupyter-book which files are in your table of contents and therefore should be rendered to the reader. Update the <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> file to include all of your chapters.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># _toc.yml</span>
+
+<span class="p p-Indicator">-</span> <span class="nt">file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">abstract</span>
   <span class="nt">numbered</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
 
+<span class="p p-Indicator">-</span> <span class="nt">file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">intro</span>
 <span class="p p-Indicator">-</span> <span class="nt">file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">lit-review</span>
 <span class="p p-Indicator">-</span> <span class="nt">file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">methods</span>
 <span class="p p-Indicator">-</span> <span class="nt">file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">references</span>
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Notice how the <code class="docutils literal notranslate"><span class="pre">.md</span></code> extension is not included in the <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> file. Both markdown (<code class="docutils literal notranslate"><span class="pre">.md</span></code>) and jupyter notebook (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) files can be designated chapters in your jupyter-book. Using notebooks directly as content is not covered in this mini-book, see the <a class="reference external" href="https://jupyterbook.org">official docs</a> for full details.</p>
 </div>
-<div class="section" id="target-references">
-<h2>Target references<a class="headerlink" href="#target-references" title="Permalink to this headline">¶</a></h2>
+<p>After saving your changes to <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>, build your book again, and then refresh your browser, to see your new chapters.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>After every prompt to add something, rebuild the book, and refresh your browser to view the changes. If the changes do not appear first check to see if you actually saved the file you were updating. You can also scroll up in the terminal and look for errors/warnings.</p>
+<p>Because you will need to issue the <code class="docutils literal notranslate"><span class="pre">build</span></code> command repeatedly while authoring your book it may be useful to know how to access your command line history. In most terminals simply press the up key once to see the last command that you typed. Press the up key twice to see what you typed two commands ago, and so on. Most of the time you can simply press the up key once and then press enter to build your book.</p>
+</div>
+</div>
+<div class="section" id="headings">
+<h2>Headings<a class="headerlink" href="#headings" title="Permalink to this headline">¶</a></h2>
+<p>Presumably a real outline for a book will describe more than just the chapter titles. Headings are used to define sub-sections in your book. Headings are created by using a series of ampersands:</p>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Syntax</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Note</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="gh"># Heading level 1</span>
+<span class="gu">## Heading level 2</span>
+<span class="gu">### Heading level 3</span>
+<span class="gu">#### Heading level 4</span>
+<span class="gu">##### Heading level 5</span>
+<span class="gu">###### Heading level 6</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="gh"># Did dinosaurs have feathers?</span>
+</pre></div>
+</div>
+</td>
+<td><p>Level 1-6 headings, denoted by number of <code class="docutils literal notranslate"><span class="pre">#</span></code>. Each chapter can only have one top level header. Avoid skipping levels (e.g. heading level 5 directly under a level 1 heading)</p></td>
+</tr>
+</tbody>
+</table>
+<p>Add some additional headings to your introduction (<code class="docutils literal notranslate"><span class="pre">intro.md</span></code>):</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>&lt;!-- intro.md --&gt;
+<span class="gh"># Introduction</span>
+
+Achillesaurus Diceratops Malarguesaurus Sellacoxa Zhejiangosaurus...
+
+<span class="gu">## Fossil record supporing the existance of feathers</span>
+There is evidence of feathers in the fossil record...
+
+<span class="gu">### China</span>
+These locations in China have fossils that show feathers...
+
+<span class="gu">### Australia</span>
+These locations in Australia have fossils that show feathers...
+</pre></div>
+</div>
+</div>
+<div class="section" id="regular-text">
+<span id="id1"></span><h2>Regular text<a class="headerlink" href="#regular-text" title="Permalink to this headline">¶</a></h2>
+<p>Regular (body) text is simply typed into your content file without any special syntax. Add a new section with some body text at the bottom of your introduction.</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>&lt;!-- intro.md --&gt;
+<span class="gu">## Other supporting evidence for feathered dinosaurs</span>
+This is body text.
+
+A carriage return is required to make a line break. 
+These two lines will be part of the same paragraph.
+
+This line will be part of the next paragraph.
+</pre></div>
+</div>
+</div>
+<div class="section" id="numbered-and-bulleted-lists">
+<span id="num-bullet-lists"></span><h2>Numbered and bulleted lists<a class="headerlink" href="#numbered-and-bulleted-lists" title="Permalink to this headline">¶</a></h2>
+<p>Lists are often a way to summarize key points that you hope a reader skimming your book will pay attention to, or provide step by step instructions.</p>
+<div class="section" id="ordered-lists">
+<h3>Ordered lists<a class="headerlink" href="#ordered-lists" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Syntax</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Note</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="k">1.</span> First item
+<span class="k">1.</span> Second item
+    <span class="k">1.</span> First sub-item
+</pre></div>
+</div>
+</td>
+<td><ol class="simple">
+<li><p>First item</p></li>
+<li><p>Second item</p>
+<ol class="simple">
+<li><p>First sub-item</p></li>
+</ol>
+</li>
+</ol>
+</td>
+<td><p>Assign every item in the list a ‘1.’ and let the compiler properly number the list. This is crucial if you later have to add an item in the middle of the list and don’t want to manually renumber.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="unordered-list">
+<h3>Unordered list<a class="headerlink" href="#unordered-list" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Example</p></th>
+<th class="head"><p>Result</p></th>
+<th class="head"><p>Note</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="k">*</span> First item
+<span class="k">*</span> Second item
+  <span class="k">*</span> First subitem
+</pre></div>
+</div>
+</td>
+<td><ul class="simple">
+<li><p>First item</p></li>
+<li><p>Second item</p>
+<ul>
+<li><p>First subitem</p></li>
+</ul>
+</li>
+</ul>
+</td>
+<td><p>An asterisk (*) or dash (-) can be used to denote an unordered list.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Add a list of locations where dinosaurs are found to the introduction:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>&lt;!-- intro.md --&gt;
+<span class="gu">## Fossil record supporting the existence of feathers</span>
+There is evidence of feathers in the fossil record...
+
+Dinosaurs with feathers have been found in:
+
+<span class="k">-</span> Asia
+<span class="k">-</span> Australia
+<span class="k">-</span> North America
+<span class="k">-</span> The Atlantic ocean 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="cross-references">
+<h2>Cross references<a class="headerlink" href="#cross-references" title="Permalink to this headline">¶</a></h2>
+<p>Cross references are essential in a technical document to help you refer to past chapters and otherwise direct the readers attention to other parts of your book. There are two ways accomplish a cross reference in jupyter-book depending on what you are referencing.</p>
 <ul class="simple">
-<li><p>numbered references</p></li>
-<li><p>link references</p></li>
+<li><p>Numbered references point to numbered quantities (figures, equations, tables)</p></li>
+<li><p>Link references internally point to headings, or can point to an external website or document</p></li>
 </ul>
 </div>
 <div class="section" id="markdown-vs-myst">
@@ -399,11 +618,11 @@ _config.yml: This file controls the configuration that determines the look and f
 </div>
 <div class="section" id="add-content">
 <h2>Add content<a class="headerlink" href="#add-content" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="headings">
-<h3>Headings<a class="headerlink" href="#headings" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>Headings<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 </div>
-<div class="section" id="regular-text">
-<h3>Regular text<a class="headerlink" href="#regular-text" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>Regular text<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="glue-results-from-your-notebooks">
