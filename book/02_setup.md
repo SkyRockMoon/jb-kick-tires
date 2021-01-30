@@ -194,7 +194,7 @@ All of the source code is located in the book directory, but before we build the
 ### Build the mini-book
 
 1. Create a virtual environment with `python3.8 -m venv kick-tires` 
-1. Activate the virtual environment `. kick-tires/bin/activate`
+1. Activate the virtual environment `source kick-tires/bin/activate`
     ```{note} 
     At this point your command prompt should change to indicate that you are inside the virtual environment. The command prompt should change from:
         $ jb_kick_tires
@@ -211,7 +211,7 @@ All of the source code is located in the book directory, but before we build the
 1. Check the jupyter-book version `jupyter-book --version`. When this was written, jupyter-book was at 0.9.1.
 
     ```{tip}
-    When you want to leave the kick-tires virtual environment issue the comman `deactivate` and you will be returned to your regular command prompt. Jupyter-book is installed *inside* the virtual environment, so if you leave the virtual environment `jupyter-book --version` will throw a 'command not found' error. A `. kick-tires/bin/activate` will reactivate your virtual environment.
+    When you want to leave the kick-tires virtual environment issue the command `deactivate` and you will be returned to your regular command prompt. Jupyter-book is installed *inside* the virtual environment, so if you leave the virtual environment `jupyter-book --version` will throw a 'command not found' error. A `source kick-tires/bin/activate` will reactivate your virtual environment.
     ```
 
 1. Build the book with `jupyter-book build book`. Wait for the console to show you the status of the build. You should expect to see something like this:
