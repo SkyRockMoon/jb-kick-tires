@@ -762,6 +762,7 @@ To reference a table by number use `` {numref}`my-table-label` ``.
   - Equation {eq}`numbered-equation` shows the result
   - A [numbered equation](math-formula) is needed to use this method
 `````````
+
 (citations)=
 ## Citations
 
