@@ -422,23 +422,23 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>In an effort to make leanring syntax more exciting this section will take you through a narrative of adding content to the <a class="reference internal" href="02_setup.html#clone"><span class="std std-ref">book you cloned</span></a> while installing jupyter-book. After getting a feel for how everything works in this section you will probably graduate to just using the <a class="reference external" href="https://jupyterbook.org/reference/cheatsheet.html">jupyter-book cheat sheet</a> to rapidly find the syntax details you need.</p>
 <p>Your mission, if you choose to accept it, is to write a (very brief and totally fictitious) book about dinosaurs using the sample book you cloned earlier as a template. Don’t worry if your paleontology skills are rusty, the focus of this activity is on writing the described syntax. You can expect to accomplish the following tasks while reading this chapter.</p>
 <ol class="simple">
-<li><p><a class="reference internal" href="#new-chapter"><span class="std std-ref">Create a new chapter about dinosaurs</span></a></p></li>
+<li><p><a class="reference internal" href="04_content_v2.html#new-chapter"><span class="std std-ref">Create a new chapter about dinosaurs</span></a></p></li>
 <li><p><a class="reference internal" href="#mark-vs-myst"><span class="std std-ref">Write some basic content using Markdown and MyST</span></a></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#headings"><span class="std std-ref">Headings</span></a></p></li>
-<li><p><a class="reference internal" href="#regular-text"><span class="std std-ref">Regular text</span></a></p></li>
-<li><p><a class="reference internal" href="#num-bullet-lists"><span class="std std-ref">Lists</span></a></p></li>
-<li><p><a class="reference internal" href="#code-blocks"><span class="std std-ref">Code blocks</span></a></p></li>
-<li><p><a class="reference internal" href="#doc-notes"><span class="std std-ref">Notes</span></a></p>
+<li><p><a class="reference internal" href="04_content_v2.html#regular-text"><span class="std std-ref">Regular text</span></a></p></li>
+<li><p><a class="reference internal" href="04_content_v2.html#num-bullet-lists"><span class="std std-ref">Lists</span></a></p></li>
+<li><p><a class="reference internal" href="04_content_v2.html#code-blocks"><span class="std std-ref">Code blocks</span></a></p></li>
+<li><p><a class="reference internal" href="04_content_v2.html#doc-notes"><span class="std std-ref">Notes</span></a></p>
 <ul>
-<li><p><a class="reference internal" href="#footnotes"><span class="std std-ref">Footnotes</span></a></p></li>
-<li><p><a class="reference internal" href="#margin-notes"><span class="std std-ref">Margin notes</span></a></p></li>
+<li><p><a class="reference internal" href="04_content_v2.html#footnotes"><span class="std std-ref">Footnotes</span></a></p></li>
+<li><p><a class="reference internal" href="04_content_v2.html#margin-notes"><span class="std std-ref">Margin notes</span></a></p></li>
 </ul>
 </li>
 <li><p><a class="reference internal" href="#ref"><span class="std std-ref">Links and section references</span></a></p></li>
-<li><p><a class="reference internal" href="#admonition"><span class="std std-ref">Admonitions</span></a></p></li>
-<li><p><a class="reference internal" href="#math-formula"><span class="std std-ref">Equations</span></a></p></li>
-<li><p><a class="reference internal" href="#tables"><span class="std std-ref">Tables</span></a></p></li>
+<li><p><a class="reference internal" href="04_content_v2.html#admonition"><span class="std std-ref">Admonitions</span></a></p></li>
+<li><p><a class="reference internal" href="04_content_v2.html#math-formula"><span class="std std-ref">Equations</span></a></p></li>
+<li><p><a class="reference internal" href="04_content_v2.html#tables"><span class="std std-ref">Tables</span></a></p></li>
 </ul>
 </li>
 <li><p><a class="reference internal" href="#glue-results"><span class="std std-ref">Embed (glue) results from your analysis in a jupyter notebook into your text content</span></a></p>
@@ -447,7 +447,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p><a class="reference internal" href="#glue-figure"><span class="std std-ref">Glue figures</span></a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#numbered-ref"><span class="std std-ref">Reference numbered content</span></a>: <a class="reference internal" href="#numbered-figure"><span class="std std-ref">figures</span></a>, <a class="reference internal" href="#numbered-table"><span class="std std-ref">tables</span></a>, <a class="reference internal" href="#numbered-eq"><span class="std std-ref">equations</span></a>,</p></li>
+<li><p><a class="reference internal" href="04_content_v2.html#numbered-ref"><span class="std std-ref">Reference numbered content</span></a>: <a class="reference internal" href="04_content_v2.html#numbered-figure"><span class="std std-ref">figures</span></a>, <a class="reference internal" href="04_content_v2.html#numbered-table"><span class="std std-ref">tables</span></a>, <a class="reference internal" href="04_content_v2.html#numbered-eq"><span class="std std-ref">equations</span></a>,</p></li>
 <li><p><a class="reference internal" href="#citations"><span class="std std-ref">Create Citations/Bibliography</span></a></p></li>
 <li><p><a class="reference internal" href="#annotations"><span class="std std-ref">Enable Annotations</span></a></p></li>
 <li><p><a class="reference internal" href="#comments"><span class="std std-ref">Enable Reader comments</span></a></p></li>
@@ -838,7 +838,7 @@ Margin note text goes here
 </div>
 <div class="section" id="links-references">
 <span id="ref"></span><h2>Links/References<a class="headerlink" href="#links-references" title="Permalink to this headline">¶</a></h2>
-<p>There are many ways to generate a link/reference in jupyter-book. Here are the two simplest methods. See <a class="reference internal" href="#numbered-ref"><span class="std std-ref">numbered references</span></a> for more advanced use cases.</p>
+<p>There are many ways to generate a link/reference in jupyter-book. Here are the two simplest methods. See <a class="reference internal" href="04_content_v2.html#numbered-ref"><span class="std std-ref">numbered references</span></a> for more advanced use cases.</p>
 <div class="section" id="markdown-links">
 <h3>Markdown links<a class="headerlink" href="#markdown-links" title="Permalink to this headline">¶</a></h3>
 <p>To link to a target header that you created with the <code class="docutils literal notranslate"><span class="pre">(target-header)=</span></code> syntax simply</p>
@@ -890,7 +890,7 @@ Margin note text goes here
 </tr>
 </tbody>
 </table>
-<p>Add some <a class="reference internal" href="#doc-notes"><span class="std std-ref">notes</span></a> <a class="reference internal" href="#ref"><span class="std std-ref">references</span></a>, and <a class="reference internal" href="#doc-links"><span class="std std-ref">links</span></a> to <code class="docutils literal notranslate"><span class="pre">05_dino.md</span></code> to help backup your assertions about feathers.</p>
+<p>Add some <a class="reference internal" href="04_content_v2.html#doc-notes"><span class="std std-ref">notes</span></a> <a class="reference internal" href="#ref"><span class="std std-ref">references</span></a>, and <a class="reference internal" href="#doc-links"><span class="std std-ref">links</span></a> to <code class="docutils literal notranslate"><span class="pre">05_dino.md</span></code> to help backup your assertions about feathers.</p>
 <p><em>05_dino.md</em></p>
 <div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{margin}
 The filler text is generated from actual dinosaur names. Placing the margin note above the paragraph it is associated with usually results in proper placement of the note.
@@ -965,7 +965,7 @@ Feathers are very difficult to identify in a fossil. Extreme care should be take
 </div>
 <div class="section" id="tables">
 <span id="id8"></span><h2>Tables<a class="headerlink" href="#tables" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">{list-tables}</span></code> directive is provided for creating numbered tables. For example this markup produces the result seen in <a class="reference internal" href="#my-table-label"><span class="std std-numref">Table 1</span></a>. To reference this table by number use <code class="docutils literal notranslate"><span class="pre">{numref}`my-table-label`</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">{list-tables}</span></code> directive is provided for creating numbered tables. For example this markup produces the result seen in <a class="reference internal" href="04_content_v2.html#my-table-label"><span class="std std-numref">Table 3</span></a>. To reference this table by number use <code class="docutils literal notranslate"><span class="pre">{numref}`my-table-label`</span></code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>There is a table available in markdown as well, but I would suggest that you use the <code class="docutils literal notranslate"><span class="pre">list-table</span></code> directive because it is easier to write and includes a caption.</p>
@@ -1016,7 +1016,7 @@ Feathers are very difficult to identify in a fossil. Extreme care should be take
 </tr>
 </tbody>
 </table>
-<p>Tables with more than two columns require you to describe how to spread out the columns with a <code class="docutils literal notranslate"><span class="pre">:widths:</span> <span class="pre">auto</span></code> argument. <a class="reference internal" href="#three-column-table"><span class="std std-numref">Table 2</span></a> shows an example of a three column table. Also, note the use of column headers.</p>
+<p>Tables with more than two columns require you to describe how to spread out the columns with a <code class="docutils literal notranslate"><span class="pre">:widths:</span> <span class="pre">auto</span></code> argument. <a class="reference internal" href="04_content_v2.html#three-column-table"><span class="std std-numref">Table 4</span></a> shows an example of a three column table. Also, note the use of column headers.</p>
 <div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{list-table} Three column table
 :header-rows: 1
 :widths: auto
@@ -1112,7 +1112,7 @@ $$ (myLabel)
     z=\sqrt{x^2+y^2}
     \]</div>
 </td>
-<td><p>See <a class="reference internal" href="#numbered-eq"><span class="std std-ref">numbered references</span></a> to refer to this equation by its number</p></td>
+<td><p>See <a class="reference internal" href="04_content_v2.html#numbered-eq"><span class="std std-ref">numbered references</span></a> to refer to this equation by its number</p></td>
 </tr>
 </tbody>
 </table>
@@ -1267,7 +1267,7 @@ Figure caption written in markdown
 <p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Feather length vs bone diameter</span><a class="headerlink" href="#fig-random" title="Permalink to this image">¶</a></p>
 </div>
 </td>
-<td><p>See <a class="reference internal" href="#numbered-ref"><span class="std std-ref">numbered refrences</span></a> to refer to this figure by its figure number.</p></td>
+<td><p>See <a class="reference internal" href="04_content_v2.html#numbered-ref"><span class="std std-ref">numbered refrences</span></a> to refer to this figure by its figure number.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1330,7 +1330,7 @@ Figure caption written in markdown
 </pre></div>
 </div>
 </td>
-<td><p>See <a class="reference internal" href="#my-table-label"><span class="std std-numref">Table 1</span></a> for a summary of results</p></td>
+<td><p>See <a class="reference internal" href="04_content_v2.html#my-table-label"><span class="std std-numref">Table 3</span></a> for a summary of results</p></td>
 <td><p>See the <a class="reference external" href="https://jupyterbook.org/reference/cheatsheet.html#referencing-tables">official docs</a> for many more options</p></td>
 </tr>
 </tbody>
@@ -1355,8 +1355,8 @@ Figure caption written in markdown
 </pre></div>
 </div>
 </td>
-<td><p>Equation <a class="reference internal" href="#equation-numbered-equation">(1)</a> shows the result</p></td>
-<td><p>A <a class="reference internal" href="#math-formula"><span class="std std-ref">numbered equation</span></a> is needed to use this method</p></td>
+<td><p>Equation <a class="reference internal" href="04_content_v2.html#equation-numbered-equation">(2)</a> shows the result</p></td>
+<td><p>A <a class="reference internal" href="04_content_v2.html#math-formula"><span class="std std-ref">numbered equation</span></a> is needed to use this method</p></td>
 </tr>
 </tbody>
 </table>
