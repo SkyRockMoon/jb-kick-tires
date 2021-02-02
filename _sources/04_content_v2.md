@@ -24,10 +24,13 @@ Your mission, if you choose to accept it, is to write a (very brief and totally 
     - [Equations](math-formula)
     - [Tables](tables)
     - [Figures](figures)
-1. [Reference numbered content](numbered-ref): [figures](numbered-figure), [tables](numbered-table), [equations](numbered-eq) 
-
-    - [Links and section references](ref)
-    
+1. [Cross References](cross-ref)
+    - [Sections](target-headers)
+    - [External links](external-links)
+    - [Reference numbered content(numbered-references) 
+        - [figures](numbered-figure), 
+        - [tables](numbered-table) 
+        - [equations](numbered-eq) 
 1. [Embed (glue) results from your analysis in a jupyter notebook into your text content](glue-results)
     - [Glue numbers](glue-number)
     - [Glue figures](glue-figure)
@@ -664,19 +667,17 @@ Artistic rendering of Psittacosaurus Mongoliensis [(CC BY-SA)](https://commons.w
 ```
 ``````
 
-(numbered-ref)=
+(cross-ref)=
 ## Cross References
 
 Cross references are a way to refer to other sections of your document, other documents, or other resources. This includes referencing numbered equations, tables, and figures. There are multiple styles of references, and only a few are shown here. See the [official docs](https://jupyterbook.org/reference/cheatsheet.html) for a full description of references. The most common types of references include:
 
-TODO: complete this TOC
-
 - [Sections (target headers)](target-headers)
-- External links
-- Numbered references
-    - Figures
-    - Tables
-    - Equations
+- [External links](external-links)
+- [Numbered references](numbered-references)
+    - [Figures](numbered-figure)
+    - [Tables](numbered-table)
+    - [Equations](numbered-eq)
 
 (target-headers)=
 ### Sections (target headers)
@@ -707,26 +708,52 @@ Add a target header to your introduction:
 (fossil-record)=
 ## Fossil record supporting the existence of feathers
 ```
+
 Then add a reference to that section in the first paragraph of your methods chapter.
+
 ```md
 <!-- methods.md -->
 
 ...Borogovia Chaoyangosaurus Protohadros. See [support from the fossil record](fossil-record) for more details.
 ```
 
+(external-links)=
 ### External links
-### Numbered refrences
 
+External links allow you to link to external websites. The syntax is the same as [target headers](target-headers), but you supply a URL instead of a label.
 
+`````````{list-table}
+:header-rows: 1
+:widths: 20 15 15
 
+* - Syntax
+  - Example
+  - Note
+* - ``````md
+    [link text](https://example.com)
+    ``````
+  - See the [example website](https://example.com) for more details
+  - 
+`````````
 
+Add an external link to your methods page. You could for example link to the repository of the fictional feather identification toolbox:
+
+```md
+<!-- methods.md -->
+
+You can install the [feather identification toolbox](https://example.com) via `pip`:
+```
+
+(numbered-references)=
+### Numbered references
+
+Numbered references point to numbered [equations](math-formula), [tables](tables), and [figures](figures).
 
 ```{tip}
 Equations are the odd ball in this group. Figures and tables use the `{numref}` directive, while equations have their own `{eq}` directive. If you reference a figure or table the reference will be inserted as `Figure X` or `Table Y`. If you reference an equation it will be inserted as `(1)`.
 ```
-
-(numbered-figure)=
-### Figures
+(numbered-eq)=
+#### Equations
 
 `````````{list-table}
 :header-rows: 1
@@ -736,31 +763,155 @@ Equations are the odd ball in this group. Figures and tables use the `{numref}` 
   - Example
   - Note
 * - ``````md
-    {numref}`<numbered-label>`
+    {eq}`<label>`   
     ``````
-  - See {numref}`fig:random` for the relationship between...
-  - See the [official docs](https://jupyterbook.org/reference/cheatsheet.html#referencing-figures) for many more options
+  - Equation {eq}`numbered-equation` shows the result
+  - A [numbered equation](math-formula) is needed to use this directive
 `````````
+
+Add a reference to the numbered equation you previously added to your methods chapter:
+
+```md
+<!-- methods.md -->
+
+To calculate the hypotenuse, $z$, of a right triangle with sides of length $x$ and $y$ use the pythagorean theorem shown in equation {eq}`pythagorean`:
+
+$$
+z=\sqrt{x^2+y^2}
+$$ (pythagorean)
+
+```
+
 (numbered-table)=
-### Tables
+#### Tables
 To reference a table by number use `` {numref}`my-table-label` ``.
 
 `````````{list-table}
 :header-rows: 1
-:widths: 20 15 15
+:widths: auto
 
 * - Syntax
   - Example
   - Note
 * - ``````md
-    {numref}`<label>`
+    {numref}`<label>`   
     ``````
   - See {numref}`my-table-label` for a summary of results
-  - See the [official docs](https://jupyterbook.org/reference/cheatsheet.html#referencing-tables) for many more options
+  - See the [official docs](https://jupyterbook.org/reference/cheatsheet.html#referencing-tables) for many more options. You need a [numbered table](tables) to use this directive.
 `````````
 
-(numbered-eq)=
-### Equations
+Add a reference to the [numbered table](tables) that you previously added to the introduction chapter:
+
+```md
+<!-- intro.md -->
+
+## Summary of evidence
+
+{numref}`summary-table` summarizes the finding from 30 years of research into feathered dinosaurs.
+```
+
+(numbered-figure)=
+#### Figures
+
+`````````{list-table}
+:header-rows: 1
+:widths: auto
+
+* - Syntax
+  - Example
+  - Note
+* - ``````md
+    {numref}`<numbered-label>`   
+    ``````
+  - See {numref}`fig:random` for the relationship between...
+  - See the [official docs](https://jupyterbook.org/reference/cheatsheet.html#referencing-figures) for many more options. You need a [numbered figure](figures) to use this directive.
+`````````
+
+Add a reference to the [numbered figure](figures) that you previously added to the introduction chapter.
+
+```md
+<!-- intro.md -->
+
+...Turanoceratops Magyarosaurus Tatankacephalus Nambalia. See {numref}`figure-example` for an artistic rendering of a potentially feathered dinosaur.
+```
+
+(glue-results)=
+## Glue results from your notebooks
+This next section covers a key element of jupyter-book, the ability to embed results from a jupyter notebook into your content. This enables the development of [executable books](exec-book). Adding this capability will slow your writing process down considerably, but over the course of multiple revisions it may just save your sanity. This is a key [tradeoff](word-vs-jupyter-book) to understand when you are kicking the tires of jupyter-book.
+
+``````{warning}
+This section uses a previously created notebook to allow us to focus on authoring content with jupyter-book. If you are new to jupyter notebooks this section wont make much sense and you will probably fail to grasp how ~~wildly awesome~~ important this capability is. 
+
+You can read more about [notebooks](notebooks) to get a feel for their true power. Notebooks are the reason jupyter-book exists, not the other way around, so make sure you have a least a superficial understanding of what they do and why you would want to use one.
+
+Jupyter notebook installs with jupyter-book, so you can open jupyter notebook from the command line with `jupyter notebook --no-browser`. Follow the link provided in the console to open the GUI. Then, dive into one of the many [jupyter notebook tutorials](https://realpython.com/jupyter-notebook-introduction/#creating-a-notebook).
+
+``````
+
+In reality your writing process likely starts with a notebook. After days (or weeks, or months...) of meticulous data collection and analysis you finally arrive at a result that you believe is publishable. At that point you would fire up jupyter-book and start describing your results. There are two major use cases for embedding notebook results to consider:
+
+- [Numerical content](glue-number)
+- [Figures](glue-figure)
+
+In all cases you make a variable or figure available in your notebook with the `` glue('<label>',<variable>) `` *function*. The `variable` is the object that you created in your notebook. You can give it an easy to remember name with the `label`. You reference the `label` in your writing when you use the `glue` directive. See below for the specific use cases of the `glue` directive to embed content. 
+
+```{important}
+The critical benefit of *gluing* notebook outputs into your document is when you update the variable in your notebook, the changes automatically propagate into your document the next time you rebuild your book. Just make sure your notebook is inside your book directory and jupyter-book takes care of the rest.
+```
+
+(glue-number)=
+### Numerical content
+
+Numerical content is just numbers. 
+
+`````````{list-table}
+:header-rows: 1
+:widths: 20 15 15
+
+* - Syntax
+  - Example
+  - Note
+* - ```md
+    The answer to the 
+    “Great Question” of “Life, 
+    the Universe and Everything”
+     is {glue:}`myLabel`.
+    ```
+  - The answer to the “Great Question” of “Life, the Universe and Everything” is {glue:}`myLabel`
+  - 
+`````````
+
+In practice you may need to round your results to a few significant digits. All of the [python format strings](https://mkaz.blog/code/python-string-format-cookbook/#f-strings) can be used with the `{glue:text}` directive.
+
+`````````{list-table}
+:header-rows: 1
+:widths: 20 15 15
+
+* - Syntax
+  - Example
+  - Note
+* - ```md
+    The result was {glue:text}`avg` 
+    (95% CI {glue:text}`lower`/
+    {glue:text}`upper`).
+    ```
+  - The result was {glue:text}`avg` (95% CI {glue:text}`lower`/{glue:text}`upper`).
+  - Unformatted text
+* - ```md
+    The result was 
+    {glue:text}`avg:2.2f` 
+    (95% CI {glue:text}`lower:2.2f`/
+    {glue:text}`upper:2.2f`).
+    ```
+  - The result was {glue:text}`avg:2.2f` (95% CI {glue:text}`lower:2.2f`/{glue:text}`upper:2.2f`).
+  - Formatted as a two digit floating point number. See the [string formatting cookbook](https://mkaz.blog/code/python-string-format-cookbook/#f-strings) for help formatting outputs.
+`````````
+TODO: add example for sample-book
+
+(glue-figure)=
+### Figures
+
+Figures typically help to visualize the results of an analysis. A figure can be added to a document with a just a `` {glue:}`<figure-label>` ``, but it is usually more helpful in a technical document to add a [numbered figure](numbered-figure) with a caption.
 
 `````````{list-table}
 :header-rows: 1
@@ -770,39 +921,28 @@ To reference a table by number use `` {numref}`my-table-label` ``.
   - Example
   - Note
 * - ``````md
-    {eq}`<label>`
+    ```{glue:figure} <figure-label>
+    ---
+    figwidth: 150px
+    name: "<figure-reference-name>"
+    ---
+
+    Figure caption written in markdown
+    ```
     ``````
-  - Equation {eq}`numbered-equation` shows the result
-  - A [numbered equation](math-formula) is needed to use this method
+  - ```{glue:figure} random-fig
+    ---
+    figwidth: 200px
+    name: "fig:random"
+    ---
+
+    Feather length vs bone diameter
+    ```
+  - See [numbered figures](numbered-figure) to refer to this figure by its figure number.
 `````````
 
+TODO: add example for sample-book
 
-
-
-
-
-
-
-
-
-
-
-## Cross references
-
-Cross references are essential in a technical document to help you refer to past chapters and otherwise direct the readers attention to other parts of your book. There are two ways accomplish a cross reference in jupyter-book depending on what you are referencing.
-
-- Numbered references point to numbered quantities (figures, equations, tables)
-- Link references internally point to headings, or can point to an external website or document
-
-## Markdown vs MyST
-
-## Add content
-
-### Headings
-
-### Regular text
-
-## Glue results from your notebooks
 
 ## Reader/reviewer feedback
 
