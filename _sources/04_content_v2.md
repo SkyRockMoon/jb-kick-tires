@@ -34,7 +34,6 @@ Your mission, if you choose to accept it, is to write a (very brief and totally 
 1. [Embed (glue) results from your analysis in a jupyter notebook into your text content](glue-results)
     - [Glue numbers](glue-number)
     - [Glue figures](glue-figure)
-
 1. [Create Citations/Bibliography](citations)
 1. [Enable Annotations](annotations)
 1. [Enable Reader comments](comments)
@@ -840,20 +839,20 @@ Add a reference to the [numbered figure](figures) that you previously added to t
 This next section covers a key element of jupyter-book, the ability to embed results from a jupyter notebook into your content. This enables the development of [executable books](exec-book). Adding this capability will slow your writing process down considerably, but over the course of multiple revisions it may just save your sanity. This is a key [tradeoff](word-vs-jupyter-book) to understand when you are kicking the tires of jupyter-book.
 
 ``````{warning}
-This section uses a previously created notebook to allow us to focus on authoring content with jupyter-book. If you are new to jupyter notebooks this section wont make much sense and you will probably fail to grasp how ~~wildly awesome~~ important this capability is. 
+This section uses a previously created notebook to allow us to focus on authoring content with jupyter-book. If you are new to jupyter notebooks this section wont make much sense and you will probably fail to grasp how wildly awesome this capability is. 
 
-You can read more about [notebooks](notebooks) to get a feel for their true power. Notebooks are the reason jupyter-book exists, not the other way around, so make sure you have a least a superficial understanding of what they do and why you would want to use one.
+Using jupyter notebook as well as gluing content is completely optional, but you can read more about [notebooks](notebooks) to get a feel for their true power. Notebooks are the reason jupyter-book exists, not the other way around, so having a least a superficial understanding of what they do and why you would want to use one will help you understand if jupyter-book is a good fit for your use case.
 
 Jupyter notebook installs with jupyter-book, so you can open jupyter notebook from the command line with `jupyter notebook --no-browser`. Follow the link provided in the console to open the GUI. Then, dive into one of the many [jupyter notebook tutorials](https://realpython.com/jupyter-notebook-introduction/#creating-a-notebook).
 
 ``````
 
-In reality your writing process likely starts with a notebook. After days (or weeks, or months...) of meticulous data collection and analysis you finally arrive at a result that you believe is publishable. At that point you would fire up jupyter-book and start describing your results. There are two major use cases for embedding notebook results to consider:
+Your writing process likely starts with an analysis of some kind. After days (or weeks, or months...) of meticulous data collection and analysis you finally arrive at a result that you believe is publishable. At that point you would fire up jupyter-book and start describing your results. If your analysis occurred in a jupyter notebook there are two major use cases for embedding notebook results to consider:
 
 - [Numerical content](glue-number)
 - [Figures](glue-figure)
 
-In all cases you make a variable or figure available in your notebook with the `` glue('<label>',<variable>) `` *function*. The `variable` is the object that you created in your notebook. You can give it an easy to remember name with the `label`. You reference the `label` in your writing when you use the `glue` directive. See below for the specific use cases of the `glue` directive to embed content. 
+In all cases you make a variable or figure available in your notebook with the `` glue('<label>',<variable>) `` *function*. The `variable` is the object that you created in your notebook. You can give it an easy to remember name with the `label`. You reference the `label` in your writing when you use the `glue` *directive*. See below for the specific use cases of the `glue` directive to embed content. 
 
 ```{important}
 The critical benefit of *gluing* notebook outputs into your document is when you update the variable in your notebook, the changes automatically propagate into your document the next time you rebuild your book. Just make sure your notebook is inside your book directory and jupyter-book takes care of the rest.
@@ -906,7 +905,15 @@ In practice you may need to round your results to a few significant digits. All 
   - The result was {glue:text}`avg:2.2f` (95% CI {glue:text}`lower:2.2f`/{glue:text}`upper:2.2f`).
   - Formatted as a two digit floating point number. See the [string formatting cookbook](https://mkaz.blog/code/python-string-format-cookbook/#f-strings) for help formatting outputs.
 `````````
-TODO: add example for sample-book
+
+Glue an output from the sample notebook into the end of your methods chapter.
+
+```md
+<!-- methods.md -->
+
+## Average feather length
+From a sample of 100 dinosaurs, the observed feather length was {glue:text}`avg:2.2f` (95% CI {glue:text}`lower:2.2f` / {glue:text}`upper:2.2f`).
+```
 
 (glue-figure)=
 ### Figures
@@ -941,11 +948,120 @@ Figures typically help to visualize the results of an analysis. A figure can be 
   - See [numbered figures](numbered-figure) to refer to this figure by its figure number.
 `````````
 
-TODO: add example for sample-book
+Modify your methods chapter again to glue a figure into the chapter.
 
+``````md
+<!-- methods.md -->
 
-## Reader/reviewer feedback
+## Average feather length
+From a sample of 100 dinosaurs, the observed feather length was {glue:text}`avg:2.2f` (95% CI {glue:text}`lower:2.2f` / {glue:text}`upper:2.2f`). See {numref}`fig:random` for a correlation of feather length to bone diameter.
 
-### Annotations
+```{glue:figure} random-fig
+---
+name: "fig:random"
+---
 
-### Comments
+Feather length vs bone diameter (completely fictional data) for fossils analyzed with the feather identification toolbox (also fictional).
+```
+``````
+
+(citations)=
+## Citations
+
+Citations require couple steps. 
+
+- Generate a refrences.bib file and place it in your `book` directory. This should be a standard option in any reference manager (e.g. [Zotero](https://www.zotero.org/)). See {doc}`references` if you need a sample `.bib` file for testing.
+- Cite using the directive`` {cite}`citation-label` ``
+- Include a list of citations at the end of the document
+
+`````````{list-table}
+:header-rows: 1
+:widths: auto
+
+* - Syntax
+  - Example
+  - Note
+* - ```md
+    {cite}`citation-label`   
+    ```
+  - As described in {cite}`stone_bayes_2015`
+  - The citation will not display properly until the bibliography is linked as shown below
+`````````
+
+Then include the bibliography with:
+
+``````md
+```{bibliography} references.bib
+:filter: docname in docnames
+```
+``````
+
+Your bibliography will be automatically generated like this, and can be formatted to meet any style guide.
+
+```{bibliography} references.bib
+:filter: docname in docnames
+```
+
+Create a references.bib file in your book directory with the following citations:
+
+```
+@book{stone_2015,
+	address = {Sheffield, England},
+	edition = {First},
+	title = {On the prospect of dinosaurs with feathers and other unusual phenomena},
+	isbn = {123-4-56789-1-2},
+	shorttitle = {Dinosaurs with feathers},
+	language = {en},
+	publisher = {Nobody Press},
+	author = {Stone, James K.},
+	year = {2015},
+	note = {OCLC: ocn970361039},
+}
+
+@book{lambert_2018,
+	address = {Los Angeles},
+	title = {A long walk in a swamp looking for dinosaur feathers},
+	isbn = {123-4-56789-1-2},
+	shorttitle = {Looking for dinosaur feathers},
+	language = {en},
+	publisher = {SAGE},
+	author = {Lambert, Benjamin},
+	year = {2018},
+}
+```
+
+The edit your literature review chapter to contain some citations.
+
+```md
+<!-- lit-review.md -->
+...Saltopus Pegomastax. Previous work on dinosaur feathers includes {cite}`stone_2015` and {cite}`lambert_2018`.
+```
+
+Then link your bibliography:
+
+``````md
+<!-- lit-review.md -->
+```{bibliography} references.bib
+:filter: docname in docnames
+```
+``````
+
+(annotations)=
+## Annotations
+A very cool integration that jupyter-book makes available is annotations. An annotation is a way for readers to make notes on your document. Seeing is believing, so view the [demo](https://jupyterbook.org/interactive/comments/hypothesis.html) on the jupyter-book website to see it in action and learn how to adjust the `_config.yml` file to enable annotations.
+
+(comments)=
+## Reader Comments
+Jupyter-book makes integrating a section for reader comments a very easy process (assuming you have a github account). Add the following to your `_config.yml` file to enable comments:
+
+```md
+html:
+  comments:
+    utterances:
+      repo: "github-org/github-repo"
+```
+Where `github-org` is your user name or organization, and `github-repo` is the repository where you are hosting your project. So in the case of this book - which is hosted at https://github.com/SkyRockMoon/jb-kick-tires - the org is `SkyRockMoon` and the repo is `jb-kick-tires`. See below, this site has comments enabled.
+
+```{note}
+The comments integration is not visible when viewing your book *locally*. You must [publish to GitHub](build-pub) to see the integration.
+```

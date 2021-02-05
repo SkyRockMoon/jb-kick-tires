@@ -391,21 +391,19 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reader-reviewer-feedback">
-   Reader/reviewer feedback
+  <a class="reference internal nav-link" href="#citations">
+   Citations
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#annotations">
-     Annotations
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#comments">
-     Comments
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#annotations">
+   Annotations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reader-comments">
+   Reader Comments
+  </a>
  </li>
 </ul>
 
@@ -466,9 +464,9 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p><a class="reference internal" href="#glue-figure"><span class="std std-ref">Glue figures</span></a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="04_content.html#citations"><span class="std std-ref">Create Citations/Bibliography</span></a></p></li>
-<li><p><a class="reference internal" href="04_content.html#annotations"><span class="std std-ref">Enable Annotations</span></a></p></li>
-<li><p><a class="reference internal" href="04_content.html#comments"><span class="std std-ref">Enable Reader comments</span></a></p></li>
+<li><p><a class="reference internal" href="#citations"><span class="std std-ref">Create Citations/Bibliography</span></a></p></li>
+<li><p><a class="reference internal" href="#annotations"><span class="std std-ref">Enable Annotations</span></a></p></li>
+<li><p><a class="reference internal" href="#comments"><span class="std std-ref">Enable Reader comments</span></a></p></li>
 </ol>
 <div class="section" id="file-structure">
 <h2>File structure<a class="headerlink" href="#file-structure" title="Permalink to this headline">¶</a></h2>
@@ -1397,16 +1395,16 @@ $$ (pythagorean)
 <p>This next section covers a key element of jupyter-book, the ability to embed results from a jupyter notebook into your content. This enables the development of <a class="reference internal" href="01_intro.html#exec-book"><span class="std std-ref">executable books</span></a>. Adding this capability will slow your writing process down considerably, but over the course of multiple revisions it may just save your sanity. This is a key <a class="reference internal" href="01_intro.html#word-vs-jupyter-book"><span class="std std-ref">tradeoff</span></a> to understand when you are kicking the tires of jupyter-book.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This section uses a previously created notebook to allow us to focus on authoring content with jupyter-book. If you are new to jupyter notebooks this section wont make much sense and you will probably fail to grasp how ~~wildly awesome~~ important this capability is.</p>
-<p>You can read more about <a class="reference internal" href="02_setup.html#notebooks"><span class="std std-ref">notebooks</span></a> to get a feel for their true power. Notebooks are the reason jupyter-book exists, not the other way around, so make sure you have a least a superficial understanding of what they do and why you would want to use one.</p>
+<p>This section uses a previously created notebook to allow us to focus on authoring content with jupyter-book. If you are new to jupyter notebooks this section wont make much sense and you will probably fail to grasp how wildly awesome this capability is.</p>
+<p>Using jupyter notebook as well as gluing content is completely optional, but you can read more about <a class="reference internal" href="02_setup.html#notebooks"><span class="std std-ref">notebooks</span></a> to get a feel for their true power. Notebooks are the reason jupyter-book exists, not the other way around, so having a least a superficial understanding of what they do and why you would want to use one will help you understand if jupyter-book is a good fit for your use case.</p>
 <p>Jupyter notebook installs with jupyter-book, so you can open jupyter notebook from the command line with <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span> <span class="pre">--no-browser</span></code>. Follow the link provided in the console to open the GUI. Then, dive into one of the many <a class="reference external" href="https://realpython.com/jupyter-notebook-introduction/#creating-a-notebook">jupyter notebook tutorials</a>.</p>
 </div>
-<p>In reality your writing process likely starts with a notebook. After days (or weeks, or months…) of meticulous data collection and analysis you finally arrive at a result that you believe is publishable. At that point you would fire up jupyter-book and start describing your results. There are two major use cases for embedding notebook results to consider:</p>
+<p>Your writing process likely starts with an analysis of some kind. After days (or weeks, or months…) of meticulous data collection and analysis you finally arrive at a result that you believe is publishable. At that point you would fire up jupyter-book and start describing your results. If your analysis occurred in a jupyter notebook there are two major use cases for embedding notebook results to consider:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#glue-number"><span class="std std-ref">Numerical content</span></a></p></li>
 <li><p><a class="reference internal" href="#glue-figure"><span class="std std-ref">Figures</span></a></p></li>
 </ul>
-<p>In all cases you make a variable or figure available in your notebook with the <code class="docutils literal notranslate"><span class="pre">glue('&lt;label&gt;',&lt;variable&gt;)</span></code> <em>function</em>. The <code class="docutils literal notranslate"><span class="pre">variable</span></code> is the object that you created in your notebook. You can give it an easy to remember name with the <code class="docutils literal notranslate"><span class="pre">label</span></code>. You reference the <code class="docutils literal notranslate"><span class="pre">label</span></code> in your writing when you use the <code class="docutils literal notranslate"><span class="pre">glue</span></code> directive. See below for the specific use cases of the <code class="docutils literal notranslate"><span class="pre">glue</span></code> directive to embed content.</p>
+<p>In all cases you make a variable or figure available in your notebook with the <code class="docutils literal notranslate"><span class="pre">glue('&lt;label&gt;',&lt;variable&gt;)</span></code> <em>function</em>. The <code class="docutils literal notranslate"><span class="pre">variable</span></code> is the object that you created in your notebook. You can give it an easy to remember name with the <code class="docutils literal notranslate"><span class="pre">label</span></code>. You reference the <code class="docutils literal notranslate"><span class="pre">label</span></code> in your writing when you use the <code class="docutils literal notranslate"><span class="pre">glue</span></code> <em>directive</em>. See below for the specific use cases of the <code class="docutils literal notranslate"><span class="pre">glue</span></code> directive to embed content.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>The critical benefit of <em>gluing</em> notebook outputs into your document is when you update the variable in your notebook, the changes automatically propagate into your document the next time you rebuild your book. Just make sure your notebook is inside your book directory and jupyter-book takes care of the rest.</p>
@@ -1474,7 +1472,13 @@ the Universe and Everything”
 </tr>
 </tbody>
 </table>
-<p>TODO: add example for sample-book</p>
+<p>Glue an output from the sample notebook into the end of your methods chapter.</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>&lt;!-- methods.md --&gt;
+
+<span class="gu">## Average feather length</span>
+From a sample of 100 dinosaurs, the observed feather length was {glue:text}`avg:2.2f` (95% CI {glue:text}`lower:2.2f` / {glue:text}`upper:2.2f`).
+</pre></div>
+</div>
 </div>
 <div class="section" id="glue-figure">
 <span id="id15"></span><h3>Figures<a class="headerlink" href="#glue-figure" title="Permalink to this headline">¶</a></h3>
@@ -1514,16 +1518,118 @@ Figure caption written in markdown
 </tr>
 </tbody>
 </table>
-<p>TODO: add example for sample-book</p>
+<p>Modify your methods chapter again to glue a figure into the chapter.</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>&lt;!-- methods.md --&gt;
+
+<span class="gu">## Average feather length</span>
+From a sample of 100 dinosaurs, the observed feather length was {glue:text}`avg:2.2f` (95% CI {glue:text}`lower:2.2f` / {glue:text}`upper:2.2f`). See {numref}`fig:random` for a correlation of feather length to bone diameter.
+
+<span class="gu">```{glue:figure} random-fig</span>
+<span class="gu">---</span>
+<span class="gu">name: &quot;fig:random&quot;</span>
+<span class="gu">---</span>
+
+Feather length vs bone diameter (completely fictional data) for fossils analyzed with the feather identification toolbox (also fictional).
+```
+</pre></div>
 </div>
 </div>
-<div class="section" id="reader-reviewer-feedback">
-<h2>Reader/reviewer feedback<a class="headerlink" href="#reader-reviewer-feedback" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="citations">
+<span id="id16"></span><h2>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">¶</a></h2>
+<p>Citations require couple steps.</p>
+<ul class="simple">
+<li><p>Generate a refrences.bib file and place it in your <code class="docutils literal notranslate"><span class="pre">book</span></code> directory. This should be a standard option in any reference manager (e.g. <a class="reference external" href="https://www.zotero.org/">Zotero</a>). See <span class="xref std std-doc">references</span> if you need a sample <code class="docutils literal notranslate"><span class="pre">.bib</span></code> file for testing.</p></li>
+<li><p>Cite using the directive<code class="docutils literal notranslate"><span class="pre">{cite}`citation-label`</span></code></p></li>
+<li><p>Include a list of citations at the end of the document</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Syntax</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Note</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span>{cite}`citation-label`   
+</pre></div>
+</div>
+</td>
+<td><p>As described in <a class="bibtex reference internal" href="#stone-bayes-2015" id="id17">[Sto15]</a></p></td>
+<td><p>The citation will not display properly until the bibliography is linked as shown below</p></td>
+</tr>
+</tbody>
+</table>
+<p>Then include the bibliography with:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{bibliography} references.bib
+:filter: docname in docnames
+```
+</pre></div>
+</div>
+<p>Your bibliography will be automatically generated like this, and can be formatted to meet any style guide.</p>
+<p id="bibtex-bibliography-04_content_v2-0"><dl class="citation">
+<dt class="bibtex label" id="stone-bayes-2015"><span class="brackets"><a class="fn-backref" href="#id17">Sto15</a></span></dt>
+<dd><p>James V. Stone. <em>Bayes’ rule with Python: a tutorial introduction to Bayesian analysis</em>. Sebtel Press, Sheffield, England, first edition, 2015. ISBN 978-0-9933679-3-9. OCLC: ocn970361039.</p>
+</dd>
+</dl>
+</p>
+<p>Create a references.bib file in your book directory with the following citations:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@book</span><span class="p">{</span><span class="n">stone_2015</span><span class="p">,</span>
+	<span class="n">address</span> <span class="o">=</span> <span class="p">{</span><span class="n">Sheffield</span><span class="p">,</span> <span class="n">England</span><span class="p">},</span>
+	<span class="n">edition</span> <span class="o">=</span> <span class="p">{</span><span class="n">First</span><span class="p">},</span>
+	<span class="n">title</span> <span class="o">=</span> <span class="p">{</span><span class="n">On</span> <span class="n">the</span> <span class="n">prospect</span> <span class="n">of</span> <span class="n">dinosaurs</span> <span class="k">with</span> <span class="n">feathers</span> <span class="ow">and</span> <span class="n">other</span> <span class="n">unusual</span> <span class="n">phenomena</span><span class="p">},</span>
+	<span class="n">isbn</span> <span class="o">=</span> <span class="p">{</span><span class="mi">123</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="mi">56789</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="p">},</span>
+	<span class="n">shorttitle</span> <span class="o">=</span> <span class="p">{</span><span class="n">Dinosaurs</span> <span class="k">with</span> <span class="n">feathers</span><span class="p">},</span>
+	<span class="n">language</span> <span class="o">=</span> <span class="p">{</span><span class="n">en</span><span class="p">},</span>
+	<span class="n">publisher</span> <span class="o">=</span> <span class="p">{</span><span class="n">Nobody</span> <span class="n">Press</span><span class="p">},</span>
+	<span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Stone</span><span class="p">,</span> <span class="n">James</span> <span class="n">K</span><span class="o">.</span><span class="p">},</span>
+	<span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2015</span><span class="p">},</span>
+	<span class="n">note</span> <span class="o">=</span> <span class="p">{</span><span class="n">OCLC</span><span class="p">:</span> <span class="n">ocn970361039</span><span class="p">},</span>
+<span class="p">}</span>
+
+<span class="nd">@book</span><span class="p">{</span><span class="n">lambert_2018</span><span class="p">,</span>
+	<span class="n">address</span> <span class="o">=</span> <span class="p">{</span><span class="n">Los</span> <span class="n">Angeles</span><span class="p">},</span>
+	<span class="n">title</span> <span class="o">=</span> <span class="p">{</span><span class="n">A</span> <span class="n">long</span> <span class="n">walk</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">swamp</span> <span class="n">looking</span> <span class="k">for</span> <span class="n">dinosaur</span> <span class="n">feathers</span><span class="p">},</span>
+	<span class="n">isbn</span> <span class="o">=</span> <span class="p">{</span><span class="mi">123</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="mi">56789</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="p">},</span>
+	<span class="n">shorttitle</span> <span class="o">=</span> <span class="p">{</span><span class="n">Looking</span> <span class="k">for</span> <span class="n">dinosaur</span> <span class="n">feathers</span><span class="p">},</span>
+	<span class="n">language</span> <span class="o">=</span> <span class="p">{</span><span class="n">en</span><span class="p">},</span>
+	<span class="n">publisher</span> <span class="o">=</span> <span class="p">{</span><span class="n">SAGE</span><span class="p">},</span>
+	<span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Lambert</span><span class="p">,</span> <span class="n">Benjamin</span><span class="p">},</span>
+	<span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2018</span><span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The edit your literature review chapter to contain some citations.</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>&lt;!-- lit-review.md --&gt;
+...Saltopus Pegomastax. Previous work on dinosaur feathers includes {cite}`stone_2015` and {cite}`lambert_2018`.
+</pre></div>
+</div>
+<p>Then link your bibliography:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>&lt;!-- lit-review.md --&gt;
+```{bibliography} references.bib
+:filter: docname in docnames
+```
+</pre></div>
+</div>
+</div>
 <div class="section" id="annotations">
-<h3>Annotations<a class="headerlink" href="#annotations" title="Permalink to this headline">¶</a></h3>
+<span id="id18"></span><h2>Annotations<a class="headerlink" href="#annotations" title="Permalink to this headline">¶</a></h2>
+<p>A very cool integration that jupyter-book makes available is annotations. An annotation is a way for readers to make notes on your document. Seeing is believing, so view the <a class="reference external" href="https://jupyterbook.org/interactive/comments/hypothesis.html">demo</a> on the jupyter-book website to see it in action and learn how to adjust the <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> file to enable annotations.</p>
 </div>
-<div class="section" id="comments">
-<h3>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="reader-comments">
+<span id="comments"></span><h2>Reader Comments<a class="headerlink" href="#reader-comments" title="Permalink to this headline">¶</a></h2>
+<p>Jupyter-book makes integrating a section for reader comments a very easy process (assuming you have a github account). Add the following to your <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> file to enable comments:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>html:
+  comments:
+    utterances:
+      repo: &quot;github-org/github-repo&quot;
+</pre></div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">github-org</span></code> is your user name or organization, and <code class="docutils literal notranslate"><span class="pre">github-repo</span></code> is the repository where you are hosting your project. So in the case of this book - which is hosted at https://github.com/SkyRockMoon/jb-kick-tires - the org is <code class="docutils literal notranslate"><span class="pre">SkyRockMoon</span></code> and the repo is <code class="docutils literal notranslate"><span class="pre">jb-kick-tires</span></code>. See below, this site has comments enabled.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The comments integration is not visible when viewing your book <em>locally</em>. You must <a class="reference internal" href="03_build-pub.html#build-pub"><span class="std std-ref">publish to GitHub</span></a> to see the integration.</p>
+</div>
 <hr class="docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="footnote-label"><span class="brackets"><a class="fn-backref" href="#id5">1</a></span></dt>
@@ -1533,7 +1639,6 @@ Figure caption written in markdown
 <dd><p>Enault, Jeremy &amp; Zatylny-Gaudin, Celine &amp; Bernay, Benoît &amp; Lefranc, Benjamin &amp; Leprince, Jérôme &amp; Baudy-Floc’h, Michèle &amp; Henry, Joël. (2012). A Complex Set of Sex Pheromones Identified in the Cuttlefish Sepia officinalis. PloS one. 7. e46531. 10.1371/journal.pone.0046531.</p>
 </dd>
 </dl>
-</div>
 </div>
 </div>
 

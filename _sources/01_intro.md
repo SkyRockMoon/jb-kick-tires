@@ -108,8 +108,8 @@ Executable book
     - [Linux and the command line](wsl)
     - [Python](python)
     - [Jupyter notebook](notebooks)
-    - [Markdown](mark-vs-myst)
-    - [Markedly Structured Text (MyST) ](mark-vs-myst)
+    - [Markdown](TODO)
+    - [Markedly Structured Text (MyST) ](TODO)
     - [Git](git) version control (e.g. [GitHub](https://github.com/))
 
 **Create content:**
