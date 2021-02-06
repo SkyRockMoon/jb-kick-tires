@@ -1,15 +1,11 @@
 (setup)=
 # Setting up jupyter-book
 
-```{warning}
-This book is still being actively developed and this version of should be considered a rough draft. [Follow me on GitHub](https://docs.github.com/en/github/getting-started-with-github/following-people#:~:text=If%20someone%20you%20follow%20stars,Unfollow%20under%20their%20profile%20image.) to receive notifications when updates are made.  
-```
-
 Jupyter-book is a collection of complex tools that, in my opinion, perform a series of consecutive miracles every time you run them to generate a very professional looking output. I call the output a book, but there are lots of other things you could call it - website, paper, technical documentation, interactive notebook, etc.
 
 The installation process described here is very windows 10 centric and may not be to everyone's taste. If you work on a linux machine you might be able to install jupyter-book in a [single command](https://jupyterbook.org/intro.html#install-jupyter-book)! In most cases sophisticated users should be able to recognize how many of these instructions apply generally to their system. For the uninitiated, this setup guide will take you from zero to jupyter-book hero. 
 
-If you are truly new to the jupyter ecosystem take the [easy path](easy-path) and install Anaconda on your machine. This is a much easier way to get started than taking the [hard path](hard-path), and if you decide you like jupyter-book then you can always go back and follow the more advanced setup. The manual installation described on the [hard path](hard-path) provides a slightly more streamlined workflow. Over the course of developing a book, it might be worth the investment of setting up streamlined workflow, but is unnecessary to just kick the tires. 
+If you are truly new to the jupyter ecosystem take the [easy path](easy-path) and install Anaconda on your machine. This is a much easier way to get started than taking the [hard path](hard-path), and if you decide you like jupyter-book then you can always go back and follow the more advanced setup. The manual installation described on the [hard path](hard-path) provides a slightly more streamlined workflow when writing. Over the course of developing a book, it might be worth the investment of setting up streamlined workflow, but is unnecessary to just kick the tires. 
 
 (easy-path)=
 ## Easy Path: Anaconda
@@ -30,7 +26,7 @@ If you already have anaconda installed on your machine and need to upgrade pytho
 ```
 ``````
 
-Anaconda is a python environment that tries to bundle everything you might need from the python ecosystem into a single easy to use windows installer. It includes jupyter-book, plus many other useful libraries. Jupyter-book requires python 3.8+, and as of mid-2020 Anaconda was shipping with python 3.8. Download the free personal edition of Anaconda [here](https://www.anaconda.com/products/individual).
+Anaconda is a python environment that tries to bundle everything you might need from the python ecosystem into a single easy to use windows installer. It includes jupyter-book, plus many other useful libraries. Jupyter-book requires python 3.8+, and as of mid-2020 Anaconda was shipping with python 3.8. Download the free personal edition of Anaconda [here](https://www.anaconda.com/products/individual) and follow the isntallation instructions.
 
 (github-easy)=
 ### Setup Github
@@ -40,22 +36,22 @@ If you don't have an account, you can [sign up](https://github.com/join) for one
 
 (clone-easy)=
 ### Clone the sample book
-In this section you will clone (download) a sample book that you can play with to see if jupyter-book is a good fit for you. To acomplish this take the following steps:
+In this section you will clone (download) a sample book that you can play with to see if jupyter-book is a good fit for you. To accomplish this take the following steps:
 
 1. Open the anaconda **prompt**. The anaconda navigator is the graphical user interface and is not what you want to be using.
-1. Navigate to where you want to store the sample book on your machine. I store all my code projects in a folder called projects on my C drive, so I would navigate to that folder like this: `cd C:\projects`. Note that the next step will create a folder called `sample-book` so you don't need to create a dedicated directory to keep you projects folder clean.
-1. Clone the sample book using git: `git clone TODO TODO`
+1. Navigate to where you want to store the sample book on your machine. I store all my code projects in a folder called projects on my C drive, so I would navigate to that folder like this: `cd C:\projects`. Note that the next step will create a folder called `sample-book` so you don't need to create a dedicated directory to keep your projects folder clean.
+1. Clone the sample book using git: `git clone https://github.com/SkyRockMoon/sample-book.git`
 1. Navigate into your cloned directory with `cd sample-book`
 1. Setup your environment with `conda env create -f environment.yml`
 1. Build the book with `jupyter-book build book`
-1. Watch the console for errors, if everything goes well it will give you a link to your book. Use the linkto open the book in an internet browser. Alternatively, use windows file explorer to locate `book/_build/html/index.html` and open that file in your browser.  
+1. Watch the console for errors, if everything goes well it will give you a link to your book. Use the link to open the book in an internet browser. Alternatively, use windows file explorer to locate `book/_build/html/index.html` and open that file in your browser.  
 
 (vscode-easy)=
 ### Optional: Install VS Code
-[VS Code](https://code.visualstudio.com/) is an amazing, free, text editor (among other things) that can be used to edit the files in the sample-book. Visit the [downloads page](https://code.visualstudio.com/Download) and install it on your machine if you don't already have a similar tool installed on your machine.
+[VS Code](https://code.visualstudio.com/) is an amazing, free, text editor (among other things) that can be used to edit the files in the sample-book. Visit the [downloads page](https://code.visualstudio.com/Download) and install it on your machine if you don't already have a similar tool installed on your machine that can be used for editing text files.
 
 ### Conclusion of the easy path
-You have successfully installed everything you need to kick the tires on jupyter-book. If you decide you want slightly more powerful tooling, consider some or all of the instructions in the [hard path](hard-path). Until you are sure jupyter-book is right for you, I wouldn't bother spending the time adding bells and whistles to your setup.
+You have successfully installed everything you need to kick the tires on jupyter-book. If you decide you want slightly more powerful tooling, consider some or all of the instructions in the [hard path](hard-path). Until you are sure jupyter-book is right for you, I wouldn't bother spending the time adding bells and whistles to your setup. Next you will fully exercise your newly installed environment by [building/publishing](build-pub) a book two different ways.
 
 (hard-path)=
 ## Hard Path: Manual Install
@@ -64,7 +60,7 @@ The [easy path](easy-path) is great for getting up and running quickly so you ca
 Here is what you can expect to accomplish:
 
 1. Install the [windows subsystem for linux](wsl). Basically this is a little linux machine installed inside windows. This is necessary because jupyter-book is a essentially a linux tool.
-1. Install [VS Code](vs-code). VS Code is an *integrated development environment*. This is where you will do all your work.
+1. Install [VS Code](vs-code). VS Code is an *integrated development environment* that includes code editing and a command line all in one place. This is where you will do all your work.
 1. Build [python3.8](python) from source code! It sounds scary, but it is actually really hard to mess up and better than the alternative.
 1. Install and register for the collaboration tools [git and GitHub](git)
 1. [Clone](clone) the mini-book repository onto your machine
@@ -72,9 +68,7 @@ Here is what you can expect to accomplish:
 
 (wsl)=
 ### Linux on windows
-Jupyter-book is fundamentally a linux tool. I initially tried to run jupyter-book on [anaconda](https://www.anaconda.com/) on a windows 10 machine, and it only partially worked for me. Almost certainly this was my fault and not jupyter-book, but again I just want to kick the tires and don't want to mess with debugging, so I eventually settled on using the [windows subsystem for linux](https://docs.microsoft.com/en-us/windows/wsl/about) (WSL). 
-
-Installation instructions for WSL are beyond the scope of this document and [is documented by Microsoft]](https://docs.microsoft.com/en-us/windows/wsl/install-win10). I personally used [these instructions](https://superuser.com/questions/1271682/is-there-a-way-of-installing-ubuntu-windows-subsystem-for-linux-on-win10-v170/1272559#1272559), which assume some pre-existing knowledge of linux. 
+Jupyter-book is fundamentally a linux tool. Installation instructions for the Windows Subsystem for Linux (WSL) on Windows 10 are beyond the scope of this document and [is documented by Microsoft](https://docs.microsoft.com/en-us/windows/wsl/install-win10). I personally used [these instructions](https://superuser.com/questions/1271682/is-there-a-way-of-installing-ubuntu-windows-subsystem-for-linux-on-win10-v170/1272559#1272559), which assume some pre-existing knowledge of linux. 
 
 ```{attention}
 These instructions assume that you install Ubuntu 18.04 as your linux distribution.
@@ -104,6 +98,7 @@ For the remainder of the setup process work out of VS Code. You can close your w
 ```{note}
 If you have issues with this step, see [this document](https://medium.com/@janelgbrandon/a-guide-for-using-wsl-for-development-d135670313a6) for additional instructions.
 ```
+
 #### Install oh-my-zsh
 This step will make everything in the console look prettier, which in turn makes using the command line easier to use. 
 - Install the z-shell, `apt install zsh`
@@ -123,7 +118,7 @@ Files inside your WSL machine are buried in a hard to remember location that you
 1. Clean up with `rm ~/projects/newfile.txt`
 
 #### Install latex libraries
-These libraries are used when building a pdf. Install them with this extra long command:
+These libraries are used when building a pdf. Install them with this 'one-liner':
 
     sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra texlive-xetex latexmk
 
@@ -180,29 +175,29 @@ If you don't have an account, you can [sign up](https://github.com/join) for one
 
 (clone)=
 ### Clone and build the mini book
-In this section we will clone - or download - the source for the mini-book that you are reading so you can modify and then rebuild it later. Up to this point we have been working from an arbitrary working folder. In VS code use `file > open folder` to navigate to your project folder (C:\projects) you created earlier. Then clone the mini-book repository from my GitHub account to your local drive using `git clone TODO TODO TODO`.
+In this section we will clone - or download - the source for the mini-book that you are reading so you can modify and then rebuild it later. Up to this point we have been working from an arbitrary working folder. In VS code use `file > open folder` to navigate to your project folder (C:\projects) you created earlier. Then clone the mini-book repository from my GitHub account to your local drive using `git clone https://github.com/SkyRockMoon/sample-book.git`.
 
-Move into the cloned directory with `cd jb_kick_tires` and then view the directory contents with `ls -a`. You should see a listing of files and folders that includes:
+Move into the cloned directory with `cd sample-book` and then view the directory contents with `ls -a`. You should see a listing of files and folders that includes:
 
 - book: this is the source code for the book
 - requirements.txt: this defines all the packages needed to exactly duplicate my python environment
-- .gitignore TODO???? - Does this get cloned: this helps git avoid tracking unnecessary files
+- .gitignore: this helps git avoid tracking unnecessary files
 
 All of the source code is located in the book directory, but before we build the book we need to install the python environment so you can build the mini-book using jupyter-book.
 
 (build)=
 ### Build the mini-book
 
-1. Create a virtual environment with `python3.8 -m venv kick-tires` 
-1. Activate the virtual environment `source kick-tires/bin/activate`
+1. Create a virtual environment with `python3.8 -m venv sample-book-venv` 
+1. Activate the virtual environment `source sample-book-venv/bin/activate`
     ```{note} 
     At this point your command prompt should change to indicate that you are inside the virtual environment. The command prompt should change from:
-        $ jb_kick_tires
+        $ sample-book
 
     To look like this once the virtual environment has been activated:
-        (kick-tires) jb_kick_tires
+        $ (sample-book-venv) sample-book
 
-    It is no longer necesary to denote a specific version of pythong. For example issue the command `python --version` and the version number should be 3.8.7. Also pip is actually pip3.
+    It is no longer necesary to denote a specific version of python. For example issue the command `python --version` and the version number should be 3.8.7. Also pip is actually pip3.
     ```
 1. Ensure pip is up to date `pip install --upgrade pip`
 
@@ -211,26 +206,26 @@ All of the source code is located in the book directory, but before we build the
 1. Check the jupyter-book version `jupyter-book --version`. When this was written, jupyter-book was at 0.9.1.
 
     ```{tip}
-    When you want to leave the kick-tires virtual environment issue the command `deactivate` and you will be returned to your regular command prompt. Jupyter-book is installed *inside* the virtual environment, so if you leave the virtual environment `jupyter-book --version` will throw a 'command not found' error. A `source kick-tires/bin/activate` will reactivate your virtual environment.
+    When you want to leave the kick-tires virtual environment issue the command `deactivate` and you will be returned to your regular command prompt. Jupyter-book is installed *inside* the virtual environment, so if you leave the virtual environment `jupyter-book --version` will throw a 'command not found' error. A `source sample-book-venv/bin/activate` will reactivate your virtual environment.
     ```
 
 1. Build the book with `jupyter-book build book`. Wait for the console to show you the status of the build. You should expect to see something like this:
     
-    ```md
-    The HTML pages are in book/_build/html.
+```md
+The HTML pages are in book/_build/html.
 
-    ===============================================================================
+===============================================================================
 
-    Finished generating HTML for book.
-    Your book's HTML pages are here:
-        book/_build/html/
-    You can look at your book by opening this file in a browser:
-        book/_build/html/index.html
-    Or paste this line directly into your browser bar:
-        file:///mnt/c/projects/jb_kick_tires/book/_build/html/index.html
+Finished generating HTML for book.
+Your book's HTML pages are here:
+    book/_build/html/
+You can look at your book by opening this file in a browser:
+    book/_build/html/index.html
+Or paste this line directly into your browser bar:
+    file:///mnt/c/projects/jb_kick_tires/book/_build/html/index.html
 
-    ===============================================================================
-    ```
+===============================================================================
+```
 1. From VS code ctrl + click on the link to open the book in your browser (your not using [chrome, right?!?!](https://www.mozilla.org/en-US/firefox/unfck/))
 
 1. If you see the sample-book then congrats. You survived the entire install process! 🎉🥴
@@ -248,13 +243,13 @@ If you didn't [clone](clone) the sample-book repository, or you are starting fro
 
 Install the github pages importer tool to make publishing your book as a website a one command job:
 
-```
+```bash
 pip install ghp-import
 ```
 
 Then from your working directory deploy your book to a webpage with: 
 
-```
+```bash
 ghp-import -n -p -f book/_build/html
 ```
 
@@ -266,11 +261,14 @@ Jupyter-book is part of the jupyter ecosystem. The star at the center of the jup
 
 To see what a jupyter notebook looks like:
 1. Open a new terminal with the plus sign in the VS code terminal window
-1. Activate the kick-tires virtual environment `. kick-tires/bin/activate`
+1. Activate the kick-tires virtual environment `source sample-book-venv/bin/activate`
 1. Open jupyter notebook with `jupyter notebook --no-browser`
 1. Follow the link provided in the console to open the jupyter notebook in a browser
 
-The chapter on [authoring content](content) will delve into the use of jupyter notebook with jupyter-book. If you are unfamiliar with jupyter notebook there are some useful tutorials ....TODO - which tutorials?
+The chapter on [authoring content](content) will delve into the use of jupyter notebook with jupyter-book. If you are unfamiliar with jupyter notebook there are some [useful tutorials](https://realpython.com/jupyter-notebook-introduction/#creating-a-notebook).
+
+### Conclusion of the hard path
+Congrats, completing the manual install is certainly an acomplishment. You have successfully installed everything you need to kick the tires on jupyter-book. Next you will fully exercise your newly installed environment by [building/publishing](build-pub) a book two different ways.  
 
 
 

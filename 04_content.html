@@ -91,6 +91,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="canonical" href="https://skyrockmoon.github.io/jb-kick-tires/04_content.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Conclusion" href="05_conclusion.html" />
     <link rel="prev" title="Build and publish a book" href="03_build-pub.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -101,7 +102,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <meta property="og:url"         content="https://skyrockmoon.github.io/jb-kick-tires/04_content.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Add content to the book" />
-<meta property="og:description" content="Add content to the book  Warning  This book is still being actively developed and this version of should be considered a rough draft. Follow me on GitHub to rec" />
+<meta property="og:description" content="Add content to the book  This section covers how to add content to your book. To utilize jupyter-book you will have to ultimately become very familiar with the " />
 
 
 <meta name="twitter:card" content="summary" />
@@ -149,6 +150,11 @@ commentsRunWhenDOMLoaded(addUtterances);
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Add content to the book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_conclusion.html">
+   Conclusion
   </a>
  </li>
 </ul>
@@ -400,6 +406,11 @@ commentsRunWhenDOMLoaded(addUtterances);
    Reader Comments
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   Conclusion
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -413,10 +424,6 @@ commentsRunWhenDOMLoaded(addUtterances);
                 
   <div class="section" id="add-content-to-the-book">
 <span id="content"></span><h1>Add content to the book<a class="headerlink" href="#add-content-to-the-book" title="Permalink to this headline">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This book is still being actively developed and this version of should be considered a rough draft. <a class="reference external" href="https://docs.github.com/en/github/getting-started-with-github/following-people#:~:text=If%20someone%20you%20follow%20stars,Unfollow%20under%20their%20profile%20image.">Follow me on GitHub</a> to receive notifications when updates are made.</p>
-</div>
 <p>This section covers how to add content to your book. To utilize jupyter-book you will have to ultimately become very familiar with the <a class="reference external" href="https://jupyterbook.org">official jupyter-book documentation</a>. However for the purposes of kicking the tires this section will take you through the features that are either critical to use, or just cool. Many details will be skipped for the purposes of illustrating what authoring a book with jupyter-book might be like in practice. Consider this chapter a minimum subset of the available functionality needed for authoring content.</p>
 <p>In an effort to make learning syntax more practical this section will take you through a narrative of adding content to the <a class="reference internal" href="02_setup.html#clone"><span class="std std-ref">book you cloned</span></a> while installing jupyter-book. After getting a feel for how everything works in this section you will probably graduate to just using the <a class="reference external" href="https://jupyterbook.org/reference/cheatsheet.html">jupyter-book cheat sheet</a> to rapidly find the syntax details you need.</p>
 <p>Your mission, if you choose to accept it, is to write a (very brief and totally fictitious) book about dinosaurs using the sample book you cloned earlier as a template. Don’t worry if your paleontology skills are rusty, the focus of this activity is on writing the described syntax. I would like to apologize in advance to actual hard working paleontologists for using your field of study as a fictions example. You can expect to accomplish the following tasks while reading this chapter.</p>
@@ -1606,6 +1613,10 @@ Feather length vs bone diameter (completely fictional data) for fossils analyzed
 ```
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The HTML and PDF outputs handle the bibliography differently. The HTML version puts the bibliography on the page that the link is located on. The PDF puts the bibliography at the end of the book as its own chapter.</p>
+</div>
 </div>
 <div class="section" id="annotations">
 <span id="id19"></span><h2>Annotations<a class="headerlink" href="#annotations" title="Permalink to this headline">¶</a></h2>
@@ -1625,6 +1636,10 @@ Feather length vs bone diameter (completely fictional data) for fossils analyzed
 <p class="admonition-title">Note</p>
 <p>The comments integration is not visible when viewing your book <em>locally</em>. You must <a class="reference internal" href="03_build-pub.html#build-pub"><span class="std std-ref">publish to GitHub</span></a> to see the integration.</p>
 </div>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>If you have made it this far and followed along in the creation of a book about dinosaurs then you have sufficiently kicked the tires on jupyter-book at this point. There should be nothing preventing you from renaming your repo/book and then starting to add the real content of your book. Many aspects of jupyter-book were skipped, but hopefully you got to see all the bits that are important to the writing process. The <a class="reference internal" href="05_conclusion.html#conclusion"><span class="std std-ref">conclusion</span></a> includes some notes on possible next steps.</p>
 <hr class="docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="footnote-label"><span class="brackets"><a class="fn-backref" href="#id6">1</a></span></dt>
@@ -1666,6 +1681,7 @@ Feather length vs bone diameter (completely fictional data) for fossils analyzed
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="03_build-pub.html" title="previous page">Build and publish a book</a>
+    <a class='right-next' id="next-link" href="05_conclusion.html" title="next page">Conclusion</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

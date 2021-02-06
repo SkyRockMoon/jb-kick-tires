@@ -1,10 +1,6 @@
 (introduction)=
 # Introduction
 
-```{warning}
-This book is still being actively developed and this version of should be considered a rough draft. [Follow me on GitHub](https://docs.github.com/en/github/getting-started-with-github/following-people#:~:text=If%20someone%20you%20follow%20stars,Unfollow%20under%20their%20profile%20image.) to receive notifications when updates are made.  
-```
-
 This mini-book 'kicks the tires' on the open source [jupyter-book](https://jupyterbook.org) project. Jupyter-book can be used to create [executable books](exec-book) that can be published as websites and/or paper (dead tree) books. 
 
 The term "kick the tires" is an informal saying from North America that means:
@@ -13,7 +9,7 @@ The term "kick the tires" is an informal saying from North America that means:
 >
 > - [Wikitionary](https://en.wiktionary.org/wiki/kick_the_tires)
 
-Jupyter-book is a free and open source project, but you are still in essence buying it when you decide to author a book (or similar document) with it. The process of writing a book is a long and hard endeavour. If you have to spend a lot of time fussing and struggling with your chosen *tooling* then you will have cost yourself considerable time and money.
+Jupyter-book is a free and open source project, but you are still in essence investing in it when you decide to author a book (or similar document) with it. The process of writing a book is a long and hard endeavour. If you have to spend a lot of time fussing and struggling with your chosen *tooling* then you will have cost yourself considerable time and money.
 
 [Investopedia](https://www.investopedia.com/terms/k/kickingthetires.asp) makes the following points about "kicking the tires" on an investment:
 
@@ -33,7 +29,7 @@ Once [setup](setup), jupyter-book hides all of the *ugly* business of creating a
 (exec-book)=
 ## Executable books
 
-This mini book skips over many of the useful and powerful features of jupyter-book because we are just kicking the tires. The importance of what an executable book is, and why you might want to write one, however can not be glossed over. An executable book is a set of files that are compiled into a book very much like a computer program. Jupyter-book is not a what you see is what you get (WYSIWYG) editor like a typical word processor. The panels below compare the process of authoring a website and/or dead tree book on a technical topic with both tools. If your authoring the next great fictional novel - which is all prose - stop right now and get busy writing in a word processor. If you are authoring a technical document with figures, equations, tables, and code, keep reading because there is a good chance jupyter-book will be a good fit.
+This mini book skips over many of the useful and powerful features of jupyter-book because we are just kicking the tires. The importance of what an executable book is, and why you might want to write one, however can not be glossed over. An [executable book](https://executablebooks.org/en/latest/) is a set of files that are compiled into a book very much like a computer program. Jupyter-book is not a what you see is what you get (WYSIWYG) editor like a typical word processor. The panels below compare the process of authoring a website and/or dead tree book on a technical topic with both tools. If your authoring the next great fictional novel - which is all prose - stop right now and get busy writing in a word processor. If you are authoring a technical document with figures, equations, tables, and code, keep reading because there is a good chance jupyter-book will be a good fit.
 
 (word-vs-jupyter-book)=
 ```{panels}
@@ -108,8 +104,8 @@ Executable book
     - [Linux and the command line](wsl)
     - [Python](python)
     - [Jupyter notebook](notebooks)
-    - [Markdown](TODO)
-    - [Markedly Structured Text (MyST) ](TODO)
+    - [Markdown](https://commonmark.org/help/)
+    - [Markedly Structured Text (MyST) ](https://myst-parser.readthedocs.io/en/latest/)
     - [Git](git) version control (e.g. [GitHub](https://github.com/))
 
 **Create content:**
@@ -154,7 +150,7 @@ Option 3 - Get a publishing deal
 
 The process of writing a book with a word processor and jupyter-book are vastly different as chronicled above. Each option has parts of the process that are fast, and other parts that are slow. Ultimately if using jupyter-book is the correct choice for you comes down to your use case. 
 
-- Using a word processor is fast initially and then revisions and changes later on become slow and painful. Quality assurance is difficult with a word processor. Figures, equations, tables, and numerical text results (e.g. mean of 34.2 (95% CI 29.2/37.8)) are all updated manually. Creating a book website manually is very challenging. 
+- Using a word processor is fast initially and then revisions and changes later on become slow and painful. Quality assurance is difficult with a word processor. Figures, equations, tables, and numerical text results - e.g. mean of 34.2 (95% CI 29.2/37.8) - are all updated manually. Creating a book website manually is very challenging for an author that is not a software developer. 
 - Jupyter-book requires a very significant investment upfront, and even after mastering the long list of tools writing is slower. However revisions and publishing can be made very rapidly. Collaboration is pleasant and streamlined. If you value the book website, jupyter-book generates a truly beautiful and best in class html output. The PDF output is also very professional. You can be assured that every reference and figure is correct and up to date. Jupyter-book will give you a warning if any of the references are missing.
 
 I believe that jupyter-book is clearly the right tool for you if:
@@ -168,9 +164,10 @@ There are certainly other use cases for jupyter-book that are more traditional, 
 
 ## Mini-book overview
 
-This mini-book is an example and template in itself.
+During the [setup](setup) you will download a jupyter-book template, here is what you can expect to do with that template:
 
-- The [setup](setup) page will show you how to install jupyter-book on a windows machine. The installation method in this book is opinionated,  because it aims to show a user how to kick the tires. The [official jupyter-book documentation](https://jupyterbook.org/content/citations.html#references-and-citations) of course has details on other installation methods. Installing jupyter-book alone is not sufficient for success, the setup page also goes into all the other tools that are assumed to be present on your machine.    
+- The [setup](setup) page will show you how to install jupyter-book on a windows machine. The installation method in this book is opinionated, because it aims to show a user how to kick the tires. The [official jupyter-book documentation](https://jupyterbook.org/content/citations.html#references-and-citations) of course has details on other installation methods. Installing jupyter-book alone is not sufficient for success, the setup page also goes into all the other tools that are assumed to be present on your machine.    
 - The [build](build) page shows you how to compile and generate both an html and PDF output of the book. This emphasizes the end goal of using jupyter-book, publishing! 
 - The [content](content) page introduces a minimal subset of the jupyter-book syntax so you can try your hand at authoring content and get a feel for the jupyter-book workflow. It is critical to understand that authoring content is slower, so that revising and publishing can be faster. Again, only you can determine if this writing model fits your use case. But at least you can quickly kick the tires and decide for yourself.
+- The [conclusion](conclusion) will wrap everything up and provide a number of jumping off points to possibly increase the benefit of using jupyter-book.
 

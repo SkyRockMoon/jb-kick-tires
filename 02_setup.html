@@ -102,7 +102,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <meta property="og:url"         content="https://skyrockmoon.github.io/jb-kick-tires/02_setup.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Setting up jupyter-book" />
-<meta property="og:description" content="Setting up jupyter-book  Warning  This book is still being actively developed and this version of should be considered a rough draft. Follow me on GitHub to rec" />
+<meta property="og:description" content="Setting up jupyter-book  Jupyter-book is a collection of complex tools that, in my opinion, perform a series of consecutive miracles every time you run them to " />
 
 
 <meta name="twitter:card" content="summary" />
@@ -149,7 +149,12 @@ commentsRunWhenDOMLoaded(addUtterances);
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="04_content.html">
-   Add content to the book v2
+   Add content to the book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_conclusion.html">
+   Conclusion
   </a>
  </li>
 </ul>
@@ -364,6 +369,11 @@ commentsRunWhenDOMLoaded(addUtterances);
      Notebooks
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conclusion-of-the-hard-path">
+     Conclusion of the hard path
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -379,13 +389,9 @@ commentsRunWhenDOMLoaded(addUtterances);
                 
   <div class="section" id="setting-up-jupyter-book">
 <span id="setup"></span><h1>Setting up jupyter-book<a class="headerlink" href="#setting-up-jupyter-book" title="Permalink to this headline">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This book is still being actively developed and this version of should be considered a rough draft. <a class="reference external" href="https://docs.github.com/en/github/getting-started-with-github/following-people#:~:text=If%20someone%20you%20follow%20stars,Unfollow%20under%20their%20profile%20image.">Follow me on GitHub</a> to receive notifications when updates are made.</p>
-</div>
 <p>Jupyter-book is a collection of complex tools that, in my opinion, perform a series of consecutive miracles every time you run them to generate a very professional looking output. I call the output a book, but there are lots of other things you could call it - website, paper, technical documentation, interactive notebook, etc.</p>
 <p>The installation process described here is very windows 10 centric and may not be to everyone’s taste. If you work on a linux machine you might be able to install jupyter-book in a <a class="reference external" href="https://jupyterbook.org/intro.html#install-jupyter-book">single command</a>! In most cases sophisticated users should be able to recognize how many of these instructions apply generally to their system. For the uninitiated, this setup guide will take you from zero to jupyter-book hero.</p>
-<p>If you are truly new to the jupyter ecosystem take the <a class="reference internal" href="#easy-path"><span class="std std-ref">easy path</span></a> and install Anaconda on your machine. This is a much easier way to get started than taking the <a class="reference internal" href="#hard-path"><span class="std std-ref">hard path</span></a>, and if you decide you like jupyter-book then you can always go back and follow the more advanced setup. The manual installation described on the <a class="reference internal" href="#hard-path"><span class="std std-ref">hard path</span></a> provides a slightly more streamlined workflow. Over the course of developing a book, it might be worth the investment of setting up streamlined workflow, but is unnecessary to just kick the tires.</p>
+<p>If you are truly new to the jupyter ecosystem take the <a class="reference internal" href="#easy-path"><span class="std std-ref">easy path</span></a> and install Anaconda on your machine. This is a much easier way to get started than taking the <a class="reference internal" href="#hard-path"><span class="std std-ref">hard path</span></a>, and if you decide you like jupyter-book then you can always go back and follow the more advanced setup. The manual installation described on the <a class="reference internal" href="#hard-path"><span class="std std-ref">hard path</span></a> provides a slightly more streamlined workflow when writing. Over the course of developing a book, it might be worth the investment of setting up streamlined workflow, but is unnecessary to just kick the tires.</p>
 <div class="section" id="easy-path-anaconda">
 <span id="easy-path"></span><h2>Easy Path: Anaconda<a class="headerlink" href="#easy-path-anaconda" title="Permalink to this headline">¶</a></h2>
 <p>The easy path describes how to get up and running with jupyter-book as quickly as possible. It will describe how to install one program that contains virtually everything that you need. Here is what to expect:</p>
@@ -404,7 +410,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>If you already have anaconda installed on your machine and need to upgrade python see this <a class="reference external" href="https://stackoverflow.com/questions/58568175/upgrade-to-python-3-8-using-conda/59348995">thread</a>.</p>
 </div>
 </div>
-<p>Anaconda is a python environment that tries to bundle everything you might need from the python ecosystem into a single easy to use windows installer. It includes jupyter-book, plus many other useful libraries. Jupyter-book requires python 3.8+, and as of mid-2020 Anaconda was shipping with python 3.8. Download the free personal edition of Anaconda <a class="reference external" href="https://www.anaconda.com/products/individual">here</a>.</p>
+<p>Anaconda is a python environment that tries to bundle everything you might need from the python ecosystem into a single easy to use windows installer. It includes jupyter-book, plus many other useful libraries. Jupyter-book requires python 3.8+, and as of mid-2020 Anaconda was shipping with python 3.8. Download the free personal edition of Anaconda <a class="reference external" href="https://www.anaconda.com/products/individual">here</a> and follow the isntallation instructions.</p>
 </div>
 <div class="section" id="setup-github">
 <span id="github-easy"></span><h3>Setup Github<a class="headerlink" href="#setup-github" title="Permalink to this headline">¶</a></h3>
@@ -413,24 +419,24 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <div class="section" id="clone-the-sample-book">
 <span id="clone-easy"></span><h3>Clone the sample book<a class="headerlink" href="#clone-the-sample-book" title="Permalink to this headline">¶</a></h3>
-<p>In this section you will clone (download) a sample book that you can play with to see if jupyter-book is a good fit for you. To acomplish this take the following steps:</p>
+<p>In this section you will clone (download) a sample book that you can play with to see if jupyter-book is a good fit for you. To accomplish this take the following steps:</p>
 <ol class="simple">
 <li><p>Open the anaconda <strong>prompt</strong>. The anaconda navigator is the graphical user interface and is not what you want to be using.</p></li>
-<li><p>Navigate to where you want to store the sample book on your machine. I store all my code projects in a folder called projects on my C drive, so I would navigate to that folder like this: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">C:\projects</span></code>. Note that the next step will create a folder called <code class="docutils literal notranslate"><span class="pre">sample-book</span></code> so you don’t need to create a dedicated directory to keep you projects folder clean.</p></li>
-<li><p>Clone the sample book using git: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">TODO</span> <span class="pre">TODO</span></code></p></li>
+<li><p>Navigate to where you want to store the sample book on your machine. I store all my code projects in a folder called projects on my C drive, so I would navigate to that folder like this: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">C:\projects</span></code>. Note that the next step will create a folder called <code class="docutils literal notranslate"><span class="pre">sample-book</span></code> so you don’t need to create a dedicated directory to keep your projects folder clean.</p></li>
+<li><p>Clone the sample book using git: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/SkyRockMoon/sample-book.git</span></code></p></li>
 <li><p>Navigate into your cloned directory with <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">sample-book</span></code></p></li>
 <li><p>Setup your environment with <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-f</span> <span class="pre">environment.yml</span></code></p></li>
 <li><p>Build the book with <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">book</span></code></p></li>
-<li><p>Watch the console for errors, if everything goes well it will give you a link to your book. Use the linkto open the book in an internet browser. Alternatively, use windows file explorer to locate <code class="docutils literal notranslate"><span class="pre">book/_build/html/index.html</span></code> and open that file in your browser.</p></li>
+<li><p>Watch the console for errors, if everything goes well it will give you a link to your book. Use the link to open the book in an internet browser. Alternatively, use windows file explorer to locate <code class="docutils literal notranslate"><span class="pre">book/_build/html/index.html</span></code> and open that file in your browser.</p></li>
 </ol>
 </div>
 <div class="section" id="optional-install-vs-code">
 <span id="vscode-easy"></span><h3>Optional: Install VS Code<a class="headerlink" href="#optional-install-vs-code" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://code.visualstudio.com/">VS Code</a> is an amazing, free, text editor (among other things) that can be used to edit the files in the sample-book. Visit the <a class="reference external" href="https://code.visualstudio.com/Download">downloads page</a> and install it on your machine if you don’t already have a similar tool installed on your machine.</p>
+<p><a class="reference external" href="https://code.visualstudio.com/">VS Code</a> is an amazing, free, text editor (among other things) that can be used to edit the files in the sample-book. Visit the <a class="reference external" href="https://code.visualstudio.com/Download">downloads page</a> and install it on your machine if you don’t already have a similar tool installed on your machine that can be used for editing text files.</p>
 </div>
 <div class="section" id="conclusion-of-the-easy-path">
 <h3>Conclusion of the easy path<a class="headerlink" href="#conclusion-of-the-easy-path" title="Permalink to this headline">¶</a></h3>
-<p>You have successfully installed everything you need to kick the tires on jupyter-book. If you decide you want slightly more powerful tooling, consider some or all of the instructions in the <a class="reference internal" href="#hard-path"><span class="std std-ref">hard path</span></a>. Until you are sure jupyter-book is right for you, I wouldn’t bother spending the time adding bells and whistles to your setup.</p>
+<p>You have successfully installed everything you need to kick the tires on jupyter-book. If you decide you want slightly more powerful tooling, consider some or all of the instructions in the <a class="reference internal" href="#hard-path"><span class="std std-ref">hard path</span></a>. Until you are sure jupyter-book is right for you, I wouldn’t bother spending the time adding bells and whistles to your setup. Next you will fully exercise your newly installed environment by <a class="reference internal" href="03_build-pub.html#build-pub"><span class="std std-ref">building/publishing</span></a> a book two different ways.</p>
 </div>
 </div>
 <div class="section" id="hard-path-manual-install">
@@ -439,7 +445,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>Here is what you can expect to accomplish:</p>
 <ol class="simple">
 <li><p>Install the <a class="reference internal" href="#wsl"><span class="std std-ref">windows subsystem for linux</span></a>. Basically this is a little linux machine installed inside windows. This is necessary because jupyter-book is a essentially a linux tool.</p></li>
-<li><p>Install <a class="reference internal" href="#vs-code"><span class="std std-ref">VS Code</span></a>. VS Code is an <em>integrated development environment</em>. This is where you will do all your work.</p></li>
+<li><p>Install <a class="reference internal" href="#vs-code"><span class="std std-ref">VS Code</span></a>. VS Code is an <em>integrated development environment</em> that includes code editing and a command line all in one place. This is where you will do all your work.</p></li>
 <li><p>Build <a class="reference internal" href="#python"><span class="std std-ref">python3.8</span></a> from source code! It sounds scary, but it is actually really hard to mess up and better than the alternative.</p></li>
 <li><p>Install and register for the collaboration tools <a class="reference internal" href="#git"><span class="std std-ref">git and GitHub</span></a></p></li>
 <li><p><a class="reference internal" href="#clone"><span class="std std-ref">Clone</span></a> the mini-book repository onto your machine</p></li>
@@ -447,8 +453,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </ol>
 <div class="section" id="linux-on-windows">
 <span id="wsl"></span><h3>Linux on windows<a class="headerlink" href="#linux-on-windows" title="Permalink to this headline">¶</a></h3>
-<p>Jupyter-book is fundamentally a linux tool. I initially tried to run jupyter-book on <a class="reference external" href="https://www.anaconda.com/">anaconda</a> on a windows 10 machine, and it only partially worked for me. Almost certainly this was my fault and not jupyter-book, but again I just want to kick the tires and don’t want to mess with debugging, so I eventually settled on using the <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/about">windows subsystem for linux</a> (WSL).</p>
-<p>Installation instructions for WSL are beyond the scope of this document and [is documented by Microsoft]](https://docs.microsoft.com/en-us/windows/wsl/install-win10). I personally used <a class="reference external" href="https://superuser.com/questions/1271682/is-there-a-way-of-installing-ubuntu-windows-subsystem-for-linux-on-win10-v170/1272559#1272559">these instructions</a>, which assume some pre-existing knowledge of linux.</p>
+<p>Jupyter-book is fundamentally a linux tool. Installation instructions for the Windows Subsystem for Linux (WSL) on Windows 10 are beyond the scope of this document and <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">is documented by Microsoft</a>. I personally used <a class="reference external" href="https://superuser.com/questions/1271682/is-there-a-way-of-installing-ubuntu-windows-subsystem-for-linux-on-win10-v170/1272559#1272559">these instructions</a>, which assume some pre-existing knowledge of linux.</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>These instructions assume that you install Ubuntu 18.04 as your linux distribution.</p>
@@ -504,7 +509,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <div class="section" id="install-latex-libraries">
 <h4>Install latex libraries<a class="headerlink" href="#install-latex-libraries" title="Permalink to this headline">¶</a></h4>
-<p>These libraries are used when building a pdf. Install them with this extra long command:</p>
+<p>These libraries are used when building a pdf. Install them with this ‘one-liner’:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra texlive-xetex latexmk
 </pre></div>
 </div>
@@ -569,27 +574,27 @@ $ rm Python-3.8.7.tgz</p>
 </div>
 <div class="section" id="clone-and-build-the-mini-book">
 <span id="clone"></span><h3>Clone and build the mini book<a class="headerlink" href="#clone-and-build-the-mini-book" title="Permalink to this headline">¶</a></h3>
-<p>In this section we will clone - or download - the source for the mini-book that you are reading so you can modify and then rebuild it later. Up to this point we have been working from an arbitrary working folder. In VS code use <code class="docutils literal notranslate"><span class="pre">file</span> <span class="pre">&gt;</span> <span class="pre">open</span> <span class="pre">folder</span></code> to navigate to your project folder (C:\projects) you created earlier. Then clone the mini-book repository from my GitHub account to your local drive using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">TODO</span> <span class="pre">TODO</span> <span class="pre">TODO</span></code>.</p>
-<p>Move into the cloned directory with <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">jb_kick_tires</span></code> and then view the directory contents with <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span></code>. You should see a listing of files and folders that includes:</p>
+<p>In this section we will clone - or download - the source for the mini-book that you are reading so you can modify and then rebuild it later. Up to this point we have been working from an arbitrary working folder. In VS code use <code class="docutils literal notranslate"><span class="pre">file</span> <span class="pre">&gt;</span> <span class="pre">open</span> <span class="pre">folder</span></code> to navigate to your project folder (C:\projects) you created earlier. Then clone the mini-book repository from my GitHub account to your local drive using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/SkyRockMoon/sample-book.git</span></code>.</p>
+<p>Move into the cloned directory with <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">sample-book</span></code> and then view the directory contents with <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span></code>. You should see a listing of files and folders that includes:</p>
 <ul class="simple">
 <li><p>book: this is the source code for the book</p></li>
 <li><p>requirements.txt: this defines all the packages needed to exactly duplicate my python environment</p></li>
-<li><p>.gitignore TODO???? - Does this get cloned: this helps git avoid tracking unnecessary files</p></li>
+<li><p>.gitignore: this helps git avoid tracking unnecessary files</p></li>
 </ul>
 <p>All of the source code is located in the book directory, but before we build the book we need to install the python environment so you can build the mini-book using jupyter-book.</p>
 </div>
 <div class="section" id="build-the-mini-book">
 <span id="build"></span><h3>Build the mini-book<a class="headerlink" href="#build-the-mini-book" title="Permalink to this headline">¶</a></h3>
 <ol>
-<li><p>Create a virtual environment with <code class="docutils literal notranslate"><span class="pre">python3.8</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">kick-tires</span></code></p></li>
-<li><p>Activate the virtual environment <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">kick-tires/bin/activate</span></code></p>
+<li><p>Create a virtual environment with <code class="docutils literal notranslate"><span class="pre">python3.8</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">sample-book-venv</span></code></p></li>
+<li><p>Activate the virtual environment <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">sample-book-venv/bin/activate</span></code></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>At this point your command prompt should change to indicate that you are inside the virtual environment. The command prompt should change from:
-$ jb_kick_tires</p>
+$ sample-book</p>
 <p>To look like this once the virtual environment has been activated:
-(kick-tires) jb_kick_tires</p>
-<p>It is no longer necesary to denote a specific version of pythong. For example issue the command <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">--version</span></code> and the version number should be 3.8.7. Also pip is actually pip3.</p>
+$ (sample-book-venv) sample-book</p>
+<p>It is no longer necesary to denote a specific version of python. For example issue the command <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">--version</span></code> and the version number should be 3.8.7. Also pip is actually pip3.</p>
 </div>
 </li>
 <li><p>Ensure pip is up to date <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--upgrade</span> <span class="pre">pip</span></code></p></li>
@@ -597,10 +602,11 @@ $ jb_kick_tires</p>
 <li><p>Check the jupyter-book version <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">--version</span></code>. When this was written, jupyter-book was at 0.9.1.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>When you want to leave the kick-tires virtual environment issue the command <code class="docutils literal notranslate"><span class="pre">deactivate</span></code> and you will be returned to your regular command prompt. Jupyter-book is installed <em>inside</em> the virtual environment, so if you leave the virtual environment <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">--version</span></code> will throw a ‘command not found’ error. A <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">kick-tires/bin/activate</span></code> will reactivate your virtual environment.</p>
+<p>When you want to leave the kick-tires virtual environment issue the command <code class="docutils literal notranslate"><span class="pre">deactivate</span></code> and you will be returned to your regular command prompt. Jupyter-book is installed <em>inside</em> the virtual environment, so if you leave the virtual environment <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">--version</span></code> will throw a ‘command not found’ error. A <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">sample-book-venv/bin/activate</span></code> will reactivate your virtual environment.</p>
 </div>
 </li>
-<li><p>Build the book with <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">book</span></code>. Wait for the console to show you the status of the build. You should expect to see something like this:</p>
+<li><p>Build the book with <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">book</span></code>. Wait for the console to show you the status of the build. You should expect to see something like this:</p></li>
+</ol>
 <div class="highlight-md notranslate"><div class="highlight"><pre><span></span>The HTML pages are in book/_build/html.
 
 ===============================================================================
@@ -616,7 +622,7 @@ Or paste this line directly into your browser bar:
 ===============================================================================
 </pre></div>
 </div>
-</li>
+<ol class="simple">
 <li><p>From VS code ctrl + click on the link to open the book in your browser (your not using <a class="reference external" href="https://www.mozilla.org/en-US/firefox/unfck/">chrome, right?!?!</a>)</p></li>
 <li><p>If you see the sample-book then congrats. You survived the entire install process! 🎉🥴</p></li>
 </ol>
@@ -632,11 +638,11 @@ Or paste this line directly into your browser bar:
 <p>If you didn’t <a class="reference internal" href="#clone"><span class="std std-ref">clone</span></a> the sample-book repository, or you are starting from scratch, follow <a class="reference external" href="https://docs.github.com/en/github/getting-started-with-github/create-a-repo">their instructions</a> for creating a new repository.</p>
 </div>
 <p>Install the github pages importer tool to make publishing your book as a website a one command job:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">ghp</span><span class="o">-</span><span class="kn">import</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install ghp-import
 </pre></div>
 </div>
 <p>Then from your working directory deploy your book to a webpage with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ghp</span><span class="o">-</span><span class="kn">import</span> <span class="o">-</span><span class="n">n</span> <span class="o">-</span><span class="n">p</span> <span class="o">-</span><span class="n">f</span> <span class="n">book</span><span class="o">/</span><span class="n">_build</span><span class="o">/</span><span class="n">html</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ghp-import -n -p -f book/_build/html
 </pre></div>
 </div>
 <p>This will move the files from book/_build/html to a branch called <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> and commit/push the branch. GitHub knows to look for a branch with that name, and will publish your book as a website at <code class="docutils literal notranslate"><span class="pre">https://&lt;user-name&gt;.github.io/&lt;repo-name&gt;</span></code>. Where <code class="docutils literal notranslate"><span class="pre">&lt;user-name&gt;</span></code> is your GitHub username, and <code class="docutils literal notranslate"><span class="pre">&lt;repo-name&gt;</span></code> is the name of the code repository that you are developing your book in.</p>
@@ -647,11 +653,15 @@ Or paste this line directly into your browser bar:
 <p>To see what a jupyter notebook looks like:</p>
 <ol class="simple">
 <li><p>Open a new terminal with the plus sign in the VS code terminal window</p></li>
-<li><p>Activate the kick-tires virtual environment <code class="docutils literal notranslate"><span class="pre">.</span> <span class="pre">kick-tires/bin/activate</span></code></p></li>
+<li><p>Activate the kick-tires virtual environment <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">sample-book-venv/bin/activate</span></code></p></li>
 <li><p>Open jupyter notebook with <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span> <span class="pre">--no-browser</span></code></p></li>
 <li><p>Follow the link provided in the console to open the jupyter notebook in a browser</p></li>
 </ol>
-<p>The chapter on <span class="xref myst">authoring content</span> will delve into the use of jupyter notebook with jupyter-book. If you are unfamiliar with jupyter notebook there are some useful tutorials ….TODO - which tutorials?</p>
+<p>The chapter on <a class="reference internal" href="04_content.html#content"><span class="std std-ref">authoring content</span></a> will delve into the use of jupyter notebook with jupyter-book. If you are unfamiliar with jupyter notebook there are some <a class="reference external" href="https://realpython.com/jupyter-notebook-introduction/#creating-a-notebook">useful tutorials</a>.</p>
+</div>
+<div class="section" id="conclusion-of-the-hard-path">
+<h3>Conclusion of the hard path<a class="headerlink" href="#conclusion-of-the-hard-path" title="Permalink to this headline">¶</a></h3>
+<p>Congrats, completing the manual install is certainly an acomplishment. You have successfully installed everything you need to kick the tires on jupyter-book. Next you will fully exercise your newly installed environment by <a class="reference internal" href="03_build-pub.html#build-pub"><span class="std std-ref">building/publishing</span></a> a book two different ways.</p>
 </div>
 </div>
 </div>

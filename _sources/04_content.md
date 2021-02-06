@@ -1,10 +1,6 @@
 (content)=
 # Add content to the book
 
-```{warning}
-This book is still being actively developed and this version of should be considered a rough draft. [Follow me on GitHub](https://docs.github.com/en/github/getting-started-with-github/following-people#:~:text=If%20someone%20you%20follow%20stars,Unfollow%20under%20their%20profile%20image.) to receive notifications when updates are made.  
-```
-
 This section covers how to add content to your book. To utilize jupyter-book you will have to ultimately become very familiar with the [official jupyter-book documentation](https://jupyterbook.org). However for the purposes of kicking the tires this section will take you through the features that are either critical to use, or just cool. Many details will be skipped for the purposes of illustrating what authoring a book with jupyter-book might be like in practice. Consider this chapter a minimum subset of the available functionality needed for authoring content.
 
 In an effort to make learning syntax more practical this section will take you through a narrative of adding content to the [book you cloned](clone) while installing jupyter-book. After getting a feel for how everything works in this section you will probably graduate to just using the [jupyter-book cheat sheet](https://jupyterbook.org/reference/cheatsheet.html) to rapidly find the syntax details you need. 
@@ -1048,6 +1044,10 @@ Then link your bibliography:
 ```
 ``````
 
+```{note}
+The HTML and PDF outputs handle the bibliography differently. The HTML version puts the bibliography on the page that the link is located on. The PDF puts the bibliography at the end of the book as its own chapter.
+```
+
 (annotations)=
 ## Annotations
 A very cool integration that jupyter-book makes available is annotations. An annotation is a way for readers to make notes on your document. Seeing is believing, so view the [demo](https://jupyterbook.org/interactive/comments/hypothesis.html) on the jupyter-book website to see it in action and learn how to adjust the `_config.yml` file to enable annotations.
@@ -1067,3 +1067,6 @@ Where `github-org` is your user name or organization, and `github-repo` is the r
 ```{note}
 The comments integration is not visible when viewing your book *locally*. You must [publish to GitHub](build-pub) to see the integration.
 ```
+
+## Conclusion
+If you have made it this far and followed along in the creation of a book about dinosaurs then you have sufficiently kicked the tires on jupyter-book at this point. There should be nothing preventing you from renaming your repo/book and then starting to add the real content of your book. Many aspects of jupyter-book were skipped, but hopefully you got to see all the bits that are important to the writing process. The [conclusion](conclusion) includes some notes on possible next steps. 
