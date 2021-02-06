@@ -1048,6 +1048,10 @@ Then link your bibliography:
 ```
 ``````
 
+```{note}
+The HTML and PDF outputs handle the bibliography differently. The HTML version puts the bibliography on the page that the link is located on. The PDF puts the bibliography at the end of the book as its own chapter.
+```
+
 (annotations)=
 ## Annotations
 A very cool integration that jupyter-book makes available is annotations. An annotation is a way for readers to make notes on your document. Seeing is believing, so view the [demo](https://jupyterbook.org/interactive/comments/hypothesis.html) on the jupyter-book website to see it in action and learn how to adjust the `_config.yml` file to enable annotations.
@@ -1067,3 +1071,6 @@ Where `github-org` is your user name or organization, and `github-repo` is the r
 ```{note}
 The comments integration is not visible when viewing your book *locally*. You must [publish to GitHub](build-pub) to see the integration.
 ```
+
+## Conclusion
+If you have made it this far and followed along in the creation of a book about dinosaurs then you have sufficiently kicked the tires on jupyter-book at this point. There should be nothing preventing you from renaming your repo/book and then starting to add the real content of your book. Many aspects of jupyter-book were skipped, but hopefully you got to see all the bits that are important to the writing process. The [conclusion](conclusion) includes some notes on possible next steps. 
