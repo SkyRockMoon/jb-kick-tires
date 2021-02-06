@@ -1,10 +1,6 @@
 (introduction)=
 # Introduction
 
-```{warning}
-This book is still being actively developed and this version of should be considered a rough draft. [Follow me on GitHub](https://docs.github.com/en/github/getting-started-with-github/following-people#:~:text=If%20someone%20you%20follow%20stars,Unfollow%20under%20their%20profile%20image.) to receive notifications when updates are made.  
-```
-
 This mini-book 'kicks the tires' on the open source [jupyter-book](https://jupyterbook.org) project. Jupyter-book can be used to create [executable books](exec-book) that can be published as websites and/or paper (dead tree) books. 
 
 The term "kick the tires" is an informal saying from North America that means:
