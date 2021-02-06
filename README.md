@@ -1,8 +1,8 @@
 # Kicking the Tires on Jupyter-Book
 
-Tip: read the full book online at [skyrockmoon.github.io/jb-kick-tires](skyrockmoon.github.io/jb-kick-tires)
+Tip: read the full book online at [skyrockmoon.github.io/jb-kick-tires](https://skyrockmoon.github.io/jb-kick-tires/01_intro.html)
 
-This [mini-book](skyrockmoon.github.io/jb-kick-tires) 'kicks the tires' on the open source [jupyter-book](https://jupyterbook.org) project. Jupyter-book can be used to create executable books that can be published as websites and/or paper (dead tree) books. 
+This [mini-book](https://skyrockmoon.github.io/jb-kick-tires/01_intro.html) 'kicks the tires' on the open source [jupyter-book](https://jupyterbook.org) project. Jupyter-book can be used to create executable books that can be published as websites and/or paper (dead tree) books. 
 
 The term "kick the tires" is an informal saying from North America that means:
 
