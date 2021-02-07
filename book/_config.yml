@@ -22,7 +22,7 @@ html:
   use_repository_button     : true  # Whether to add a link to your repository button
   use_issues_button         : true  # Whether to add an "open an issue" button
   extra_navbar              : "" #Powered by <a href="https://jupyterbook.org">Jupyter Book</a>  # Will be displayed underneath the left navbar.
-  extra_footer              : Powered by <a href="https://jupyterbook.org">Jupyter Book</a>  # Will be displayed underneath the footer.
+  extra_footer              : <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Kicking the Tires on Jupyter-Book</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://skyrockmoon.github.io/jb-kick-tires" property="cc:attributionName" rel="cc:attributionURL">Ryan Lowe</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://skyrockmoon.github.io/jb-kick-tires" rel="dct:source">https://skyrockmoon.github.io/jb-kick-tires</a>. <br><br>Powered by <a href="https://jupyterbook.org">Jupyter Book</a>  # Will be displayed underneath the footer.
   google_analytics_id       : ""  # A GA id that can be used to track book views.
   baseurl                   : https://skyrockmoon.github.io/jb-kick-tires  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
   comments:
