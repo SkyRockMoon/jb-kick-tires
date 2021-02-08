@@ -1,13 +1,13 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Build and publish a book &#8212; Kicking the Tires on Jupyter-Book</title>
     
-  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -89,6 +89,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://skyrockmoon.github.io/jb-kick-tires/03_build-pub.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Add content to the book" href="04_content.html" />
@@ -98,15 +99,24 @@ commentsRunWhenDOMLoaded(addUtterances);
     <meta name="docsearch:language" content="en" />
 
 
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://skyrockmoon.github.io/jb-kick-tires/03_build-pub.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="Build and publish a book" />
-<meta property="og:description" content="Build and publish a book  If you successfully completed the instructions on the setup page then you can build a book. In this section we will look in a little b" />
+<!-- Primary Meta Tags -->
+<title>Introduction — Kicking the Tires on Jupyter-Book</title>
+<meta name="title" content="Introduction — Kicking the Tires on Jupyter-Book">
+<meta name="description" content="This mini-book ‘kicks the tires’ on the open source jupyter-book project. Jupyter-book can be used to create executable books that can be published as websites and/or paper (dead tree) books. The term “kick the tires” is an informal saying from North America that means: To inspect something to ensure it meets expected standards or has favored characteristics, typically before committing to using it.">
 
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://skyrockmoon.github.io/jb-kick-tires/01_intro.html">
+<meta property="og:title" content="Introduction — Kicking the Tires on Jupyter-Book">
+<meta property="og:description" content="This mini-book ‘kicks the tires’ on the open source jupyter-book project. Jupyter-book can be used to create executable books that can be published as websites and/or paper (dead tree) books. The term “kick the tires” is an informal saying from North America that means: To inspect something to ensure it meets expected standards or has favored characteristics, typically before committing to using it.">
+<meta property="og:image" content="https://skyrockmoon.github.io/jb-kick-tires/tire.png">
 
-<meta name="twitter:card" content="summary" />
-
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://skyrockmoon.github.io/jb-kick-tires/01_intro.html">
+<meta property="twitter:title" content="Introduction — Kicking the Tires on Jupyter-Book">
+<meta property="twitter:description" content="This mini-book ‘kicks the tires’ on the open source jupyter-book project. Jupyter-book can be used to create executable books that can be published as websites and/or paper (dead tree) books. The term “kick the tires” is an informal saying from North America that means: To inspect something to ensure it meets expected standards or has favored characteristics, typically before committing to using it.">
+<meta property="twitter:image" content="https://skyrockmoon.github.io/jb-kick-tires/tire.png">
 
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -265,12 +275,14 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <div class="section" id="build-and-publish-a-book">
+  <!-- Kicking the Tires on Jupyter-Book by Ryan Lowe is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
+Based on a work at https://skyrockmoon.github.io/jb-kick-tires. -->
+<div class="section" id="build-and-publish-a-book">
 <span id="build-pub"></span><h1>Build and publish a book<a class="headerlink" href="#build-and-publish-a-book" title="Permalink to this headline">¶</a></h1>
 <p>If you successfully completed the instructions on the <a class="reference internal" href="02_setup.html#setup"><span class="std std-ref">setup</span></a> page then you can build a book. In this section we will look in a little bit closer detail at what actually happened during the build process to ensure that jupyter-book is a start to finish solution for your writing process. When using jupyter-book the writing process is slower than say a word processor, but the overall process that ends in publishing your work is both more modern (with an option for a website) and faster. If you don’t like what you see here, then jupyter-book may not be a good fit for your use case. It’s better to find that out now rather than later if that is the case.</p>
 <div class="section" id="build-a-book-website">
 <h2>Build a book website<a class="headerlink" href="#build-a-book-website" title="Permalink to this headline">¶</a></h2>
-<p>When you issue the command <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">book</span></code> you are compiling your source files. The source files are written in either markdown (<code class="docutils literal notranslate"><span class="pre">md</span></code>) or a jupyter notebook (<code class="docutils literal notranslate"><span class="pre">ipynb</span></code>).  The configuration (<code class="docutils literal notranslate"><span class="pre">_config.yml</span></code>) and table of contents (<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>) files determine exactly how your content files are organized and look. The output of the <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">book</span></code> command is to create a new folder inside the <code class="docutils literal notranslate"><span class="pre">book</span></code> directory named <code class="docutils literal notranslate"><span class="pre">_build</span></code>. There are multiple things inside the <code class="docutils literal notranslate"><span class="pre">_build</span></code> directory, but the bits relevant to this discussion are nested further inside the <code class="docutils literal notranslate"><span class="pre">html</span></code> directory. Specifically <code class="docutils literal notranslate"><span class="pre">index.html</span></code> is the homepage for your book website. See <a class="reference internal" href="02_setup.html#gh-actions"><span class="std std-ref">deploying your website to the internet</span></a> for details on how you can host your book website for free. For a few dollars per month you can go legit and register a domain like ‘my-awesome-book-website.com’ (still available the last time I checked!) and host it in an amazon s3 bucket or a similar service.</p>
+<p>When you issue the command <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">book</span></code> you are compiling your source files. The source files are written in either markdown (<code class="docutils literal notranslate"><span class="pre">md</span></code>) or a jupyter notebook (<code class="docutils literal notranslate"><span class="pre">ipynb</span></code>).  The configuration (<code class="docutils literal notranslate"><span class="pre">_config.yml</span></code>) and table of contents (<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>) files determine exactly how your content files are organized and look. The output of the <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">book</span></code> command is to create a new folder inside the <code class="docutils literal notranslate"><span class="pre">book</span></code> directory named <code class="docutils literal notranslate"><span class="pre">_build</span></code>. There are multiple things inside the <code class="docutils literal notranslate"><span class="pre">_build</span></code> directory, but the bits relevant to this discussion are nested further inside the <code class="docutils literal notranslate"><span class="pre">html</span></code> directory. Specifically <code class="docutils literal notranslate"><span class="pre">index.html</span></code> is the homepage for your book website. See <a class="reference internal" href="02_setup.html#gh-actions"><span class="std std-ref">deploying your website to the internet</span></a> for details on how you can host your book website for free. For a few dollars per month you can go legit and register a domain like ‘<a class="reference external" href="http://my-awesome-book-website.com">my-awesome-book-website.com</a>’ (still available the last time I checked!) and host it in an amazon s3 bucket or a similar service.</p>
 </div>
 <div class="section" id="build-a-book-pdf">
 <h2>Build a book PDF<a class="headerlink" href="#build-a-book-pdf" title="Permalink to this headline">¶</a></h2>
@@ -338,7 +350,7 @@ A PDF of your book can be found at:
         
             &copy; Copyright 2021.<br/>
           <div class="extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Kicking the Tires on Jupyter-Book</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://skyrockmoon.github.io/jb-kick-tires" property="cc:attributionName" rel="cc:attributionURL">Ryan Lowe</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://skyrockmoon.github.io/jb-kick-tires" rel="dct:source">https://skyrockmoon.github.io/jb-kick-tires</a>. <br><br>Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
           </div>
       </p>
     </div>
@@ -350,7 +362,7 @@ A PDF of your book can be found at:
     </div>
 
     
-  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

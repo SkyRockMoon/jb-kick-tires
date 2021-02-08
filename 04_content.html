@@ -1,13 +1,13 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add content to the book &#8212; Kicking the Tires on Jupyter-Book</title>
     
-  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -89,6 +89,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://skyrockmoon.github.io/jb-kick-tires/04_content.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Conclusion" href="05_conclusion.html" />
@@ -98,14 +99,24 @@ commentsRunWhenDOMLoaded(addUtterances);
     <meta name="docsearch:language" content="en" />
 
 
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://skyrockmoon.github.io/jb-kick-tires/04_content.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="Add content to the book" />
-<meta property="og:description" content="Add content to the book  This section covers how to add content to your book. To utilize jupyter-book you will have to ultimately become very familiar with the " />
+<!-- Primary Meta Tags -->
+<title>Introduction — Kicking the Tires on Jupyter-Book</title>
+<meta name="title" content="Introduction — Kicking the Tires on Jupyter-Book">
+<meta name="description" content="This mini-book ‘kicks the tires’ on the open source jupyter-book project. Jupyter-book can be used to create executable books that can be published as websites and/or paper (dead tree) books. The term “kick the tires” is an informal saying from North America that means: To inspect something to ensure it meets expected standards or has favored characteristics, typically before committing to using it.">
 
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://skyrockmoon.github.io/jb-kick-tires/01_intro.html">
+<meta property="og:title" content="Introduction — Kicking the Tires on Jupyter-Book">
+<meta property="og:description" content="This mini-book ‘kicks the tires’ on the open source jupyter-book project. Jupyter-book can be used to create executable books that can be published as websites and/or paper (dead tree) books. The term “kick the tires” is an informal saying from North America that means: To inspect something to ensure it meets expected standards or has favored characteristics, typically before committing to using it.">
+<meta property="og:image" content="https://skyrockmoon.github.io/jb-kick-tires/tire.png">
 
-<meta name="twitter:card" content="summary" />
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://skyrockmoon.github.io/jb-kick-tires/01_intro.html">
+<meta property="twitter:title" content="Introduction — Kicking the Tires on Jupyter-Book">
+<meta property="twitter:description" content="This mini-book ‘kicks the tires’ on the open source jupyter-book project. Jupyter-book can be used to create executable books that can be published as websites and/or paper (dead tree) books. The term “kick the tires” is an informal saying from North America that means: To inspect something to ensure it meets expected standards or has favored characteristics, typically before committing to using it.">
+<meta property="twitter:image" content="https://skyrockmoon.github.io/jb-kick-tires/tire.png">
 
 
   </head>
@@ -422,7 +433,9 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <div class="section" id="add-content-to-the-book">
+  <!-- Kicking the Tires on Jupyter-Book by Ryan Lowe is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
+Based on a work at https://skyrockmoon.github.io/jb-kick-tires. -->
+<div class="section" id="add-content-to-the-book">
 <span id="content"></span><h1>Add content to the book<a class="headerlink" href="#add-content-to-the-book" title="Permalink to this headline">¶</a></h1>
 <p>This section covers how to add content to your book. To utilize jupyter-book you will have to ultimately become very familiar with the <a class="reference external" href="https://jupyterbook.org">official jupyter-book documentation</a>. However for the purposes of kicking the tires this section will take you through the features that are either critical to use, or just cool. Many details will be skipped for the purposes of illustrating what authoring a book with jupyter-book might be like in practice. Consider this chapter a minimum subset of the available functionality needed for authoring content.</p>
 <p>In an effort to make learning syntax more practical this section will take you through a narrative of adding content to the <a class="reference internal" href="02_setup.html#clone"><span class="std std-ref">book you cloned</span></a> while installing jupyter-book. After getting a feel for how everything works in this section you will probably graduate to just using the <a class="reference external" href="https://jupyterbook.org/reference/cheatsheet.html">jupyter-book cheat sheet</a> to rapidly find the syntax details you need.</p>
@@ -572,7 +585,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </pre></div>
 </div>
 </td>
-<td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="gh"># Did dinosaurs have feathers?</span>
+<td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="gh"># Did dinosaurs have feathers?   </span>
 </pre></div>
 </div>
 </td>
@@ -1296,7 +1309,7 @@ You can install the [<span class="nt">feather identification toolbox</span>](<sp
 <p>Numbered references point to numbered <a class="reference internal" href="#math-formula"><span class="std std-ref">equations</span></a>, <a class="reference internal" href="#tables"><span class="std std-ref">tables</span></a>, and <a class="reference internal" href="#figures"><span class="std std-ref">figures</span></a>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Equations are the odd ball in this group. Figures and tables use the <code class="docutils literal notranslate"><span class="pre">{numref}</span></code> directive, while equations have their own <code class="docutils literal notranslate"><span class="pre">{eq}</span></code> directive. If you reference a figure or table the reference will be inserted as <code class="docutils literal notranslate"><span class="pre">Figure</span> <span class="pre">X</span></code> or <code class="docutils literal notranslate"><span class="pre">Table</span> <span class="pre">Y</span></code>. If you reference an equation it will be inserted as <code class="docutils literal notranslate"><span class="pre">(1)</span></code>.</p>
+<p>Equations are the odd ball in this group. Figures and tables use the <code class="docutils literal notranslate"><span class="pre">{numref}</span></code> directive, while equations have their own <code class="docutils literal notranslate"><span class="pre">{eq}</span></code> directive. If you reference a figure or table the reference will be inserted as <code class="docutils literal notranslate"><span class="pre">Figure</span> <span class="pre">X</span></code> or <code class="docutils literal notranslate"><span class="pre">Table</span> <span class="pre">Y</span></code>. If you reference an equation it will be inserted as <code class="docutils literal notranslate"><span class="pre">(#)</span></code>.</p>
 </div>
 <div class="section" id="numbered-eq">
 <span id="id13"></span><h4>Equations<a class="headerlink" href="#numbered-eq" title="Permalink to this headline">¶</a></h4>
@@ -1457,7 +1470,7 @@ the Universe and Everything”
 </pre></div>
 </div>
 </td>
-<td><p>The result was <span class="pasted-text">-0.16156338937358977</span> (95% CI <span class="pasted-text">-1.9091848709630883</span>/<span class="pasted-text">1.5860580922159089</span>).</p></td>
+<td><p>The result was <span class="pasted-text">2.9263482574064237</span> (95% CI <span class="pasted-text">0.9899746614939711</span>/<span class="pasted-text">4.8627218533188765</span>).</p></td>
 <td><p>Unformatted text</p></td>
 </tr>
 <tr class="row-odd"><td><div class="highlight-md notranslate"><div class="highlight"><pre><span></span>The result was 
@@ -1467,7 +1480,7 @@ the Universe and Everything”
 </pre></div>
 </div>
 </td>
-<td><p>The result was <span class="pasted-text">-0.16</span> (95% CI <span class="pasted-text">-1.91</span>/<span class="pasted-text">1.59</span>).</p></td>
+<td><p>The result was <span class="pasted-text">2.93</span> (95% CI <span class="pasted-text">0.99</span>/<span class="pasted-text">4.86</span>).</p></td>
 <td><p>Formatted as a two digit floating point number. See the <a class="reference external" href="https://mkaz.blog/code/python-string-format-cookbook/#f-strings">string formatting cookbook</a> for help formatting outputs.</p></td>
 </tr>
 </tbody>
@@ -1555,21 +1568,20 @@ Feather length vs bone diameter (completely fictional data) for fossils analyzed
 </pre></div>
 </div>
 </td>
-<td><p>As described in <a class="bibtex reference internal" href="#stone-bayes-2015" id="id18">[Sto15]</a></p></td>
+<td><p>As described in <span id="id18">[<a class="reference internal" href="#id20"><span>Sto15</span></a>]</span></p></td>
 <td><p>The citation will not display properly until the bibliography is linked as shown below</p></td>
 </tr>
 </tbody>
 </table>
 <p>Then include the bibliography with:</p>
-<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{bibliography} references.bib
-:filter: docname in docnames
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{bibliography}
 ```
 </pre></div>
 </div>
-<p>Your bibliography will be automatically generated like this, and can be formatted to meet any style guide.</p>
-<p id="bibtex-bibliography-04_content-0"><dl class="citation">
-<dt class="bibtex label" id="stone-bayes-2015"><span class="brackets"><a class="fn-backref" href="#id18">Sto15</a></span></dt>
-<dd><p>James V. Stone. <em>Bayes’ rule with Python: a tutorial introduction to Bayesian analysis</em>. Sebtel Press, Sheffield, England, first edition, 2015. ISBN 978-0-9933679-3-9. OCLC: ocn970361039.</p>
+<p>Your bibliography will be automatically generated like this, and citations can <a class="reference external" href="https://jupyterbook.org/content/citations.html?highlight=cite#selecting-your-reference-style">be formatted</a> multiple ways.</p>
+<p id="id19"><dl class="citation">
+<dt class="label" id="id20"><span class="brackets"><a class="fn-backref" href="#id18">Sto15</a></span></dt>
+<dd><p>James V. Stone. <em>Bayes' rule with Python: a tutorial introduction to Bayesian analysis</em>. Sebtel Press, Sheffield, England, first edition, 2015. ISBN 978-0-9933679-3-9. OCLC: ocn970361039.</p>
 </dd>
 </dl>
 </p>
@@ -1608,8 +1620,7 @@ Feather length vs bone diameter (completely fictional data) for fossils analyzed
 <p>Then link your bibliography:</p>
 <div class="highlight-md notranslate"><div class="highlight"><pre><span></span>&lt;!-- lit-review.md --&gt;
 
-```{bibliography} references.bib
-:filter: docname in docnames
+```{bibliography}
 ```
 </pre></div>
 </div>
@@ -1619,19 +1630,19 @@ Feather length vs bone diameter (completely fictional data) for fossils analyzed
 </div>
 </div>
 <div class="section" id="annotations">
-<span id="id19"></span><h2>Annotations<a class="headerlink" href="#annotations" title="Permalink to this headline">¶</a></h2>
+<span id="id22"></span><h2>Annotations<a class="headerlink" href="#annotations" title="Permalink to this headline">¶</a></h2>
 <p>A very cool integration that jupyter-book makes available is annotations. An annotation is a way for readers to make notes on your document. Seeing is believing, so view the <a class="reference external" href="https://jupyterbook.org/interactive/comments/hypothesis.html">demo</a> on the jupyter-book website to see it in action and learn how to adjust the <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> file to enable annotations.</p>
 </div>
 <div class="section" id="reader-comments">
 <span id="comments"></span><h2>Reader Comments<a class="headerlink" href="#reader-comments" title="Permalink to this headline">¶</a></h2>
 <p>Jupyter-book makes integrating a section for reader comments a very easy process (assuming you have a github account). Add the following to your <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> file to enable comments:</p>
-<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>html:
-  comments:
-    utterances:
-      repo: &quot;github-org/github-repo&quot;
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">html</span><span class="p">:</span>
+  <span class="nt">comments</span><span class="p">:</span>
+    <span class="nt">utterances</span><span class="p">:</span>
+      <span class="nt">repo</span><span class="p">:</span> <span class="s">&quot;github-org/github-repo&quot;</span>
 </pre></div>
 </div>
-<p>Where <code class="docutils literal notranslate"><span class="pre">github-org</span></code> is your user name or organization, and <code class="docutils literal notranslate"><span class="pre">github-repo</span></code> is the repository where you are hosting your project. So in the case of this book - which is hosted at https://github.com/SkyRockMoon/jb-kick-tires - the org is <code class="docutils literal notranslate"><span class="pre">SkyRockMoon</span></code> and the repo is <code class="docutils literal notranslate"><span class="pre">jb-kick-tires</span></code>. See below, this site has comments enabled.</p>
+<p>Where <code class="docutils literal notranslate"><span class="pre">github-org</span></code> is your user name or organization, and <code class="docutils literal notranslate"><span class="pre">github-repo</span></code> is the repository where you are hosting your project. So in the case of this book - which is hosted at <a class="reference external" href="https://github.com/SkyRockMoon/jb-kick-tires">https://github.com/SkyRockMoon/jb-kick-tires</a> - the org is <code class="docutils literal notranslate"><span class="pre">SkyRockMoon</span></code> and the repo is <code class="docutils literal notranslate"><span class="pre">jb-kick-tires</span></code>. See below, this site has comments enabled.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The comments integration is not visible when viewing your book <em>locally</em>. You must <a class="reference internal" href="03_build-pub.html#build-pub"><span class="std std-ref">publish to GitHub</span></a> to see the integration.</p>
@@ -1639,8 +1650,8 @@ Feather length vs bone diameter (completely fictional data) for fossils analyzed
 </div>
 <div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
-<p>If you have made it this far and followed along in the creation of a book about dinosaurs then you have sufficiently kicked the tires on jupyter-book at this point. There should be nothing preventing you from renaming your repo/book and then starting to add the real content of your book. Many aspects of jupyter-book were skipped, but hopefully you got to see all the bits that are important to the writing process. The <a class="reference internal" href="05_conclusion.html#conclusion"><span class="std std-ref">conclusion</span></a> includes some notes on possible next steps.</p>
-<hr class="docutils" />
+<p>If you have made it this far and followed along in the creation of a book about dinosaurs then you have sufficiently kicked the tires on jupyter-book at this point. There should be nothing preventing you from renaming your repo/book and then starting to add meaningful content. Many aspects of jupyter-book were skipped, but hopefully you got to see all the bits that are important to the writing process. The <a class="reference internal" href="05_conclusion.html#conclusion"><span class="std std-ref">conclusion</span></a> includes some notes on possible next steps.</p>
+<hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="footnote-label"><span class="brackets"><a class="fn-backref" href="#id6">1</a></span></dt>
 <dd><p>This is my footnote which wil be placed at the bottom of the page. Conveniently you can click on the footnote number to return to the text that contains the note.</p>
@@ -1692,7 +1703,7 @@ Feather length vs bone diameter (completely fictional data) for fossils analyzed
         
             &copy; Copyright 2021.<br/>
           <div class="extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Kicking the Tires on Jupyter-Book</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://skyrockmoon.github.io/jb-kick-tires" property="cc:attributionName" rel="cc:attributionURL">Ryan Lowe</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://skyrockmoon.github.io/jb-kick-tires" rel="dct:source">https://skyrockmoon.github.io/jb-kick-tires</a>. <br><br>Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
           </div>
       </p>
     </div>
@@ -1704,7 +1715,7 @@ Feather length vs bone diameter (completely fictional data) for fossils analyzed
     </div>
 
     
-  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     
