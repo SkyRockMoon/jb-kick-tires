@@ -1,3 +1,5 @@
+<!-- Kicking the Tires on Jupyter-Book by Ryan Lowe is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
+Based on a work at https://skyrockmoon.github.io/jb-kick-tires. -->
 (content)=
 # Add content to the book
 
@@ -129,7 +131,7 @@ Presumably a real outline for a book will describe more than just the chapter ti
     ###### Heading level 6
     ```
   - ```md
-    # Did dinosaurs have feathers?
+    # Did dinosaurs have feathers?   
     ```
   - Level 1-6 headings, denoted by number of `#`. Each chapter can only have one top level header. Avoid skipping levels (e.g. heading level 5 directly under a level 1 heading)
 ``````
@@ -745,7 +747,7 @@ You can install the [feather identification toolbox](https://example.com) via `p
 Numbered references point to numbered [equations](math-formula), [tables](tables), and [figures](figures).
 
 ```{tip}
-Equations are the odd ball in this group. Figures and tables use the `{numref}` directive, while equations have their own `{eq}` directive. If you reference a figure or table the reference will be inserted as `Figure X` or `Table Y`. If you reference an equation it will be inserted as `(1)`.
+Equations are the odd ball in this group. Figures and tables use the `{numref}` directive, while equations have their own `{eq}` directive. If you reference a figure or table the reference will be inserted as `Figure X` or `Table Y`. If you reference an equation it will be inserted as `(#)`.
 ```
 (numbered-eq)=
 #### Equations
@@ -987,15 +989,13 @@ Citations require couple steps.
 Then include the bibliography with:
 
 ``````md
-```{bibliography} references.bib
-:filter: docname in docnames
+```{bibliography}
 ```
 ``````
 
-Your bibliography will be automatically generated like this, and can be formatted to meet any style guide.
+Your bibliography will be automatically generated like this, and citations can [be formatted](https://jupyterbook.org/content/citations.html?highlight=cite#selecting-your-reference-style) multiple ways.
 
-```{bibliography} references.bib
-:filter: docname in docnames
+```{bibliography}
 ```
 
 Create a references.bib file in your book directory with the following citations:
@@ -1039,8 +1039,7 @@ Then link your bibliography:
 ``````md
 <!-- lit-review.md -->
 
-```{bibliography} references.bib
-:filter: docname in docnames
+```{bibliography}
 ```
 ``````
 
@@ -1056,7 +1055,7 @@ A very cool integration that jupyter-book makes available is annotations. An ann
 ## Reader Comments
 Jupyter-book makes integrating a section for reader comments a very easy process (assuming you have a github account). Add the following to your `_config.yml` file to enable comments:
 
-```md
+```yaml
 html:
   comments:
     utterances:
@@ -1069,4 +1068,4 @@ The comments integration is not visible when viewing your book *locally*. You mu
 ```
 
 ## Conclusion
-If you have made it this far and followed along in the creation of a book about dinosaurs then you have sufficiently kicked the tires on jupyter-book at this point. There should be nothing preventing you from renaming your repo/book and then starting to add the real content of your book. Many aspects of jupyter-book were skipped, but hopefully you got to see all the bits that are important to the writing process. The [conclusion](conclusion) includes some notes on possible next steps. 
+If you have made it this far and followed along in the creation of a book about dinosaurs then you have sufficiently kicked the tires on jupyter-book at this point. There should be nothing preventing you from renaming your repo/book and then starting to add meaningful content. Many aspects of jupyter-book were skipped, but hopefully you got to see all the bits that are important to the writing process. The [conclusion](conclusion) includes some notes on possible next steps. 

@@ -1,3 +1,6 @@
+<!-- Kicking the Tires on Jupyter-Book by Ryan Lowe is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
+Based on a work at https://skyrockmoon.github.io/jb-kick-tires. -->
+
 (introduction)=
 # Introduction
 
